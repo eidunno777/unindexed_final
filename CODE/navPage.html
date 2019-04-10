@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no,  maximum-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans" rel="stylesheet">
+<!--    <link href="https://db.onlinewebfonts.com/c/31b8101b7be4ea7380dd68f7ae18231d?family=Blender+Pro+Thin" rel="stylesheet" type="text/css" />-->
+<!--    <link href="//db.onlinewebfonts.com/c/335787aa6f57d71cabe8eb5dc89c6d6b?family=Blender+Pro" rel="stylesheet" type="text/css" />-->
+    <title>Unindexed</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-latest.js"></script>
+</head>
+
+<body>
+    <!--    <img class='bgImage' src="IMG/anonPages/anonVIdeos.png">-->
+    <div class="titleWrap"  onClick="returnToNav()">
+        <div class="redLine" onClick="returnToNav()"></div>
+        <p class="uiTitle uiElement babyHeaderText" onClick="returnToNav()">&nbsp;&nbsp;UNINDEXED</p>
+    </div>
+    <div class='bgImagesWrap'>
+        <img class='bgGradient' src="IMG/UI/bgGradient.png">
+    </div>
+    <div class="sideNav">
+        <div class='sideNavWrap'>
+            <div class="progressWrap">
+                <img class="progressBar" src="IMG/UI/progressBar.png">
+            </div>
+            <div class="arrowWrap">
+                <img class="uiArrow arrowUp" src="IMG/UI/arrowUp.png" height="18" width="18" onClick='pageUp()'>
+                <img class="uiArrow arrowDown" src="IMG/UI/arrowDown.png" height="18" width="18" onClick='pageDown()'>
+            </div>
+        </div>
+    </div>
+    <div id="main" class="container-fluid">
+        <div class='codeBlockContainer' hidden>
+            <p class="anonBGCode">????? ?????? ??? ??? ??? ??? ??? ????????? ??? ??? ?? <br><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;????? ?????? ??? ??? ??? ??? ??? ????????? ??? ??? ?? <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;??? ??? ??? ??? ????????? ??? ??? ?? <br><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;??? ??? ??? ??? ????????? ??? ??? ?? <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;???????????? ? ??? ??? ??? ??? ??? ??? ??? ?? <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;??????????????? ????? ????? ? ??? ??? ??? ??? ??? ??? ??? ?? <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;??????????????? ????? ????? ? ??? ????? ?? <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;????????? ????? ? ??? ????? ?? <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;????? ?????? ??? ??? ??? ??? ??? ????????? ??? ??? ? <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;????? ?????? ??? ??? ??? ??? ??? ????????? ??? ????????? ??? ??? ?????? ??? ??? ??? <br>
+                ??????????????? ????? ????? ???? ??? ??? ??? ??? ??? ??? ??? ??? ?? <br>
+                ??????????????? ????? ????? ? ??? ??? ??? ??? ??? ??? ??? ?? <br> <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;????? ?????? ??? ??? ??? ??? ??? ????????? ??? ??? ?? <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;????? ?????? ????? ???????????? ???????????????????????????????????????? <br>
+                ??????????????? ????? ????? ? ??? ??? ??? ??? ??? ??? ??? ?? <br>
+            </p>
+            <p class="anonBGCode">????? ?????? ??? ??? ??? ??? ??? ????????? ??? ??? ?? <br><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;????? ?????? ??? ??? ??? ??? ??? ????????? ??? ??? ?? <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;??? ??? ??? ??? ????????? ??? ??? ?? <br><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;??? ??? ??? ??? ????????? ??? ??? ?? <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;??????????????? ????? ????? ? ??? ??? ??? ??? ??? ??? ??? ?? <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;????? ?????? ??? ??? ??? ??? ??? ????????? ??? ??? ? <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;????? ?????? ??? ??? ??? ??? ??? ????????? ??? ????????? ??? ??? ?????? ??? ??? ??? <br>
+                ??????????????? ????? ????? ???? ??? ??? ??? ??? ??? ??? ??? ??? ?? <br>
+                ??????????????? ????? ????? ? ??? ??? ??? ??? ??? ??? ??? ?? <br> <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;????? ?????? ??? ??? ??? ??? ??? ????????? ??? ??? ?? <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;????? ?????? ????? ???????????? ???????????????????????????????????????? <br>
+                ??????????????? ????? ????? ? ??? ??? ??? ??? ??? ??? ??? ?? <br>
+            </p>
+            <p class="anonBGCode">?????? ??? ??? ??? ????????? ??? ??? ?? <br><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;????? ?????? ??? ??? ??? ??? ??? ????????? ??? ??? ?? <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;??? ??? ??? ??? ????????? ??? ??? ?? <br><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;??? ??? ??? ??? ????????? ??? ??? ?? <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;??????????????? ????? ????? ? ??? ??? ??? ??? ??? ??? ??? ?? <br><br>
+                ????? ?????? ??? ??? ??? ??? ??? ????????? ??? ??? ?
+
+            </p>
+            <p class="anonBGCode">
+                ????? ?????? ??? ??? ??? ??? ??? ????????? ??? ??? ? <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;????? ?????? ??? ??? ??? ??? ??? ????????? ??? ????????? ??? ??? ?????? ??? ??? ??? <br>
+                ??????????????? ????? ????? ???? ??? ??? ??? ??? ??? ??? ??? ??? ?? <br>
+                ??????????????? ????? ????? ? ??? ??? ??? ??? ??? ??? ??? ?? <br> <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;????? ?????? ??? ??? ??? ??? ??? ????????? ??? ??? ?? <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;????? ?????? ????? ???????????? ???????????????????????????????????????? <br>
+                ??????????????? ????? ????? ? ??? ??? ??? ??? ??? ??? ??? ?? <br>
+            </p>
+            <p class="anonBGCode">
+
+                ??????????????? ????? ????? ? ??? ??? ??? ??? ??? ??? ??? ?? <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;????? ? ??? ??? ??? ????????? ??? ??? ?? <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;????? ?????? ????? ???????????????????????????????????????? <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;????? ?????? ??? ??? ??? ??? ??? ????????? ??? ??? ?? <br>
+                ??????????????? ????? ????? ? ??? ??? ??? ??? ??? ??? ??? ?? <br>
+            </p>
+            <p class="anonBGCode">
+                ??????????????? ????? ????? ? ??? ??? ??? ??? ??? ??? ??? ?? <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;????? ? ??? ??? ??? ????????? ??? ??? ?? <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;????? ?????? ??? ??? ??? ??? ??? ????????? ??
+            </p>
+        </div>
+        <div class="bgContainer"></div>
+
+        <div class="row page introPage">
+            <div class="titleText">UNINDEXED</div>
+            <div class="redBar"></div>
+        </div>
+        <div class="row page introPage2">
+            <p class="bodyText introPage2_bodyText">
+                The Darknet offers users the power and freedom of complete Internet anonymity, and is accessible to anyone with just a Google search and a couple of clicks. What users choose to do with this freedom is up to them. This experience explores three stories that utilize the Darknet in significantly different ways.
+            </p>
+            <img class="scrollIcon" src="IMG/arrowIcon.png">
+        </div>
+        <div class="row navMenuRow navPage page">
+            <div class="col-sm-6"></div>
+            <!--            navMenuContainer contains hover width-->
+            <div class="navMenuContainer col-sm-5">
+                <div class='silkRoadNavMenu' onclick="startStory(this)">
+                    <div class="navText1 navMenuText nav1 navMenu">SILK ROAD
+                    </div>
+                </div>
+                <div class='wikiLeaksNavMenu' onclick="startStory(this)">
+                    <div class="navText2 navMenuText nav2 navMenu">WIKILEAKS
+                    </div>
+                </div>
+                <div class='anonNavMenu' onclick="startStory(this)">
+                    <div class="navText3 navMenuText nav3 navMenu">ANONYMOUS
+                    </div>
+                </div>
+            </div>
+            <div class="navMenuNums">
+                <div class='navNum1 navNum nav1 navMenu' onclick="startStory(this)">01</div>
+                <div class='navNum2 navNum nav2 navMenu' onclick="startStory(this)">02</div>
+                <div class='navNum3 navNum nav3 navMenu' onclick="startStory(this)">03</div>
+            </div>
+        </div>
+
+        <div class="row anonPage1 page storyPage" >
+            <div class="col-sm-1"></div>
+            <div class="col-sm-6 padding21 paddingSmLeft">
+                <p class="dateText">2003</p>
+                <h2 class="bigHeaderText anon01_titleText">ANONYMOUS FIRST ORIGINATES ON 4CHAN</h2>
+                <p id="bodyText_anon1" class="bodyText">4chan is an imageboard website where posts generally have anonymous authors. The concept of Anonymous began as a decentralized community on 4chan that would act anonymously in a coordinated manner. These coordinated efforts were usually toward a loosely self-agreed goal that was primarily for entertainment purposes (or lulz). In the next 15 years this small and largely immature 4chan community would evolve into an international hactivist group.
+                </p>
+            </div>
+        </div>
+        <div class="row anonPage2 page storyPage">
+            <div class="col-sm-6">
+                <p class="captionText anon02_caption">SP - an abbreviation of Supressive Person, a term used in Scientology to describe "antisocial personalities." Many who end up leaving the church are labeled as SPs.</p>
+                <div id="appearing_div">
+                    <video id="video" class='anon_Vid video' muted>
+                        <source src="VIDEO/CRUISE_VID.mp4" type='video/mp4; codecs="avc1.42E01E"' />
+                    </video>
+                    <canvas width="1040" height="720" id="buffer" style="display:none"></canvas>
+                    <canvas width="640" height="360" id="output"></canvas>
+                </div>
+            </div>
+            <div class="col-sm-6 padding18 paddingLeft">
+                <p class="dateText">2008</p>
+                <h2 class="smBigHeaderText">PROJECT CHANOLOGY</h2>
+                <!--                <img id="cruiseBut" class="button playBut" src="IMG/UI/playBut.png" height="38" width="38">-->
+                <div class="textShadowWrap">
+                    <div class="textShadow anon_02_shadow"></div>
+                    <p id="bodyText_Anon02" class="bodyText">After a video leaked of Tom Cruise gushing about his total devotion to the doctrines of The Church of Scientology, the Internet and 4chan users in praticular had a field day making memes of the video. However, the church began trying to expunge the video from the Internet; sending legal nastygrams to anyone hosting or sharing it. The anons were so enraged by this attempt at censorship that they set out to inflict as much damage as possible on the church. So began Project Chanology, in which the anons wanted not only the lulz, but also for those lulz to have a real-world effect. In dedicating themselves to that latter goal, Anonymous began to develop a real political consciousness.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row anonPage3 page storyPage">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-6 padding18 paddingSmLeft">
+                <p class="dateText">2010</p>
+                <h2 class="smBigHeaderText anon03_headerText">OPERATION PAYBACK<br></h2>
+                <p class="bodyText anon03_bodyText">After WikiLeak's release of hundreds of thousands of confidential U.S. documents, the three companies began blocking payments to the site for alleged terms-of-service violations. The action struck many anons as a transparent attempt to hobble Julian Assange's whistle-blowing organization. So began Operation Payback, in which anons used illegal DDoS attacks to take down the websites of MasterCard and Visa and briefly slow down PayPal to a crawl. In order to avoid jail time, the anons planned and carried out these attacks using the anonymity provided by the darknet.
+                </p>
+                <!--                <img class="button playBut playBut_Payback" src="IMG/UI/playBut.png" height="38" width="38">-->
+
+            </div>
+            <div class='col-sm-5'>
+                <!--                <img src="IMG/paybackImg.png" class='tempIMG'>-->
+                <p class="captionText anon03_caption">Anonymous released this video shortly after the attacks. Anonymous almost always releases videos that explain what their motives and who their targets are.</p>
+                <video class="video anon_Vid anon_paybackVid" mute loop>
+                    <source src="VIDEO/anonPayback.mp4" type='video/mp4; codecs="avc1.42E01E"' />
+                </video>
+            </div>
+        </div>
+        <div class="row anonPage35 quotePage page storyPage">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-6 padding21 paddingSmLeft">
+                <h2 class="quoteHeader anon_quoteText">We are anonymous, we are legion,
+                    we do not forgive, we do not forget</h2>
+                <p class="quoteSignature anon03_quoteSignature"><span class="redDash">–</span> ANONYMOUS
+                </p>
+            </div>
+            <div class='col-sm-5'></div>
+        </div>
+        <div class="row anonPage4 page storyPage">
+            <div class="col-sm-6 padding30 paddingLeft10">
+                <video class="anon_Vid anon_01 video" mute loop>
+                    <source src="VIDEO/anon_01.mp4" type='video/mp4; codecs="avc1.42E01E"' />
+                </video>
+                <video class="anon_Vid anon_02 video" mute loop>
+                    <source src="VIDEO/anon_02.mp4" type='video/mp4; codecs="avc1.42E01E"' />
+                </video>
+                <video class="anon_Vid anon_03 video" mute loop>
+                    <source src="VIDEO/anon_03.mp4" type='video/mp4; codecs="avc1.42E01E"' />
+                </video>
+                <video class="anon_Vid anon_04 video" mute loop>
+                    <source src="VIDEO/anon_04.mp4" type='video/mp4; codecs="avc1.42E01E"' />
+                </video>
+                <video class="anon_Vid anon_05 video" mute loop>
+                    <source src="VIDEO/anon_05.mp4" type='video/mp4; codecs="avc1.42E01E"' />
+                </video>
+                <video class="anon_Vid anon_06 video" mute loop>
+                    <source src="VIDEO/anon_06.mp4" type='video/mp4; codecs="avc1.42E01E"' />
+                </video>
+            </div>
+            <div class="col-sm-6 padding26 paddingLeft10">
+                <p class="dateText">2012</p>
+                <h2 class="biggestHeaderText">FREEDOM OPS</h2>
+                <!--                <img id="tunisiaBut" class="button playBut" src="IMG//UI/playBut.png" height="38" width="38">-->
+                <p class="bodyText">During the Arab Spring, Anonymous provided support to the For the first time, Anonymous had gotten on the winning side of a real fight, and it liked the feeliDuring the Arab Spring, Anonymous provided support to the. For the first time, Anonymous had gotten on the winning side of a real fight, and it liked the feeling.the feeliDuring the Arab Spring, Anonymous provided support to the . For the first time, Anonymous had**
+                </p>
+            </div>
+        </div>
+        <div class="row anonPage5 page storyPage">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-6 padding16 paddingSmLeft">
+                <h2 class="medHeaderText longTextBlock">Over it's 20-year life span, Anonymous has grown from a simple 4chan community to a global movement that has defined hacktivism</h2>
+                <p class="bodyText bodyTextPadding anon05_bodyText">This incredible evolution could not have occured without the power and freedom provided by the darknet. The privacy ensured sheilds the anons, allowing them to plan their attacks and employ illegal tactics to inflict actual damage on those who abuse their power *too unobjective?. Without this anonymity, the powerful targets of the attacks would surely punish the perpetrators. For many anons this would mean jail time, while for others it could even mean death. The darknet allows people to use the web however they choose, without fear of who’s watching; without this anonymity, their is no Anonymous.
+                </p>
+                <p class="endStoryBut bodyTextPadding anon_endStoryBut" onClick="returnToNav()">END STORY</p>
+            </div>
+            <div class='col-sm-5'></div>
+        </div>
+
+        <div class="row WL_Page1 page storyPage">
+            <div class="col-sm-5">
+                <!--                <img class="assangeImg img" src="IMG/WIKILEAKS/WL_assange.png">-->
+            </div>
+            <div class="col-sm-6 padding24 paddingMdLeft">
+                <p class="dateText">2006</p>
+                <h2 class="medHeaderText WL01_headerText">JULIAN ASSANGE FOUNDS WIKI LEAKS</h2>
+                <p class="bodyText WL01_bodyText">A non-profit website with the purposes of disseminating original documents from anonymous sources and leakers. The site leveraged the Tor network, creating a secure location for whistleblowers to safety expose the encroachment and corruption of state and corporate power.
+                </p>
+            </div>
+        </div>
+        <div class="row WL_Page15 quotePage page storyPage">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-6 padding21 paddingSmLeft">
+                <h2 class="quoteHeader WL_quoteText">One of the best ways to achieve justice is to expose injustice.</h2>
+                <p class="quoteSignature anon03_quoteSignature"><span class="redDash">–</span> JULIAN ASSANGE
+                </p>
+            </div>
+            <div class='col-sm-5'></div>
+        </div>
+        <div class="row WL_Page2 page storyPage">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-6 padding22 paddingSmLeft">
+                <p class="dateText">2010</p>
+                <h2 class="medHeaderText">WIKILEAKS MAKES MAJOR HEADLINES</h2>
+                <p class="bodyText WL02_bodyText">After leaking confidential documents from Iceland's Kaupthing Bank, WikiLeaks got major media coverage for the first time. The documents leaked showed that suspiciously large sums of money were loaned to various owners of the bank, and large debts were written off shortly before the collapse of Iceland's banking sector. WikiLeaks recieved praise by the Iceland people for uncovering this truth.*
+                </p><br>
+            </div>
+            <div class="col-sm-4 padding25 paddingMdLeft">
+                <p class="captionText WL02_caption">Anonymous released this video shortly after the attacks. Anonymous almost always releases videos that explain what their motives and who their targets are.</p>
+                <video class="video WL_iceland" mute loop>
+                    <source src="VIDEO/WL_iceland.mp4" type='video/mp4; codecs="avc1.42E01E"' />
+                </video>
+            </div>
+        </div>
+        <div class="row WL_Page3 page storyPage">
+            <div class="col-sm-6">
+                <div class="transcriptWrap">
+                    <img id="collatBut" class="button" onclick="toggleTranscript()" src="IMG/UI/textBut.png" height="42" width="42">
+                    <div class="textColWrap">
+                        <p class="transcriptText">06:44&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Crazyhorse this is Bushmaster Five, Bushmaster Four break.<br>
+                            06:54&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This is Two-Six roger. I'll pop flares [drop flares]. We also have one individual moving. <br>
+                            07:07&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yeah Bushmaster, we have a van that's approaching and picking up the bodies.<br>
+                            07:14&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Where's that van at?<br>
+                            07:15&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Right down there by the bodies.<br>
+                            07:16&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Okay, yeah.<br>
+                            07:18&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bushmaster; Crazyhorse. We have individuals going to the scene, looks like possibly uh &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picking up bodies and weapons.<br>
+                            07:25&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Let me engage.<br>
+                            07:28&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Can I shoot?<br>
+                            07:31&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Roger. Break. Uh Crazyhorse One-Eight request permission to uh engage.<br>
+                            07:36&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Picking up the wounded?<br>
+                            07:38&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yeah, we're trying to get permission to engage.<br>
+                            07:41&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Come on, let us shoot!<br>
+                            07:44&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bushmaster; Crazyhorse One-Eight.<br>
+                            07:49&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;They're taking him.<br>
+                            07:51&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bushmaster; Crazyhorse One-Eight.<br>
+                            07:56&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This is Bushmaster Seven, go ahead.<br>
+                            07:59&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Roger. We have a black SUV-uh Bongo truck [van] picking up the bodies. <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Request permission to engage.<br>
+                            08:02&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fuck.<br>
+                            08:06&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This is Bushmaster Seven, roger. This is Bushmaster Seven, roger. Engage.<br>
+                            08:12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;One-Eight, engage.<br>
+                            08:12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Clear.<br>
+                            08:13&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Come on!<br>
+                            08:17&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Clear.<br>
+                            08:20&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Clear.<br>
+                            08:21&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We're engaging.<br> </p>
+                        <p class="buttonLabel WL03_buttonLabel">TRANSCRIPT EXCERPT</p>
+                        <p class="captionText WL_collatCap">Unbeknownst to the US forces, the van described in this excerpt of the transcript and photographed above contained a father and two of his children. The father was killed and the two children both seriously injured.</p>
+                    </div>
+                </div>
+                <img class="collatImg img" src="IMG/WIKILEAKS/WL_Collat.jpg">
+            </div>
+            <div class="col-sm-6 padding20 paddingSmLeft">
+                <p class="dateText">2010</p>
+                <h2 class="biggishHeaderText thinHeaderCol">COLLATERAL MURDER</h2>
+                <p class="bodyText thinBodyCol">On April 5th WikiLeaks released a classified US military video depicting the indiscriminate slaying of over a dozen people in the Iraqi suburb of New Baghdad -- including two Reuters news staff. WikiLeaks released the full 39-minute video as wekk as a 17-minute version of the footage, edited down for maximum emotional impact. Following the video release, the attacks received worldwide coverage and controversy, with both the legality and morality of the attacks, as well as the manipulation of the footage by WikiLeaks coming into question.
+                </p>
+            </div>
+        </div>
+        <div class="row WL_Page4 page storyPage">
+            <video class="WL_Vid WL_01 video" hidden mute loop>
+                <source src="VIDEO/WL_01.mp4" type='video/mp4; codecs="avc1.42E01E"' />
+            </video>
+            <video class="WL_Vid WL_02 video" hidden mute loop>
+                <source src="VIDEO/WL_02.mp4" type='video/mp4; codecs="avc1.42E01E"' />
+            </video>
+            <video class="WL_Vid WL_03 video" hidden mute loop>
+                <source src="VIDEO/WL_03.mp4" type='video/mp4; codecs="avc1.42E01E"' />
+            </video>
+            <video class="WL_Vid WL_04 video" hidden mute loop>
+                <source src="VIDEO/WL_04.mp4" type='video/mp4; codecs="avc1.42E01E"' />
+            </video>
+            <video class="WL_Vid WL_05 video" hidden mute loop>
+                <source src="VIDEO/WL_05.mp4" type='video/mp4; codecs="avc1.42E01E"' />
+            </video>
+            <video class="WL_Vid WL_06 video" hidden mute loop>
+                <source src="VIDEO/WL_06.mp4" type='video/mp4; codecs="avc1.42E01E"' />
+            </video>
+            <div class="col-sm-2"></div>
+            <div class="col-sm-6 padding16">
+                <p class="dateText">2010</p>
+                <h2 class="smBigHeaderText WL04_headerText">WIKILEAKS RELEASES THE LARGEST LEAK
+                    OF CLASSIFIED DOCUMENTS IN HISTORY</h2>
+                <p class="bodyText WL04_bodyText">
+                    92,000 documents related to the war in Afghanistan and 400,000 documents related to the war Iraq War. The documents revealed a real and uncensored story of both wars. Detailing thousands of unreported civilian causalities, evidence of torture as well as other war crimes. The U.S. condemned these leaks, and suggesting the disclosures put lives at risk and gives adversaries valuable information.
+                </p>
+                <img class="button WL04_playBut" onclick="revealWLVideos()" src="IMG/UI/playBut.png">
+                <p class="buttonLabel WL04_buttonLabel">REACTIONS FROM U.S.A.</p>
+            </div>
+            <div class="col-sm-4 padding21 paddingMdLeft"></div>
+        </div>
+        <div class="row WL_Page5 page storyPage">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-5 padding15 paddingSmLeft">
+                <h2 class="quoteHeader WL05_quote">It is impossible to correct abuses unless we know that they’re going on.</h2>
+                <!--                <h2 class="quoteHeader WL05_quote">IT IS IMPOSSIBLE TO CORRECT ABUSES UNLESS WE KNOW THEY'RE GOING ON.</h2>-->
+                <div class="inlineContainer">
+                    <p class="quoteSignatureText"><span class="redDash">–</span>JULIAN ASSANGE</p>
+                    <div class="rightContainer">
+                        <p class="bodyText WL05_bodyText">Despite all these controversies, WikiLeaks created the technology that allows for whistleblowers to safely expose the corruption of state and corporate power, and for that they must be commeded. *(Their system of utilizing Tor to allow for anonymous communication between them and the whistleblower) This system has since been modeled and put into use by The New York Times, The Guardian* as well as other major media outlets.
+                        </p>
+                        <p class="endStoryBut WL_endBut" onClick="returnToNav()">END STORY</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6"></div>
+        </div>
+
+        <div class="row SR_Page1 page storyPage">
+            <div class="col-sm-5">
+                <!--                <img class="rossImg" src="IMG/WIKILEAKS/SR_ross.png">-->
+            </div>
+            <div class="col-sm-6 padding17 paddingMdLeft">
+                <p class="dateText">2010</p>
+                <h2 class="smHeaderText SR01_headerText">ROSS ULBRICT BEGINS DEVELOPEMENT ON SILK ROAD </h2>
+                <p class="bodyText">At the age of 26, Ulbrict - a libretarian idealist from Texas - began buidling the website Silk Road. He envisioned the site as a free market experiment with an emphasis on user anonymity. To achieve this, Ulbrict planned to host the site on the darknet, making communition between users entirely anonymous. Ulbrict designed the site to only handle transactions made in bitcoin, offering a level of anonymity far greater than any other form of currency or credit card. As a result, Silk Road’s existence would be completely outside the scope of government control, allowing users to buy or sell almost anything.
+                </p>
+            </div>
+        </div>
+        <div class="row SR_Page2 page storyPage">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-6 padding21 paddingSmLeft">
+                <p class="dateText">2010</p>
+                <h2 class="medHeaderText">SILK ROAD BECOMES THE BIGGEST DARK WEB BLACK MARKET</h2>
+                <div class="bodyTextWrap">
+                    <p class="bodyText SR02_bodyText">Much of this success can be attributed to Silk Road’s trustworthiness. By establishing a rating and feedback system, Silk Road eliminated much of the fear of buying fake or altered products. Additionally, since purchases were occurring on an online platform, Silk Road eliminated the dangers of meeting with nefarious dealers in person. Ross even created a commercial for the site. In essence, Silk Road brought the drug trade into the 21st century.
+                    </p>
+                    <!--                    <img id="SR02_playBut" class="button playBut" src="IMG/UI/playBut.png" height="38" width="38">-->
+                </div>
+            </div>
+            <div class="col-sm-4 padding21 paddingMdLeft">
+                <video class="SR_Vid SR_ad video" mute loop>
+                    <source src="VIDEO/SR_ad.mp4" type='video/mp4; codecs="avc1.42E01E"' />
+                </video>
+            </div>
+        </div>
+        <div class="row SR_Page25 quotePage page storyPage">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-6 padding22 paddingSmLeft">
+                <h2 class="quoteHeader SR_quoteText">People should have the right to buy and sell whatever they wanted so long as they aren't hurting anyone</h2>
+                <p class="quoteSignature anon03_quoteSignature"><span class="redDash">–</span> ROSS ULBRICT
+                </p>
+            </div>
+            <div class='col-sm-5'></div>
+        </div>
+        <div class="row SR_Page3 page storyPage">
+            <div class="col-sm-5">
+                <!--                <img class="rossImg" src="IMG/WIKILEAKS/SR_ross.png">-->
+            </div>
+            <div class="col-sm-6 padding24 paddingBigLeft">
+                <p class="dateText SR03_dateText">2010</p>
+                <!--                <h2 class="smHeaderText">ROSS ULBRICT BEGINS DEVELOPING SILK ROAD </h2>-->
+                <p class="bodyText">Despite creating terms of service that were more prohibitive than other dark web markets, Ulbricht became unwilling or unable to maintain the standards that he had initially set, and as the site evolved, more and more dangerous products, including heroin, guns, and fentanyl, began to be listed. All these listings were easily accessbile to everyone of all ages, all you needed was a shipping address and a bitcoin account.
+                </p>
+            </div>
+        </div>
+        <div class="row SR_Page4 page storyPage">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-6 padding23 paddingSmLeft">
+                <p class="dateText">2013</p>
+                <h2 class="medHeaderText SR04_headerText">AFTER ALMOST A TWO-YEAR LONG INVESTIGATION THE FBI SHUTS DOWN SILK ROAD</h2>
+                <div class="bodyTextWrap">
+                    <p class="bodyText">Ulbricht was arrested and sentenced to life in prison(more info here conviceted crimes etc)*. As part of their investigation, they determined that over $1.2 billion in sales had occurred involving 150,000 customers and 4000 vendors.
+                    </p>
+                </div>
+            </div>
+            <div class="col-sm-4 padding21 paddingMdLeft"></div>
+        </div>
+        <div class="row SR_Page5 page storyPage">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-6 padding17 paddingSmLeft">
+                <p class="dateText">TODAY</p>
+                <h2 class="medBigHeaderText SR04_headerText">THE END OF DARKNET BLACK MARKETS?</h2>
+                <div class="bodyTextWrap SR05_container">
+                    <div class="SR05_buttonGroup">
+                        <div class="viewButContainer buttonContainer">
+                            <div class="buttonTextWrap">
+                                <p class="buttonLabel rightButtonLabel rightAlign">DREAM MARKET</p>
+                                <p id="viewBut1Cap" class="captionText SR05_caption rightAlign">
+                                    Status: Active since 2013<br>
+                                    Total Current Listings: 120,062<br>
+                                    Drug Listings: 61,457
+                                </p>
+                            </div>
+                            <img id="SR_viewBut1" class="button viewBut" onclick="revealSR_05(this)" src="IMG/UI/viewBut.png">
+                        </div>
+                        <div class="viewButContainer buttonContainer">
+                            <div class="buttonTextWrap">
+                                <p class="buttonLabel rightButtonLabel rightAlign">SILK ROAD 3</p>
+                                <p id="viewBut2Cap" class="captionText SR05_caption rightAlign">
+                                    Status: Active since 2013<br>
+                                    Total Current Listings: 51,074<br>
+                                    Drug Listings: 33,291
+                                </p>
+                            </div>
+                            <img id="SR_viewBut2" class="button viewBut" onclick="revealSR_05(this)" src="IMG/UI/viewBut.png">
+                        </div>
+                        <div class="viewButContainer buttonContainer SR_viewBut3Container">
+                            <div class="buttonTextWrap">
+                                <p class="buttonLabel rightButtonLabel rightAlign">ALPHA BAY</p>
+                                <p id="viewBut3Cap" class="captionText SR05_caption rightAlign">
+                                    Status: Shutdown<br>
+                                    Listings before shutdown:<br>
+                                    Total Listings: 369,000<br>
+                                    Drug Listings: 250,000<br>
+                                </p>
+                            </div>
+                            <img id="SR_viewBut3" class="button viewBut" onclick="revealSR_05(this)" src="IMG/UI/viewBut.png">
+                        </div>
+                    </div>
+                    <div class="textAndButContainer">
+                        <p class="bodyText SR05_bodyText">Rather than end the online black market trade, the shutdown of Silk Road simply caused other darknet black market sites to spring up to take over the demand left behind. Today there are many black markets still on the darknet, many of which are much larger than the Silk Road, making one thing very clear: as long as users can remain anonymous and money can be made, a black market will always exist on the darknet.
+                        </p>
+                        <p class="endStoryBut SR_endBut" onClick="returnToNav()">END STORY</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 padding21 paddingBigLeft"></div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+<!--<script src="js/lottie.js"></script>-->
+<script src="//cdn.jsdelivr.net/npm/velocity-animate@1.5/velocity.min.js"></script>
+<script src='JS/bigJS.js'></script>
