@@ -214,8 +214,8 @@
 
     //scrolling event listener
     var midScroll = false;
-    document.addEventListener("wheel", function(e) {
-        if (onIntroPage2 == true) {
+    function scrollEvent(){
+                if (onIntroPage2 == true) {
             onIntroPage2 = false;
             var introPage2 = $('.introPage2');
             $(introPage2).removeClass('fadeInAndScale');
@@ -255,6 +255,12 @@
                 }
             }
         }
+    }
+//    document.addEventListener("wheel", function(e) {
+//        scrollEvenet();
+//    });
+    window.addEventListener('scroll', function() {
+        scrollEvent(); 
     });
 
     $(".video").hover(

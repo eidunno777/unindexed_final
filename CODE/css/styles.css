@@ -9,7 +9,7 @@ body {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    position: fixed;
+/*    position: absolute;*/
 }
 .quoteSignatureText{
     display: inline-block;
@@ -165,7 +165,7 @@ body {
 }
 
 .sideNav {
-    z-index: 1000000;
+/*    z-index: 1000000;*/
     box-sizing: border-box;
 /*    background-color:rgba(0, 0, 0, 0.3);*/
     opacity: 0;
@@ -174,9 +174,8 @@ body {
     transform-origin: top left;
     transform: rotate(90deg);
     position: absolute;
-    left: 107%;
+    left: 100%;
     top: 0%;
-    transition: 1.5s all ease;
 }
 
 .sideNavWrap {
@@ -216,26 +215,26 @@ body {
 }
 
 .arrowDown {
-    padding-left: 7px;
 }
 
 .arrowUp {
-    padding-left: 7px;
+    margin-bottom: 15px;
 }
 
 .arrowWrap {
-    padding-left: 60px;
-    width: 120px;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
+    bottom: 3%;
+    left: 3%;
+    position: absolute;
+    width: 50px;
+    z-index: 100000;
+    transition: 1.5s all ease;
+    visibility: hidden;
 }
 
 .uiTitle {
-/*    opacity: 0;*/
     display: inline-block;
     left: 40px;
-    top: 30px;
+    top: 40px !important;
     transition: 1.5s all ease;
 }
 .uiTitle:hover {
@@ -255,8 +254,8 @@ body {
     object-fit: cover;
 }
 .button{
-    width: 35px;
-    height: 40px;
+    width: 33px;
+    height: 33px;
 }
 
 #cruiseBut {
@@ -269,22 +268,6 @@ body {
     opacity: .5;
 }
 
-
-#appearing_div {
-    position: absolute;
-    left: 24%;
-    top: 19%;
-    z-index: -200;
-    /*    z-index: 1000;*/
-}
-
-#video {
-    width: 740px;
-    height: 500px;
-    position: absolute;
-    top: -25%;
-    opacity: .8;
-}
 
 .navMenuTextContainer {
     height 100%;
@@ -360,7 +343,7 @@ body {
 }
 
 .bgContainer{
-    z-index: -11000;
+/*    z-index: -11000;*/
     width: 100%;
     height: 100%;
 }
@@ -505,7 +488,7 @@ body {
 }
 .fadeOutAndScale{
     opacity: 0 !important;
-    animation: scaleDown ease 1.5s;
+    animation: scaleDown ease 2.2s;
 }
 .fadeOutAndScaleUp{
     opacity: 0 !important;
@@ -653,10 +636,11 @@ body {
     visibility: hidden;
 /*    opacity: 1;*/
 /*    top: 100%;*/
-/*    z-index: 10000;*/
+    position: absolute;
+    z-index: 1000;
     left: 0;
-    transform: scale(.95);
-    transition: all ease 1.4s;
+    transform: scale(1.05);
+    transition: all ease 1.2s;
 }
 
 .padding18 {
@@ -678,7 +662,9 @@ body {
 .paddingSmLeft {
     padding-left: 45px;
 }
-
+.uiArrow{
+    width: 23px;
+}
 .uiArrow:hover {
     cursor: pointer;
 }
@@ -710,7 +696,8 @@ body {
     position: relative;
     z-index: 2000;
     font-family: "Blender Pro Thin" !important;
-    font-size: 13pt;
+    font-size: 15pt;
+    width: 90px;
     color: white;
     opacity: .8;
     transition: .5s all ease;
@@ -792,11 +779,11 @@ body {
 .buttonLabel {
     position: relative;
     padding-top: 10px;
-    padding-left: 9px;
     padding-bottom: 0px;
     margin-bottom: 5px;
+    right: 5px;
     font-family: "Blender Pro" !important;
-    font-size: 9pt;
+    font-size: 10pt;
     font-style: normal;
     color: #c6c6c6;
     letter-spacing: 1px;
@@ -825,11 +812,11 @@ body {
 .captionText{
     width: 200px;
     font-family: 'Nunito Sans', sans-serif;
-    font-size: 7pt;
+    font-size: 8pt;
     line-height: 14pt;
     font-style: lighter; 
     color: #939393;
-    width: 150px;
+    width: 180px;
     padding-left: 9px;
     opacity: 0;
     transition: all ease 1s;
@@ -906,6 +893,8 @@ body {
 */
 
 .introPage {
+    position: absolute;
+    z-index: 1000;
     top: 0px;
     left: 0px;
 }
@@ -960,13 +949,13 @@ body {
 }
 
 .anon03_bodyText {
-    width: 410px;
+    width: 370px;
 }
 
 .anon_paybackVid {
     width: 700px;
     top: 10%;
-    left: -52%;
+    left: -60%;
 }
 
 .video {
@@ -1065,6 +1054,9 @@ body {
 .paddingLeft {
     padding-left: 4%;
 }
+.paddingLeft6 {
+    padding-left: 5%;
+}
 
 .redDash {
     color: red;
@@ -1116,9 +1108,9 @@ body {
     display: block;
 /*    left: 265px;*/
 /*    top: -115px;*/
-    margin: 0 0 0 39px;
-    margin-top: 12px;
-    width: 80px !important;
+    margin: 0 0 0 39;
+    margin-top: 52px;
+    margin-left: 39px;
 }
 WL_bgImg{
     position: absolute !important;
@@ -1134,7 +1126,7 @@ SR_bgImg{
     display: inline-block;
     vertical-align: top;
     padding-left: 25px;
-    padding-top: 12px;
+    padding-top: 26px;
 /*    float: left;*/
     width: 220px;
 }
@@ -1280,7 +1272,9 @@ SR_bgImg{
     position: absolute;
     top: 49%;
     left: 50%;
-    width: 560px;
+    width: 570px;
+    font-size: 11pt;
+    line-height: 20pt;
     text-align: center;
     transform: translate(-50%, -50%);
 }
@@ -1304,18 +1298,18 @@ SR_bgImg{
 
 .anon02_caption {
     opacity: 1 !important;
-    width: 200px;
+    width: 220px;
     position: absolute;
-    left: 13%;
-    top: 49%;
+    left: 10%;
+    top: 53%;
 }
 
 .anon03_caption {
     opacity: 1 !important;
-    width: 180px;
+    width: 210px;
     position: absolute;
-    left: 33%;
-    top: 61%;
+    left: 40%;
+    top: 62%;
 }
 
 .WL02_caption {
@@ -1327,15 +1321,16 @@ SR_bgImg{
 }
 
 .WL04_buttonLabel {
+    padding-left: 14px;
     display: inline-block;
     left: 36px;
     top: -1px;
-    width: 145px;
+    width: 170px;
 }
 
 .WL04_playBut {
     position: relative;
-    left: 35px;
+    left: 40px;
 }
 
 .padding15 {
@@ -1408,10 +1403,27 @@ SR_bgImg{
         width: 320px;
     }
     .bodyText{
-         width: 320px;
+        width: 320px;
+        font-size: 8pt;
+        line-height: 16pt;
+        padding: 10px 0 0 0px;
+    }
+    .dateText{
+        font-size: 9pt;
+        letter-spacing: 3px;
+        padding-bottom: 0px;
+        top: 12px;
+    }
+    .titleWrap{
+        position: absolute;
+        left: 13px !important;
+/*        top: 0px !important;*/
     }
     .paddingMdLeft{
-        padding-left: 55px;
+        padding-left: 39px;
+    }
+    .paddingSmLeft{
+        padding-left: 29px;
     }
     .quoteHeader{
         padding-left: 10px;
@@ -1419,7 +1431,7 @@ SR_bgImg{
         line-height: 34pt;
     }
     .SR_quoteText{
-        width: 320px;
+        width: 340px;
         height: 297px;
     }
     .titleText{
@@ -1468,6 +1480,14 @@ SR_bgImg{
         width: 340px;
         line-height: 42pt;
         font-size: 42pt !important;
+    }
+    .navNum{
+        font-size: 10pt;
+        line-height: 82px;
+    }
+    .navMenuNums {
+        position: absolute;
+        top: 36%;
     }
 }
 .WL01_bodyText {
@@ -1531,4 +1551,61 @@ titleWrap:hover{
     url("https://db.onlinewebfonts.com/t/335787aa6f57d71cabe8eb5dc89c6d6b.woff") format("woff"), /* chrome firefox */
     url("https://db.onlinewebfonts.com/t/335787aa6f57d71cabe8eb5dc89c6d6b.ttf") format("truetype"), /* chrome firefox opera Safari, Android, iOS 4.2+*/
     url("https://db.onlinewebfonts.com/t/335787aa6f57d71cabe8eb5dc89c6d6b.svg#Blender Pro") format("svg"); /* iOS 4.1- */
+}
+.aboutBut {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    z-index: 100000;
+    right: 40px;
+    top: 40px;
+    opacity: 0;
+    visibility: hidden;
+}
+.aboutBut:hover{
+    cursor: pointer;
+}
+.anon_cruiseVid {
+    filter: brightness(.5);
+    position: absolute;
+    left: 24%;
+    top: 9%;
+    z-index: -200;
+    width: 720px;
+    height: 500px;
+}
+
+.SR05_caption {
+    padding-right: 35px;
+}
+
+.sideNavBar {
+    position: relative;
+    left: 81%;
+    width: 50%;
+    height: 49px;
+    background-color: #939393;
+    transition: .5s all ease;
+    z-index: 120000`00;
+}
+.sideNavBar:hover{
+    left: 51%;
+    cursor: pointer !important;
+}
+
+.sideNavBarWrap {
+    position: absolute;
+    right: 0;
+    top: 25%;
+    width: 50px;
+    height: 50%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    z-index: 10000;
+}
+
+.sideNav1 {
+     background-color: #ed1c24;
+    left: 51%;
 }

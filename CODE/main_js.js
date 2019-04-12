@@ -1,12 +1,17 @@
     var allVids = $(document).find(".video");
+    var onMobile = false;
     function myFunction(x) {
-        if (x.matches) { // If media query matches
+        if (x.matches) { // on mobile
+            onMobile = true;
+            $('.redLine').prop('hidden', true);
             $(".sideNav").prop('hidden', true);
             $(".SR05_buttonGroup").prop('hidden', true);
             for (var i = 0; i < allVids.length; i++) {
                 $(allVids[i]).prop('hidden', true); //mute
             }
-        } else {
+        } else { //not on mobile
+            onMobile = false;
+            $('.redLine').prop('hidden', false);
             $(".sideNav").prop('hidden', false);
             $(".SR05_buttonGroup").prop('hidden', false);
             for (var i = 0; i < allVids.length; i++) {
@@ -33,16 +38,26 @@
     var numPages = 6;
     while (numPages--) visitedPages.push(false);
 
-    function resetVistedPagesArray() {
-        while (numPages--) visitedPages.push(false);
+    function resetVisitedPagesArray() {
+        console.log(visitedPages.legnth);
+        for(var i = 0;  i < visitedPages.length; i++){
+            visitedPages[i] = false;
+            console.log('hi');
+        }
+        console.log(visitedPages);
     }
     
     var allNavMenuItems = $(document).find('.navMenu');
     function navPageIntro(){
+//        scrambling = true;
+//        setTimeout(function(){
+//            scrambling = false;
+//        }, 1500);
         var nav1Items = $(document).find('.nav1');
         var nav2Items = $(document).find('.nav2');
         var nav3Items = $(document).find('.nav3');
-        $('.navMenuRow').prop('hidden', false);
+//        $('.navMenuRow').prop('hidden', false);
+        $(navNumber).removeClass('fadeOutAndScale');
         $('.navPage').removeClass("fadeInAndScale");
         $('.navPage').css("visibility", 'visible');
         console.log(nav1Items);
@@ -70,15 +85,12 @@
 //        }, 800);
 //        navMenuItems
     }
-    
+    var navNumber = "";
     function startStory(storyName) {
-//        $(".uiTitle").prop("hidden", false);
-        var navNumber = "";
         setTimeout(function(){
-            $('.titleWrap').addClass("opacity1");
-            $('.sideNav').addClass("opacity1");
+            $('.arrowWrap').addClass("opacity1");
         }, 1100);
-    
+        resetVisitedPagesArray();
         var story = $(storyName).attr('class');
         if (story == "anonNavMenu" || $(story).hasClass('nav3')) {
             $(".bgImage").removeAttr("hidden");
@@ -103,23 +115,25 @@
 
         navClicked = true;
         pageNumber = 0;
+        //fade out clicked element
         setTimeout(function() {
-            $(navNumber).addClass('fadeOutAndScaleUp');
+            $(navNumber).addClass('fadeOutAndScale');
             $('.navPage').css('visibility', 'hidden');
+            $('.navPage').removeClass('opacity1');
         }, 700);
         setTimeout(function() {
-             $(pageClassList[pageNumber]).css('visibility', 'visible');
+//             $(pageClassList[pageNumber]).css('visibility', 'visible');
              $(pageClassList[pageNumber]).css('transform', 'scale(1)');
              $(pageClassList[pageNumber]).addClass('opacity1');
-             $('.navPage').prop('hidden', true);
+//             $('.navPage').prop('hidden', true); //fuck with this
         }, 1100);
-        slideSideBar();
+        sideBarReveal();
     }
 
-    function slideSideBar() {
+    function sideBarReveal() {
         setTimeout(function() {
-            $(".sideNav").css("left", "100%");
-        }, 1500);
+            $(".sideNav").addClass("opacity1");
+        }, 1200);
     }
     
     var currentlyScrolling = false;
@@ -130,13 +144,13 @@
             setTimeout(function() {
                 currentlyScrolling = false;
                 pageNumber--;
-            }, 800);
-                $(pageClassList[pageNumber]).css('transform', 'scale(.95)');
+            }, 600);
+                $(pageClassList[pageNumber]).css('transform', 'scale(1.05)');
                 $(pageClassList[pageNumber]).removeClass('opacity1');
             setTimeout(function() {
                 $(pageClassList[pageNumber - 1]).css('transform', 'scale(1)');
                 $(pageClassList[pageNumber - 1]).addClass('opacity1');
-            }, 600);
+            }, 400);
         }
     }
     
@@ -147,18 +161,19 @@
             setTimeout(function() {
                 currentlyScrolling = false;
                 pageNumber++;
-            }, 800);
+            }, 600);
             //current page fade out / scale up
-            $(pageClassList[pageNumber]).css('transform', 'scale(1.05)');
+            $(pageClassList[pageNumber]).css('transform', 'scale(.95)');
             $(pageClassList[pageNumber]).removeClass('opacity1'); 
             //next page fade in / scale up
             setTimeout(function() {
                 $(pageClassList[pageNumber + 1]).css('transform', 'scale(1)');
                 $(pageClassList[pageNumber + 1]).addClass('opacity1');
-            }, 600);
+            }, 400);
             
             //if page hasnt been visited yet
             if (visitedPages[pageNumber + 1] == false) {
+
                 visitedPages[pageNumber + 1] = true;
                 //quote scramble
                 if (pageClassList[pageNumber + 1] == ".SR_Page25") {
@@ -211,11 +226,17 @@
             vidsRevealed = true;
         }
     }
+    function revealUI(){
+        $('.titleWrap').addClass("opacity1");
+        $('.aboutBut').addClass("opacity1");
+        console.log('yo');
+    }
 
+    var scrambling = false;
     //scrolling event listener
     var midScroll = false;
-    function scrollEvent(){
-                if (onIntroPage2 == true) {
+    document.addEventListener("wheel", function(e) {
+        if (onIntroPage2 == true) {
             onIntroPage2 = false;
             var introPage2 = $('.introPage2');
             $(introPage2).removeClass('fadeInAndScale');
@@ -223,8 +244,13 @@
             setTimeout(function() {
 //                $('.navMenuRow').prop('hidden', false);
 //                $('.navPage').addClass("fadeInAndScale");
+                revealUI();
                 navPageIntro();
                 next();
+                scrambling = true;
+                setTimeout(function(){
+                    scrambling = false;
+                }, 2000);
             }, 900);
         } else {
             if (pageNumber != -1) {
@@ -255,12 +281,50 @@
                 }
             }
         }
-    }
-//    document.addEventListener("wheel", function(e) {
-//        scrollEvenet();
-//    });
-    window.addEventListener('scroll', function() {
-        scrollEvent(); 
+    });
+    window.addEventListener('scroll', function(e) {
+        if(onMobile == true){
+            if (onIntroPage2 == true) {
+                onIntroPage2 = false;
+                var introPage2 = $('.introPage2');
+                $(introPage2).removeClass('fadeInAndScale');
+                fadeOutAndReset(introPage2);
+                setTimeout(function() {
+    //                $('.navMenuRow').prop('hidden', false);
+    //                $('.navPage').addClass("fadeInAndScale");
+                    navPageIntro();
+                    next();
+                }, 900);
+            } else {
+                if (pageNumber != -1) {
+                    var variation = parseInt(e.deltaY);
+                    //scroll down - next page in story
+                    if (variation > 0) {
+                        if (midScroll == false) {
+                            pageDown();
+                            console.log('scroll down');
+                            midScroll = true;
+                            //2s limitation bw each scroll
+                            setTimeout(function() {
+                                midScroll = false;
+                            }, 1200);
+                        }
+                    }
+                    //scroll up - prev page in story
+                    else if (pageNumber != 5) {
+                        if (midScroll == false) {
+                            pageUp();
+                            console.log('scroll up');
+                            midScroll = true;
+                            //2s limitation bw each scroll
+                            setTimeout(function() {
+                                midScroll = false;
+                            }, 2000);
+                        }
+                    }
+                }
+            }
+        }
     });
 
     $(".video").hover(
@@ -290,6 +354,7 @@
 
     function returnToNav() {
         navClicked = false;
+        resetVisitedPagesArray();
         $(".uiTitle").removeClass("opacity1");
         $('.sideNav').removeClass("opacity1");
         clearBackground();
@@ -298,8 +363,9 @@
             $(allNavMenuItems[i]).removeClass('fadeOut');
         }
         pageNumber = -1;
-        navPageIntro();
-//        location.reload();
+        setTimeout(function(){
+            navPageIntro();
+        }, 1000);
     }
 
     //    var animation = bodymovin.loadAnimation({
@@ -574,30 +640,34 @@
     $('.navMenu').mouseenter(navMouseEnter).mouseleave(navMouseLeave);
 
     function navMouseEnter() {
-        clearBackground();
-        navHovering = true;
-        var navNum = this.classList[2];
-        var navNumNode;
-        if (navNum == 'nav1') {
-            navNumNode = document.querySelector(".navNum1");
-            $(".nav1").addClass("navHover");
-            $(".nav2").addClass("navNotHovered");
-            $(".nav3").addClass("navNotHovered");
-            //            clearWrongBG();
+        if(scrambling == false){
+            clearBackground();
+            navHovering = true;
+            var navNum = this.classList[2];
+            var navNumNode;
+            if (navNum == 'nav1') {
+                navNumNode = document.querySelector(".navNum1");
+                $(".nav1").addClass("navHover");
+                $(".nav2").addClass("navNotHovered");
+                $(".nav3").addClass("navNotHovered");
+                //            clearWrongBG();
+            }
+            if (navNum == 'nav2') {
+                navNumNode = document.querySelector(".navNum2");
+                $(".nav2").addClass("navHover");
+                $(".nav1").addClass("navNotHovered");
+                $(".nav3").addClass("navNotHovered");
+            }
+            if (navNum == 'nav3') {
+                navNumNode = document.querySelector(".navNum3");
+                $(".nav3").addClass("navHover");
+                $(".nav2").addClass("navNotHovered");
+                $(".nav1").addClass("navNotHovered");
+            }
+            if(onMobile == false){
+                generateBackground(navNum);
+            }
         }
-        if (navNum == 'nav2') {
-            navNumNode = document.querySelector(".navNum2");
-            $(".nav2").addClass("navHover");
-            $(".nav1").addClass("navNotHovered");
-            $(".nav3").addClass("navNotHovered");
-        }
-        if (navNum == 'nav3') {
-            navNumNode = document.querySelector(".navNum3");
-            $(".nav3").addClass("navHover");
-            $(".nav2").addClass("navNotHovered");
-            $(".nav1").addClass("navNotHovered");
-        }
-        generateBackground(navNum);
     }
 
     function navMouseLeave() {
@@ -659,7 +729,6 @@
         clearBackground();
         var bgContainer = document.querySelector(".bgContainer");
         var oldBGImgs = $(".bgContainer").find('.bgLayer');
-        console.log(oldBGImgs);
         if (bgGenerated == false) {
             if (storyNum == 'nav1') {
                 bgLayer4Class = 'SR_BGLayer4';
