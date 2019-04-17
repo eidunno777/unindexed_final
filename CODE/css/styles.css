@@ -29,7 +29,9 @@ body {
     line-height: 19pt;
     font-style: normal;
     color: #939393;
-    padding: 20px 0 0 39px;
+/*    padding: 20px 0 0 39px;*/
+    padding-top: 20px;
+    margin-left: 39px;
     width: 440px;
 }
 .smHeaderText {
@@ -137,8 +139,8 @@ body {
 .dateText {
     position: relative;
     z-index: 2000;
-    font-family: "Blender Pro Thin" !important;
-    font-size: 9pt;
+    font-family: "Blender Pro" !important;
+    font-size: 10pt;
     line-height: 0pt;
     padding-bottom: 1px;
     font-style: normal;
@@ -215,27 +217,31 @@ body {
 }
 
 .arrowDown {
+    top: 44px;
 }
 
 .arrowUp {
-    margin-bottom: 15px;
+
 }
 
 .arrowWrap {
-    bottom: 3%;
-    left: 3%;
+    bottom:11%;
+    right: 1.8%;
     position: absolute;
-    width: 50px;
+    width: 20px;
     z-index: 100000;
-    transition: 1.5s all ease;
+/*    transition: 1.2s all ease;*/
+    opacity 0;
     visibility: hidden;
 }
 
 .uiTitle {
+    position: absolute;
     display: inline-block;
-    left: 40px;
-    top: 40px !important;
-    transition: 1.5s all ease;
+    left: 4px;
+    top: 3px !important;
+/*    margin-top: 5px;*/
+    transition: .8s all ease;
 }
 .uiTitle:hover {
     cursor: pointer;
@@ -254,8 +260,9 @@ body {
     object-fit: cover;
 }
 .button{
-    width: 33px;
-    height: 33px;
+    width: 30px;
+    height: 30px;
+    filter: brightness(.85);
 }
 
 #cruiseBut {
@@ -281,7 +288,7 @@ body {
 .navMenuContainer {
     position: absolute;
     right: 8%;
-    top: 38%;
+    top: 41%;
     display;
     flex;
     flex-direction: column;
@@ -338,7 +345,7 @@ body {
 
 .navMenuNums {
     position: absolute;
-    top: 37.5%;
+    top: 40.5%;
     right: 6%;
 }
 
@@ -652,6 +659,9 @@ body {
 .padding14 {
     padding-top: 14%;
 }
+.padding13 {
+    padding-top: 13%;
+}
 .padding21 {
     padding-top: 21%;
 }
@@ -660,13 +670,19 @@ body {
 }
 
 .paddingSmLeft {
-    padding-left: 45px;
+    padding-left: 50px;
 }
 .uiArrow{
-    width: 23px;
+    color: #939393;
+    width: 21.5px;
+    height: 15px;
+    transform: scale(.9);
+    filter: brightness(.8);
+    transition: all ease .7s;
 }
 .uiArrow:hover {
     cursor: pointer;
+    filter: brightness(1.1);
 }
 
 .tempIMG {
@@ -724,11 +740,12 @@ body {
 }
 
 .bodyTextPadding {
-    padding-left: 39px;
+    margin-left: 39px;
 }
 
 .uiElement {
-    z-index: 10000;
+    position: absolute;
+    z-index: 10000000000;
 }
 
 .paddingMdLeft {
@@ -752,9 +769,9 @@ body {
     width: 650px;
     height: 410px;
     position: absolute;
-    top: 8%;
+    top: 9%;
     left: 33%;
-    filter: brightness(.5);
+    filter: brightness(.4);
 }
 
 #collatBut {
@@ -772,13 +789,13 @@ body {
     flex-flow: row nowrap;
     position: absolute;
     width: 590px;
-    top: -1%;
+    top: 0%;
     left: 32.5%;
 }
 
 .buttonLabel {
     position: relative;
-    padding-top: 10px;
+    padding-top: 6px;
     padding-bottom: 0px;
     margin-bottom: 5px;
     right: 5px;
@@ -820,7 +837,7 @@ body {
     padding-left: 9px;
     opacity: 0;
     transition: all ease 1s;
-    z-index: 2500;
+    z-index: 25000;
 }
 .textColWrap {
     position: relative;
@@ -839,7 +856,7 @@ body {
 .WL_Vid {
     position: absolute;
     z-index: -1000;
-    opacity: 0;
+/*    opacity: 0;*/
     transition: all ease 1.5s;
 }
 
@@ -851,7 +868,7 @@ body {
 }
 .WL_02 {
     top: 80%;
-    left: 50%;
+    left: 52%;
     width: 300px;
 /*    -webkit-filter:brightness(0.7);*/
 }
@@ -870,6 +887,7 @@ body {
 #bodyText_Anon02 {
     width: 390px;
     font-size: 9.7pt !important;
+    margin-left: 31px;
 }
 
 .redBar {
@@ -879,7 +897,7 @@ body {
     transform: translate(-50%, -50%);
     width: 0%;
     height: 1px;
-    background-color: red;
+    background-color: #ed1c24;
     opacity: 1;
     transition: 4s ease-in width, 1s ease opacity;
 /*    animation: barGrow 4s ease-in 1s 1 normal;*/
@@ -964,9 +982,9 @@ body {
 }
 
 .WL05_bodyText {
-    margin-top: 3px;
-    padding: 0 0 0 0 !important;
-    width: 410px;
+/*    margin-top: 3px;*/
+/*    padding: 0 0 0 0 !important;*/
+    width: 360px;
 }
 
 .quoteSignature {
@@ -1014,12 +1032,13 @@ body {
 
 .WL_endBut {
     margin-top: 28px;
+    margin-left: 38px;
 }
 
 .SR_ad {
     position: absolute;
     left: -75%;
-    top: 20%;
+    top: 12%;
     width: 700px;
 }
 
@@ -1043,7 +1062,7 @@ body {
 }
 
 .WL04_bodyText {
-    width: 380px;
+    width: 410px;
 }
 
 .anon01_titleText {
@@ -1081,7 +1100,8 @@ body {
 
 .WL04_headerText {
     width: 810px;
-    line-height: 60px;
+    font-size: 34pt;
+    line-height: 55px;
 }
 
 .WL_quoteText {
@@ -1090,10 +1110,14 @@ body {
 
 .SR04_headerText {
     width: 750px;
+    font-size: 33pt;
 }
 
 .padding20 {
     padding-top: 20%;
+}
+.padding19 {
+    padding-top: 19%;
 }
 .padding21 {
     padding-top: 21%;
@@ -1106,10 +1130,7 @@ body {
 .SR_endBut {
     position: relative;
     display: block;
-/*    left: 265px;*/
-/*    top: -115px;*/
-    margin: 0 0 0 39;
-    margin-top: 52px;
+    margin-top: 26px;
     margin-left: 39px;
 }
 WL_bgImg{
@@ -1141,7 +1162,7 @@ SR_bgImg{
 
 .WL03_buttonLabel {
     padding-left: 0px !important;
-    width: 125px;
+    width: 135px;
 }
 
 .buttonTextWrap {
@@ -1182,13 +1203,13 @@ SR_bgImg{
 }
 
 .anon05_bodyText {
-    width: 520px;
+    width: 480px;
 }
 
 .anon_endStoryBut {
 /*    padding-top: 10px;*/
     margin-top: 25px;
-    width: 120px;
+    width: 92.5px;
 }
 
 .silkRoadNavContainer {
@@ -1244,7 +1265,7 @@ SR_bgImg{
     margin: 0 0 0 0;
     z-index: 3000;
     font-family: "Blender Pro Thin" !important;
-    font-size: 13pt;
+    font-size: 13.5pt;
     letter-spacing: 2.5px;
     font-style: normal;
     color: #c6c6c6;
@@ -1272,7 +1293,7 @@ SR_bgImg{
     position: absolute;
     top: 49%;
     left: 50%;
-    width: 570px;
+    width: 590px;
     font-size: 11pt;
     line-height: 20pt;
     text-align: center;
@@ -1314,9 +1335,9 @@ SR_bgImg{
 
 .WL02_caption {
     opacity: 1 !important;
-    width: 200px;
+    width: 220px;
     position: absolute;
-    left: 30%;
+    left: 31%;
     top: 68%;
 }
 
@@ -1324,12 +1345,13 @@ SR_bgImg{
     padding-left: 14px;
     display: inline-block;
     left: 36px;
-    top: -1px;
+    top: 20px;
     width: 170px;
 }
 
 .WL04_playBut {
     position: relative;
+    top: 20px;
     left: 40px;
 }
 
@@ -1414,11 +1436,7 @@ SR_bgImg{
         padding-bottom: 0px;
         top: 12px;
     }
-    .titleWrap{
-        position: absolute;
-        left: 13px !important;
-/*        top: 0px !important;*/
-    }
+
     .paddingMdLeft{
         padding-left: 39px;
     }
@@ -1470,9 +1488,7 @@ SR_bgImg{
         font-size: 26pt;
         line-height: 29pt;
     }
-    .WL01_bodyText{
-        width: 280px !important;
-    }
+
     .padding24{
         padding-top: 0%;
     }
@@ -1491,7 +1507,7 @@ SR_bgImg{
     }
 }
 .WL01_bodyText {
-    width: 380px;
+    width: 390px;
 }
 
 .WL01_headerText {
@@ -1512,10 +1528,10 @@ SR_bgImg{
 
 .redLine {
     display: inline-block;
-    margin-top: 3px;
+    margin-top: 8px;
     background-color: #ed1c24;
     width: 3px;
-    height: 16px;
+    height: 17px;
 /*    opacity: .9;*/
 }
 .redLine:hover{
@@ -1524,6 +1540,7 @@ SR_bgImg{
 
 .titleWrap {
     opacity: 0;
+    visibility: hidden;
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
@@ -1531,6 +1548,7 @@ SR_bgImg{
     left: 40px;
     top: 30px;
     width: 113px;
+    transition: all ease 1s;
 }
 titleWrap:hover{
     cursor: pointer;
@@ -1553,17 +1571,23 @@ titleWrap:hover{
     url("https://db.onlinewebfonts.com/t/335787aa6f57d71cabe8eb5dc89c6d6b.svg#Blender Pro") format("svg"); /* iOS 4.1- */
 }
 .aboutBut {
-    width: 25px;
-    height: 25px;
+    width: 16px;
     position: absolute;
-    z-index: 100000;
-    right: 40px;
-    top: 40px;
+    height: 24px;
+    right: 1.9%;
+    top: 22px;
+    font-family: "Blender Pro Thin" !important;
+    font-size: 25pt;
+    font-style: normal;
+    color: #939393;
+    filter: brightness(.95);
     opacity: 0;
     visibility: hidden;
+    transition: all ease 1s;
 }
 .aboutBut:hover{
     cursor: pointer;
+    opacity: .6;
 }
 .anon_cruiseVid {
     filter: brightness(.5);
@@ -1582,20 +1606,21 @@ titleWrap:hover{
 .sideNavBar {
     position: relative;
     left: 81%;
-    width: 50%;
+    width: 12%;
     height: 49px;
-    background-color: #939393;
-    transition: .5s all ease;
-    z-index: 120000`00;
+    background-color: #333333;
+    transition: .8s all ease;
+    z-index: 12000000;
 }
 .sideNavBar:hover{
-    left: 51%;
+/*    left: 51%;*/
     cursor: pointer !important;
+    filter: brightness(2);
 }
 
 .sideNavBarWrap {
     position: absolute;
-    right: 0;
+    right: 2%;
     top: 25%;
     width: 50px;
     height: 50%;
@@ -1603,9 +1628,272 @@ titleWrap:hover{
     flex-flow: column nowrap;
     justify-content: space-between;
     z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all ease 1s;
 }
 
 .sideNav1 {
-     background-color: #ed1c24;
-    left: 51%;
+/*    left: 51%;*/
+}
+
+
+
+.horzLine {
+    width: 100%;
+    position: absolute;
+    height: 1px;
+    background-color: red;
+    opacity: .5;
+    top: 7.4%;
+}
+.horzLine2 {
+    width: 100%;
+    position: absolute;
+    height: 1px;
+    background-color: red;
+    opacity: .5;
+    bottom: 3.1%;
+}
+.vertLine {
+    z-index: 1000000000;
+    width: 1px;
+    position: absolute;
+    height: 100%;
+    background-color: red;
+    opacity: .5;
+    left: 40px;
+}
+
+.audioImg {
+    width: 19px;
+    position: absolute;
+    right: 5%;
+    top: 36px;
+    opacity: .1;
+}
+.smallHeight{
+    height: 3px !important;
+}
+.audioButBar {
+    display: inline-block;
+    width: 2px;
+    height: 10px;
+    background-color: #939393;
+    margin-right: 2px;
+    transition: .8s all ease;
+    filter: brightness(.95);
+}
+
+.audioButContainer {
+    width: 25px;
+    position: absolute;
+    right: 4.7%;
+    top: 37px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all ease 1s;
+}
+.audioButContainer:hover .inner {
+    cursor: pointer;
+    height: 3px;
+}
+
+.bar1 {
+    height: 7px;
+}
+
+.bar2 {
+    height: 14px;
+}
+
+.bar3 {
+    height: 19px;
+}
+
+.bar4 {
+    height: 10px;
+}
+
+.bar5 {
+    height: 5px;
+}
+
+
+
+.audioButContainer:hover .audioButBar {
+    cursor: pointer;
+    height: 3px;
+}
+
+.audioButContainer:hover {
+    cursor: pointer;
+}
+
+.selectedStoryNum {
+    display: inline-block;
+/*
+    color: #ed1c24;
+    filter: brightness(1.6) !important;
+*/
+    color: #c6c6c6;
+    filter: brightness(.55);
+    position: relative;
+    font-family: "Blender Pro Thin" !important;
+    font-size: 11pt;
+    letter-spacing: 2.5px;
+    font-style: normal;
+    transition: all ease .7s;
+}
+
+.selectedStory {
+    position: relative;
+    font-family: "Blender Pro Thin" !important;
+    font-size: 11pt;
+    letter-spacing: 2.5px;
+    font-style: normal;
+    color: #c6c6c6;
+    filter: brightness(.75);
+    transition: all ease .7s;
+    display: inline-block;
+    padding-left: 7px;
+}
+
+.active {
+    background-color: #ed1c24;
+    filter: brightness(1) !important;
+}
+
+.selectedStory:hover {
+    filter: brightness(1.2);
+}
+.selectedStoryNum:hover {
+    filter: brightness(.8);
+}
+.selectedStoryWrap {
+    position: absolute;
+    bottom: .5%;
+    left: 3%;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.selectedStoryWrap:hover .inner {
+    filter: brightness(1.2);
+}
+
+.SR02_caption {
+    opacity: 1;
+    width: 190px;
+    position: absolute;
+    top: 63%;
+    left: 47%;
+}
+
+.SR04_bodyText {
+/*    width: 459px;*/
+}
+
+.red {
+    color: red;
+}
+
+.WL_arrest {
+    top: 10%;
+    left: -34%;
+    width: 750px;
+    filter: brightness(.4);
+}
+
+.WL_arrestCap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    opacity: 1;
+    
+}
+
+.anon05_headerText {
+    width: 910px !important;
+}
+
+.rightWrap {
+    width: 30%;
+    float left;
+    display: inline-block;
+    border-left: 1px solid #ed1c24;
+    padding-left: 30px;
+    margin-top: 20px;
+    margin-left: 100px;
+}
+
+.small_bodyText {
+    position: relative;
+    z-index: 2000;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 8pt;
+    font-style: normal;
+    color: #939393;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.about_BodyText {
+    position: relative;
+    z-index: 2000;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 12pt;
+    line-height: 19pt;
+    font-style: normal;
+    color: #939393;
+    width: 100%;
+}
+
+
+
+.leftWrap {
+    width: 50%;
+    display: inline-block;
+    float: left;
+}
+
+.03 {
+    
+}
+
+#third {
+    margin-bottom: 0px !important;
+    padding-bottom: 0px !important;
+}
+
+.about_bottomInfo {
+    position: relative;
+    z-index: 2000;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 8pt;
+    line-height: 19pt;
+    font-style: normal;
+    color: #939393;
+    width: 440px;
+}
+
+.textWrap {
+    position: relative;
+    top: 4%;
+}
+
+.aboutPageTextWrap {
+    position: relative;
+    margin-left: 5%;
+    top: 26%;
+}
+
+.aboutPageHeader {
+    margin-bottom: 30px;
+}
+
+.aboutPage {
+    opacity: 0;
+    visibility: hidden;
 }

@@ -1,3 +1,8 @@
+    function revealAboutPage(){
+        $(".aboutPage").addClass("opacity1");
+        console.log('hi');
+    }
+  
     var allVids = $(document).find(".video");
     var onMobile = false;
     function myFunction(x) {
@@ -39,28 +44,19 @@
     while (numPages--) visitedPages.push(false);
 
     function resetVisitedPagesArray() {
-        console.log(visitedPages.legnth);
         for(var i = 0;  i < visitedPages.length; i++){
             visitedPages[i] = false;
-            console.log('hi');
         }
-        console.log(visitedPages);
     }
     
     var allNavMenuItems = $(document).find('.navMenu');
     function navPageIntro(){
-//        scrambling = true;
-//        setTimeout(function(){
-//            scrambling = false;
-//        }, 1500);
         var nav1Items = $(document).find('.nav1');
         var nav2Items = $(document).find('.nav2');
         var nav3Items = $(document).find('.nav3');
-//        $('.navMenuRow').prop('hidden', false);
         $(navNumber).removeClass('fadeOutAndScale');
         $('.navPage').removeClass("fadeInAndScale");
         $('.navPage').css("visibility", 'visible');
-        console.log(nav1Items);
         for(var i = 0; i < allNavMenuItems.length; i++){
             $(allNavMenuItems[i]).removeClass('fadeOutAndScaleUp');
         }
@@ -85,27 +81,60 @@
 //        }, 800);
 //        navMenuItems
     }
+
+    function resetNavBar(){
+        for(var i = 0; i < sideNavBarList.length; i++){
+            if(i == 0){
+                $(sideNavBarList[i]).addClass('active');
+            }
+            else{
+                $(sideNavBarList[i]).removeClass('active');
+            }
+        }
+    }
+
+    function changeStoryName(storyNum){
+        var newStoryName = '';
+        var newStoryNum = '';
+        if(storyNum == 1){
+            newStoryName = "SILK ROAD";
+            newStoryNum = "01";
+        }
+        else if(storyNum == 2){
+            newStoryName = "WIKILEAKS";
+            newStoryNum = "02";
+        }
+        else{
+            newStoryName = "ANONYMOUS";
+            newStoryNum = "03";
+        }
+        $(".selectedStory").html(newStoryName);
+        $(".selectedStoryNum").html(newStoryNum);
+    }
+
     var navNumber = "";
     function startStory(storyName) {
-        setTimeout(function(){
-            $('.arrowWrap').addClass("opacity1");
-        }, 1100);
+        resetNavBar();
         resetVisitedPagesArray();
+        revealUIElements();
         var story = $(storyName).attr('class');
-        if (story == "anonNavMenu" || $(story).hasClass('nav3')) {
+        if (story == "anonNavMenu" || $(storyName).hasClass('nav3')) {
+            changeStoryName(3);
             $(".bgImage").removeAttr("hidden");
             $('.nav1').addClass("fadeOut");
             $('.nav2').addClass("fadeOut");
             navNumber = ".nav3";
             pageClassList = ['.anonPage1', '.anonPage2', '.anonPage3', '.anonPage35', '.anonPage4', '.anonPage5'];
             storyName = "anon";
-        } else if (story == "wikiLeaksNavMenu" || $(story).hasClass('nav2')) {
+        } else if (story == "wikiLeaksNavMenu" || $(storyName).hasClass('nav2')) {
+            changeStoryName(2);
             $('.nav1').addClass("fadeOut");
             $('.nav3').addClass("fadeOut");
             navNumber = ".nav2";
             pageClassList = ['.WL_Page1', '.WL_Page15', '.WL_Page2', '.WL_Page3', '.WL_Page4', '.WL_Page5'];
             storyName = "wl";
         } else {
+            changeStoryName(1);
             $('.nav2').addClass("fadeOut");
             $('.nav3').addClass("fadeOut");
             navNumber = ".nav1";
@@ -127,15 +156,18 @@
              $(pageClassList[pageNumber]).addClass('opacity1');
 //             $('.navPage').prop('hidden', true); //fuck with this
         }, 1100);
-        sideBarReveal();
     }
 
-    function sideBarReveal() {
+    function revealUIElements() {
         setTimeout(function() {
-            $(".sideNav").addClass("opacity1");
+            $(".sideNavBarWrap").addClass("opacity1");
+            $(".selectedStoryWrap").addClass("opacity1");
+            $('.arrowWrap').addClass("opacity1");
         }, 1200);
     }
     
+    var sideNavBarList = $(".sideNavBarWrap").find(".sideNavBar");
+
     var currentlyScrolling = false;
     //prev page in story
     function pageUp() {
@@ -148,6 +180,11 @@
                 $(pageClassList[pageNumber]).css('transform', 'scale(1.05)');
                 $(pageClassList[pageNumber]).removeClass('opacity1');
             setTimeout(function() {
+//                for(var i = 0; i < sideNavBarList.length; i++){
+//                    if(sideNavBar)
+//                }
+                $(sideNavBarList[pageNumber]).removeClass('active');
+                $(sideNavBarList[pageNumber - 1]).addClass('active');
                 $(pageClassList[pageNumber - 1]).css('transform', 'scale(1)');
                 $(pageClassList[pageNumber - 1]).addClass('opacity1');
             }, 400);
@@ -167,6 +204,8 @@
             $(pageClassList[pageNumber]).removeClass('opacity1'); 
             //next page fade in / scale up
             setTimeout(function() {
+                $(sideNavBarList[pageNumber]).removeClass('active');
+                $(sideNavBarList[pageNumber + 1]).addClass('active');
                 $(pageClassList[pageNumber + 1]).css('transform', 'scale(1)');
                 $(pageClassList[pageNumber + 1]).addClass('opacity1');
             }, 400);
@@ -193,6 +232,55 @@
                 }
             }
         }
+    }
+    
+    function pageJump(pageClicked){
+        var newPageNum;
+        for(var i = 0; i < sideNavBarList.length; i++){
+            if(pageClicked.id == sideNavBarList[i].id){
+                newPageNum = i;
+            }
+        }
+        //next page
+        if(newPageNum != pageNumber){
+            setTimeout(function() {
+                $(sideNavBarList[pageNumber]).removeClass('active');
+                $(sideNavBarList[newPageNum]).addClass('active');
+                //scale up if 
+                if(newPageNum > pageNumber){
+                    $(pageClassList[pageNumber]).css('transform', 'scale(.95)');
+                }
+                else{
+                    $(pageClassList[pageNumber]).css('transform', 'scale(1.05)');
+                }
+                $(pageClassList[pageNumber]).removeClass('opacity1');
+                $(pageClassList[newPageNum]).css('transform', 'scale(1)');
+                $(pageClassList[newPageNum]).addClass('opacity1');
+                pageNumber = newPageNum;
+            }, 400);
+            //if page hasnt been visited yet
+            if (visitedPages[pageNumber + 1] == false) {
+
+                visitedPages[pageNumber + 1] = true;
+                //quote scramble
+                if (pageClassList[pageNumber + 1] == ".SR_Page25") {
+                    fSR_quote.setText(phrases5[counter]);
+                    counter = (counter + 1) % phrases5.length
+                } else if (pageClassList[pageNumber + 1] == ".anonPage35") {
+                    fAnon_quote.setText(phrases7[counter]);
+                    counter = (counter + 1) % phrases7.length
+                } else if (pageClassList[pageNumber + 1] == ".WL_Page15") {
+                    fWL_quote.setText(phrases6[counter]);
+                    counter = (counter + 1) % phrases6.length
+                }
+
+                var pageVids = $(pageClassList[pageNumber + 1]).find('.video');
+                for (var i = 0; i < pageVids.length; i++) {
+                    pageVids[i].play();
+                }
+            }
+        }
+
     }
 
     var WL_vids = [".WL_04", ".WL_01", ".WL_02", ".WL_05", ".WL_06", ".WL_03"];
@@ -226,10 +314,11 @@
             vidsRevealed = true;
         }
     }
+
     function revealUI(){
         $('.titleWrap').addClass("opacity1");
         $('.aboutBut').addClass("opacity1");
-        console.log('yo');
+        $(".audioButContainer").addClass('opacity1');
     }
 
     var scrambling = false;
@@ -326,21 +415,46 @@
             }
         }
     });
-
+    
+    /* fade in/out audio on hover */
     $(".video").hover(
         function() {
-            $(this).animate({
-                volume: .9
-            }, 700);
-            $(this).prop('muted', false); //mute
+            if(audioEnabled == true){
+                console.log('poop');
+                 $(this).animate({
+                    volume: .9
+                }, 700);
+                $(this).prop('muted', false); //mute
+            }
         },
         function() {
             $(this).animate({
                 volume: 0
             }, 700);
-            //        $( this ).prop('muted', true); //unmute
         }
     );
+    var audioEnabled = true;
+    function audioButClicked(){
+        if (audioEnabled == true){
+            //disable audio from all videos 
+            $('audio,video').each(function(){
+                $(this).prop('muted', true);
+                console.log($(this));
+            });
+//            var audioBars = $('.audioButContainer').find('.audioButBars');
+            $('.audioButContainer').children().addClass('smallHeight');
+            audioEnabled = false;
+        }
+        else{
+            $('audio,video').each(function(){
+                $(this).prop('muted', false);
+                console.log($(this));
+            });
+            $('.audioButContainer').children().removeClass('smallHeight');
+            audioEnabled = true;
+        }
+    }
+
     //    ****
     //    var WL_Vids = $(".WL_Page4").find(".WL_Vid");
     //    for(var i = 0; i < WL_Vids.length; i++){
@@ -348,17 +462,27 @@
     //    }
 
     //    mute all videos for sanitys sake
-    for (var i = 0; i < allVids.length; i++) {
-        $(allVids[i]).prop('muted', true); //mute
-    }
+//    for (var i = 0; i < allVids.length; i++) {
+//        $(allVids[i]).prop('muted', true); //mute
+//    }
 
     function returnToNav() {
         navClicked = false;
         resetVisitedPagesArray();
         $(".uiTitle").removeClass("opacity1");
-        $('.sideNav').removeClass("opacity1");
+        $(".sideNavBarWrap").removeClass("opacity1");
+        $(".selectedStoryWrap").removeClass("opacity1");
+        $('.arrowWrap').removeClass("opacity1");
+//        var arrows = $('.arrowWrap').find(".uiArrow");
+//        $(arrows[0]).removeClass("opacity1");
+//        $(arrows[1]).removeClass("opacity1");
         clearBackground();
-        fadeOutAndReset(pageClassList[pageNumber]);
+        $(pageClassList[pageNumber]).css('transform', 'scale(.95)');
+        $(pageClassList[pageNumber]).removeClass('opacity1');
+        setTimeout(function(){
+             resetPagePositions();
+        }, 1000);
+//        fadeOutAndReset(pageClassList[pageNumber]);
         for(var i = 0; i < allNavMenuItems.length; i++){
             $(allNavMenuItems[i]).removeClass('fadeOut');
         }
@@ -367,7 +491,14 @@
             navPageIntro();
         }, 1000);
     }
-
+    
+    function resetPagePositions(){
+       var storyPages = $("#main").find('.storyPage');
+       $(storyPages).each(function( index ) {
+           console.log('hi');
+           $(this).css('transform', 'scale(1.05)');
+        });
+    }
     //    var animation = bodymovin.loadAnimation({
     //        container: document.getElementById('navMenuAnim'),
     //        renderer: 'svg',
@@ -554,7 +685,7 @@
         "People should have the right to buy and sell whatever they wanted so long as they aren't hurting anyone"
     ]
     const phrases6 = [
-        "One of the best ways to achieve justice is to expose injustice."
+        "It is impossible to correct abuses unless we know that they’re going on."
     ]
     const phrases7 = [
         "We are anonymous, we are legion, we do not forgive, we do not forget"
@@ -601,14 +732,17 @@
     var introPage = $(".introPage");
 
     function fadeOutAndReset(currentPage) {
-        var pageElements = $(currentPage).children();
-        for (var i = 0; i < pageElements.length; i++) {
-            //            $(pageElements[i]).addClass("fadeOut");
-        }
+//        var pageElements = $(currentPage).children();
+//        for (var i = 0; i < pageElements.length; i++) {
+//            //            $(pageElements[i]).addClass("fadeOut");
+//        }
         $(currentPage).addClass("fadeOutAndScale");
-        setTimeout(function() {
-            $(currentPage).prop('hidden', true);
-        }, 1000);
+//        $(currentPage).removeClass("opacity1");
+//        $(currentPage).css('transform', 'scale(.9)');
+//        $(currentPage).removeClass('opacity1');
+//        setTimeout(function() {
+//            $(currentPage).css('visibility', 'hidden');
+//        }, 1000);
     }
 
     function introAnim() {
