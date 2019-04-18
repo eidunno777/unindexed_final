@@ -1523,11 +1523,11 @@ SR_bgImg{
     }
     .titleText{
         left: 52%;
-        top: 38%;
+        top: 28%;
         transform: translate(-43%, -58%);
     }
     .redBar{
-        top: 45% !important;
+        top: 35% !important;
         left: 55%;
     }
     .introPage2{
