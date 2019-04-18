@@ -1425,7 +1425,7 @@ SR_bgImg{
         width: 320px;
     }
     .bodyText{
-        width: 320px;
+        width: 290px;
         font-size: 8pt;
         line-height: 16pt;
         padding: 10px 0 0 0px;
@@ -1925,4 +1925,11 @@ titleWrap:hover{
 
 .video:hover {
     cursor: url(../IMG/UI/volCursor.svg), auto;
+}
+
+.siteWrap {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
 }
