@@ -1522,10 +1522,13 @@ SR_bgImg{
         right: 4.5% !important;
     }
     .titleText{
+        left: 52%;
+        top: 38%;
         transform: translate(-43%, -58%);
     }
     .redBar{
-        top: 55% !important;
+        top: 45% !important;
+        left: 55%;
     }
     .introPage2{
        left: -5% !important;
@@ -1537,7 +1540,7 @@ SR_bgImg{
     }
     .titleWrap{
         left: 18px !important;
-/*        top: 32px !important;*/
+/*        top: 10px !important;*/
     }
     .padding17{
         padding-bottom: 28% !important;
