@@ -1277,10 +1277,10 @@ SR_bgImg{
     filter: brightness(1);
 }
 .scrollIcon {
-    height: 50px;
+    width: 25px;
     position: absolute;
-    top: 69%;
-    left: 51.5%;
+    top: 79%;
+    left: 52.5%;
     animation: scrollIconBounce 3s ease infinite;
 }
 @keyframes scrollIconBounce{
@@ -1503,8 +1503,33 @@ SR_bgImg{
     }
     .navMenuNums {
         position: absolute;
-        top: 36%;
+        top: 39.35%;
     }
+    .audioButContainer{
+         right:11.5% !important;
+    }
+    .aboutBut{
+        right: 4.5% !important;
+    }
+    .titleText{
+        transform: translate(-43%, -58%);
+    }
+    .redBar{
+        top: 55% !important;
+    }
+    .introPage2{
+       left: -5% !important;
+    }
+    .scrollIcon{
+        left: 57.5% !important;
+        top: 72%;
+        width: 20px;
+    }
+    .titleWrap{
+        left: 18px !important;
+/*        top: 32px !important;*/
+    }
+
 }
 .WL01_bodyText {
     width: 390px;
@@ -1896,4 +1921,8 @@ titleWrap:hover{
 .aboutPage {
     opacity: 0;
     visibility: hidden;
+}
+
+.video:hover {
+    cursor: url(../IMG/UI/volCursor.svg), auto;
 }
