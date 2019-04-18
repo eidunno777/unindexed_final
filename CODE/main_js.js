@@ -6,7 +6,7 @@
     var allVids = $(document).find(".video");
     var allCaptions = $(document).find(".captionText");
     var onMobile = false;
-    function myFunction(x) {
+    function changeToMobile(x) {
         if (x.matches) { // on mobile
             onMobile = true;
             $('.redLine').prop('hidden', true);
@@ -41,10 +41,14 @@
             }
         }
     }
+    
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+        
+    }
 
     var x = window.matchMedia("(max-width: 480px)")
-    myFunction(x) // Call listener function at run time
-    x.addListener(myFunction) // Attach listener function on state changes
+    changeToMobile(x) // Call listener function at run time
+    x.addListener(changeToMobile) // Attach listener function on state changes
 
     var navClicked = false;
     var pageNumber = -1;
