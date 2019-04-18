@@ -1418,17 +1418,19 @@ SR_bgImg{
 }
 @media all and (max-width: 480px) {
     .smHeaderText{
-        font-size: 26pt;
-        line-height: 34pt;
+        font-size: 22pt;
+        line-height: 28pt;
+        width: 400px !important;
     }
     .SR01_headerText {
         width: 320px;
     }
     .bodyText{
-        width: 290px;
+        width: 300px;
         font-size: 8pt;
         line-height: 16pt;
         padding: 10px 0 0 0px;
+        margin-left: 0px !important;
     }
     .dateText{
         font-size: 9pt;
@@ -1528,6 +1530,10 @@ SR_bgImg{
     .titleWrap{
         left: 18px !important;
 /*        top: 32px !important;*/
+    }
+    .padding17{
+        padding-bottom: 28% !important;
+        padding-top: 0% !important;
     }
 
 }

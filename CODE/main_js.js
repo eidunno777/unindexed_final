@@ -4,27 +4,40 @@
     }
   
     var allVids = $(document).find(".video");
+    var allCaptions = $(document).find(".captionText");
     var onMobile = false;
     function myFunction(x) {
         if (x.matches) { // on mobile
             onMobile = true;
             $('.redLine').prop('hidden', true);
             $(".sideNav").prop('hidden', true);
+            $('.sideNavBarWrap').prop('hidden', true);
+            $('.arrowWrap').prop('hidden', true);
+            $('.selectedStoryWrap').prop('hidden', true);
             $(".SR05_buttonGroup").prop('hidden', true);
             for (var i = 0; i < allVids.length; i++) {
                 $(allVids[i]).prop('hidden', true); //mute
+            }
+            for (var i = 0; i < allCaptions.length; i++) {
+                $(allCaptions[i]).prop('hidden', true); //mute
             }
         } else { //not on mobile
             onMobile = false;
             $('.redLine').prop('hidden', false);
             $(".sideNav").prop('hidden', false);
             $(".SR05_buttonGroup").prop('hidden', false);
+            $('.sideNavBarWrap').prop('hidden', false);
+            $('.selectedStoryWrap').prop('hidden', false);
+            $('.arrowWrap').prop('hidden', false);
             for (var i = 0; i < allVids.length; i++) {
                 if($(allVids[i]).hasClass("WL_Vid")){
                 }
                 else{
                     $(allVids[i]).prop('hidden', false); //mute
                 }
+            }
+            for (var i = 0; i < allCaptions.length; i++) {
+                $(allCaptions[i]).prop('hidden', false); //mute
             }
         }
     }
