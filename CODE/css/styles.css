@@ -1492,7 +1492,7 @@ SR_bgImg{
         filter: brightness(.7);
     }
     .uiTitle{
-        left: 4px !important;
+        left: 0px !important;
         top: -5x !important;
     }
     .WL01_headerText {
@@ -1514,15 +1514,17 @@ SR_bgImg{
     }
     .navMenuNums {
         position: absolute;
-        top: 23.4%;
+        top: 28.4%;
     }
     .navMenuContainer{
-        top: 25%;
+        top: 30%;
     }
     .audioButContainer{
-         right: 13.5% !important;
+        top: 28px !important;
+        right: 13.5% !important;
     }
     .aboutBut{
+        top: 12px !Important;
         right: 4.5% !important;
     }
     .titleText{
@@ -1539,20 +1541,20 @@ SR_bgImg{
        left: 0% !important;
     }
     .introPage2_bodyText {
-        width: 320px !important;
+        width: 329px !important;
         left: 54%;
     }
     .scrollIcon{
-        left: 53% !important;
+        left: 51% !important;
         top: 70%;
         width: 20px;
     }
     .titleWrap{
-        top: 19px !important;
+        top: 21px !important;
         left: 8px !important;
     }
     .padding17{
-        padding-bottom: 28% !important;
+        padding-bottom: 10% !important;
         padding-top: 0% !important;
     }
 
@@ -1696,7 +1698,7 @@ titleWrap:hover{
     height: 1px;
     background-color: red;
     opacity: .5;
-    top: 7.4%;
+    top: 5.8%;
 }
 .horzLine2 {
     width: 100%;
@@ -1713,6 +1715,7 @@ titleWrap:hover{
     height: 100%;
     background-color: red;
     opacity: .5;
+    top: 10px;
     left: 40px;
 }
 
