@@ -1309,7 +1309,7 @@ SR_bgImg{
 }
 
 .padding16 {
-    padding-top: 16%;
+    padding-top: 11%;
 }
 
 .navText3 {
@@ -1474,6 +1474,8 @@ SR_bgImg{
     }
     .SR04_headerText{
         width: 100%;
+        font-size: 27pt;
+        line-height: 31pt;
     }
     .SR05_bodyText{
         width: 37%;
@@ -1555,7 +1557,7 @@ SR_bgImg{
         padding-top: 0% !important;
     }
     .padding16 {
-        padding-top: 20%;
+        padding-top: 7%;
         padding-left: 37px;
     }
     .padding21{
@@ -1583,8 +1585,8 @@ SR_bgImg{
         padding-top: 33%;
     }
     .medBigHeaderText{
-        font-size: 30pt;
-        line-height: 34pt;
+        font-size: 28pt;
+        line-height: 31pt;
     }
     .SR05_bodyText{
         width: 300px;
@@ -1612,7 +1614,7 @@ SR_bgImg{
         padding-left: 38px;
     }
     .WL05_bodyText{
-        width: 310px;
+        width: 290px;
     }
     .WL04_headerText{
         width: 320px;
