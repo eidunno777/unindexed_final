@@ -1409,9 +1409,16 @@ SR_bgImg{
     
 }
 @media all and (max-width: 768px) {
-    
+    .smHeaderText{
+        font-size: 25pt;
+        line-height: 28pt;
+        width: 300px !important;
+    }
 }
 @media all and (max-width: 480px) {
+    .anon05_bodyText {
+        width: 330px !important;
+    }
     .smHeaderText{
         font-size: 25pt;
         line-height: 28pt;
@@ -1670,9 +1677,23 @@ SR_bgImg{
     .padding15 {
         padding-top: 10%;
     }
-
+    .anon02_padding{
+        top: 6% !important;
+    }
 }
-    
+
+@media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+  html {
+    transform: rotate(-90deg);
+    transform-origin: left top;
+    width: 100vh;
+    overflow-x: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
+}
+
 .WL01_bodyText {
     width: 390px;
 }
@@ -1748,10 +1769,10 @@ titleWrap:hover{
     filter: brightness(.5);
     position: absolute;
     left: 24%;
-    top: 9%;
+    top: 12%;
     z-index: -200;
     width: 720px;
-    height: 500px;
+    height: 400px;
 }
 
 .SR05_caption {
@@ -2066,3 +2087,7 @@ titleWrap:hover{
 }
 
 
+
+.SR02_padding {
+    padding-top: 16.5%;
+}
