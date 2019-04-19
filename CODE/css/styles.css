@@ -1492,7 +1492,8 @@ SR_bgImg{
         filter: brightness(.7);
     }
     .uiTitle{
-        top: 4px !important;
+        left: 4px !important;
+        top: -5x !important;
     }
     .WL01_headerText {
         width: 290px !important;
@@ -1547,7 +1548,8 @@ SR_bgImg{
         width: 20px;
     }
     .titleWrap{
-/*        top: 10px !important;*/
+        top: 19px !important;
+        left: 8px !important;
     }
     .padding17{
         padding-bottom: 28% !important;
