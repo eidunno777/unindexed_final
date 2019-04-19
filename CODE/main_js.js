@@ -389,19 +389,6 @@
             else if (pageNumber != -1) {
                 if (distance < -30) {
                     if (midScroll == false) {
-                            pageUp();
-                            console.log('scroll up');
-                            midScroll = true;
-                            //2s limitation bw each scroll
-                            setTimeout(function() {
-                                midScroll = false;
-                            }, 2000);
-                        }
-                }// up
-                if (distance > 30) 
-                {
-                    if (midScroll == false) {
-                        alert("Stopped scrolling!");
                         pageDown();
                         console.log('scroll down');
                         midScroll = true;
@@ -409,6 +396,18 @@
                         setTimeout(function() {
                             midScroll = false;
                         }, 1200);
+                    }
+                }// up
+                if (distance > 30) 
+                {
+                    if (midScroll == false) {
+                        pageUp();
+                        console.log('scroll up');
+                        midScroll = true;
+                        //2s limitation bw each scroll
+                        setTimeout(function() {
+                            midScroll = false;
+                        }, 2000);
                     }
                 }// down
             }
