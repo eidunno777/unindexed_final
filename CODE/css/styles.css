@@ -1194,7 +1194,7 @@ SR_bgImg{
 }
 
 .WL02_bodyText {
-    width: 370px;
+    width: 380px;
 }
 
 .anon05_bodyText {
@@ -1563,14 +1563,14 @@ SR_bgImg{
         padding-left: 37px;
     }
     .padding21{
-        padding-top: 30% !important; 
+        padding-top: 18% !important; 
     }
     .WL01_bodyText {
         width: 310px !Important;
     }
     .padding22 {
         padding-top: 0%;
-        top: -8%;
+        top: -5%;
 /*        left: 30px !important;*/
     }
     .WL_quoteText {
@@ -1578,7 +1578,7 @@ SR_bgImg{
         font-size: 33pt !important;
     }
     .anon03_quoteSignature{
-        margin-top: -45px;
+        margin-top: -15px;
     }
     .SR04_mobile{
         bottom: -13% !important;
@@ -2090,4 +2090,8 @@ titleWrap:hover{
 
 .SR02_padding {
     padding-top: 16.5%;
+}
+
+.SR_quotePadding {
+    top: 9%;
 }

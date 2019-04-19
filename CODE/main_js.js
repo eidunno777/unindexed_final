@@ -418,7 +418,6 @@
         });
     });
     
-    screen.lockOrientation("portrait");
 
     document.addEventListener("wheel", function(e) {
         if (onIntroPage2 == true) {
