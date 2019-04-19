@@ -342,61 +342,64 @@
     //scrolling event listener
     var midScroll = false;
     var lastPoint = null; //global
-    function onScroll(){
-        if(onMobile == true){
-                if (onIntroPage2 == true) {
-                    onIntroPage2 = false;
-                    var introPage2 = $('.introPage2');
-                    $(introPage2).removeClass('fadeInAndScale');
-                    fadeOutAndReset(introPage2);
-                    setTimeout(function() {
-        //                $('.navMenuRow').prop('hidden', false);
-        //                $('.navPage').addClass("fadeInAndScale");
-                        navPageIntro();
-                        next();
-                    }, 900);
-                } else {
-                    var currentPoint = e.originalEvent.changedTouches[0].pageY;
-                    if (pageNumber != -1) {
-                        //scroll down - next page in story
-                       if(lastPoint != null && lastPoint < currentPoint ){
-                            if (midScroll == false) {
-                                alert("Stopped scrolling!");
-                                pageDown();
-                                console.log('scroll down');
-                                midScroll = true;
-                                //2s limitation bw each scroll
-                                setTimeout(function() {
-                                    midScroll = false;
-                                }, 1200);
-                            }
-                        }
-                        //scroll up - prev page in story
-                        else if (pageNumber != 5) {
-                            if (midScroll == false) {
-                                pageUp();
-                                console.log('scroll up');
-                                midScroll = true;
-                                //2s limitation bw each scroll
-                                setTimeout(function() {
-                                    midScroll = false;
-                                }, 2000);
-                            }
-                        }
-                        lastPoint = currentPoint;
-                    }
-                }
+    $(window).on('touchstart', function(e) {
+
+        var swipe = e.originalEvent.touches,
+        start = swipe[0].pageY;
+
+        $(this).on('touchmove', function(e) {
+
+            var contact = e.originalEvent.touches,
+            end = contact[0].pageY,
+            distance = end-start;
+            if (onIntroPage2 == true) {
+                onIntroPage2 = false;
+                var introPage2 = $('.introPage2');
+                $(introPage2).removeClass('fadeInAndScale');
+                fadeOutAndReset(introPage2);
+                setTimeout(function() {
+                    revealUI();
+                    navPageIntro();
+                    next();
+                    scrambling = true;
+                    setTimeout(function(){
+                        scrambling = false;
+                    }, 2000);
+                }, 900);
             }
-    }
-    $(document.body).on('touchmove', onScroll); // for mobile
-    $(window).on('scroll', onScroll); 
-// callback
-//function onScroll(){ 
-//    if( $(window).scrollTop() + window.innerHeight >= document.body.scrollHeight ) { 
-//        track_page++; 
-//        load_contents(track_page); 
-//    }
-//}
+            else if (pageNumber != -1) {
+                if (distance < -30) {
+                    if (midScroll == false) {
+                            pageUp();
+                            console.log('scroll up');
+                            midScroll = true;
+                            //2s limitation bw each scroll
+                            setTimeout(function() {
+                                midScroll = false;
+                            }, 2000);
+                        }
+                }// up
+                if (distance > 30) 
+                {
+                    if (midScroll == false) {
+                        alert("Stopped scrolling!");
+                        pageDown();
+                        console.log('scroll down');
+                        midScroll = true;
+                        //2s limitation bw each scroll
+                        setTimeout(function() {
+                            midScroll = false;
+                        }, 1200);
+                    }
+                }// down
+            }
+        })
+        .one('touchend', function() {
+
+            $(this).off('touchmove touchend');
+        });
+    });
+
 
     document.addEventListener("wheel", function(e) {
         if (onIntroPage2 == true) {
@@ -443,9 +446,9 @@
             }
         }
     });
-    window.addEventListener('scroll', function(e) {
-        scroll();
-    });
+//    window.addEventListener('scroll', function(e) {
+//        scroll();
+//    });
     /* fade in/out audio on hover */
     $(".video").hover(
         function() {
