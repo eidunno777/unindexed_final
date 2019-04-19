@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans" rel="stylesheet">
     <title>Unindexed</title>
     <script type="text/javascript" src="https://code.jquery.com/jquery-latest.js"></script>
-    <link rel="shortcut icon" src="IMG/favIcon.ico">
+    <link rel="icon" type="image/png" href="IMG/icon.png">
 </head>
 
 <body>
@@ -33,20 +33,20 @@
                 <div id="sideNav4" class="sideNavBar uiElement" onClick='pageJump(this)'></div>
                 <div id="sideNav5" class="sideNavBar uiElement" onClick='pageJump(this)'></div>
                 <div id="sideNav6" class="sideNavBar uiElement" onClick='pageJump(this)'></div>
-</div>
+            </div>
             <div class="arrowWrap">
                 <img class="uiArrow arrowUp uiElement" src="IMG/UI/arrowUp.png" onClick='pageUp()'>
                 <img class="uiArrow arrowDown uiElement" src="IMG/UI/arrowDown.png" onClick='pageDown()'>
             </div>
-            <div class="audioButContainer uiElement" onClick="audioButClicked()">
+            <div class="audioButContainer uiElement" onClick='audioButClicked()'>
                 <div class="audioButBar bar1"></div><div class="audioButBar bar2"></div><div class="audioButBar bar3"></div><div class="audioButBar bar4"></div><div class="audioButBar bar5"></div>
             </div>
-            <p class="aboutBut uiElement" onClick()="revealAboutPage()">?</p>
+            <p class="aboutBut uiElement" onClick="toggleAboutPage()">?</p>
             <div class="selectedStoryWrap">
                 <p class="selectedStoryNum uiElement">01</p>
                 <p class="selectedStory uiElement">SILK ROAD</p>
             </div>
-</div>
+        </div>
 
         <div id="main" class="container-fluid">
             <div class="aboutPage page" hidden>
@@ -54,7 +54,9 @@
                     <h1 class="medBigHeaderText aboutPageHeader">ABOUT</h1>
                     <div class="textWrap">
                         <div class="leftWrap">
-                             <p class="about_BodyText">This project explores three stories deeply tied to the dark net.  People often percieve the dark net to be a criminal infested underworld; however, there is much more nuance and ambiguity to the users and the uses of the dark net. Each individual responds differently to the power and freedom that any technology creates and the dark net is no different. While some will use it to safely expose corruption, or plan non-violent protests, at the same time others will use it to purchase contraband. This is the moral dilemma of the dark net, and like the dark net itself, each of these three stories presented has it’s own moral dilemmas.</p>
+                             <p class="about_BodyText">The dark net is the portion of the internet purposefully hidden from public view. Almost all actions that take place on these sites are unindexed, allowing the people making them to remain completely anonymous. <br><br>
+                            In this project I wanted to explore stories that utilized this anonymity in completely different ways. While some will use it to safely expose corruption, or plan non-violent protests, at the same time others will use it to purchase contraband. This is the moral dilemma of the dark net, and like the dark net itself, each of the three stories presented has it’s own moral dilemmas. 
+                            however, there is much more nuance and ambiguity to the users and the uses of the dark net. </p>
                             <p class="about_bottomInfo">This experience only chronicles some of the major events for each these subjects</p>
                         </div>
                         <div class="rightWrap">
@@ -236,9 +238,12 @@
             <div class="row WL_Page3 page storyPage">
                 <div class="col-sm-6">
                     <div class="transcriptWrap">
-                        <img id="collatBut" class="button" onclick="toggleTranscript()" src="IMG/UI/textBut.png" height="42" width="42">
+<!--                        <img id="collatBut" class="button" onclick="toggleTranscript()" src="IMG/UI/textBut.png" height="42" width="42">-->
+                        <div id="transcriptBut" class="button" onclick="toggleTranscript()" height="12" width="12">
+                        
+                        </div>
                         <div class="textColWrap">
-                            <p class="transcriptText">06:44&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Crazyhorse this is Bushmaster Five, Bushmaster Four break.<br>
+                            <p class="transcriptText css-typing">06:44&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Crazyhorse this is Bushmaster Five, Bushmaster Four break.<br>
                                 06:54&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This is Two-Six roger. I'll pop flares [drop flares]. We also have one individual moving. <br>
                                 07:07&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yeah Bushmaster, we have a van that's approaching and picking up the bodies.<br>
                                 07:14&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Where's that van at?<br>
@@ -507,6 +512,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 </body>
-<!--<script src="js/lottie.js"></script>-->
+<script src="js/lottie.js"></script>
 <script src="//cdn.jsdelivr.net/npm/velocity-animate@1.5/velocity.min.js"></script>
 <script src='main_js.js'></script>
