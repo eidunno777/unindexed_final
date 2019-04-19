@@ -1571,7 +1571,7 @@ SR_bgImg{
         font-size: 33pt !important;
     }
     .anon03_quoteSignature{
-        margin-top: -30px;
+        margin-top: -45px;
     }
     .SR04_mobile{
         bottom: -13% !important;
@@ -1646,11 +1646,11 @@ SR_bgImg{
         top: -5% !important;
     } 
     .anon_quotePadding{
-        top: -4%;
+        top: -2%;
     }
     .padding18 {
         padding-top: 0%;
-        top: 3%;
+        top: -2%;
     }
     .biggestHeaderText{
         font-size: 37pt;
@@ -1659,7 +1659,7 @@ SR_bgImg{
     .padding25 {
         padding-top: 0%;
         padding-left: 36px;
-        top: -16%;
+        top: -9%;
     }
     .anon05_headerText {
         width: 300px !important;
@@ -1668,11 +1668,9 @@ SR_bgImg{
         margin-left: 0px;
     }
     .padding15 {
-        padding-top: 0%;
+        padding-top: 10%;
     }
-    .anon03_quoteSignature{
-        
-    }
+
 }
     
 .WL01_bodyText {
