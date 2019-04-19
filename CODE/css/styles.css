@@ -735,9 +735,7 @@ body {
   width: 93%;
 }
 
-.longTextBlock {
-    width: 1000px !important;
-}
+
 
 .bodyTextPadding {
     margin-left: 39px;
@@ -1074,6 +1072,7 @@ body {
     padding-left: 4%;
 }
 .paddingLeft6 {
+    
     padding-left: 5%;
 }
 
@@ -1085,9 +1084,7 @@ body {
     width: 800px;
 }
 
-.padding21 {
-    padding-top: 21%;
-}
+
 .padding22 {
     padding-top: 22%;
 }
@@ -1119,9 +1116,7 @@ body {
 .padding19 {
     padding-top: 19%;
 }
-.padding21 {
-    padding-top: 21%;
-}
+
 
 .SR03_dateText {
     padding-left: 38px;
@@ -1601,7 +1596,7 @@ SR_bgImg{
         bottom: 10%;
     }
     .biggishHeaderText{
-        font-size: 29pt;
+        font-size: 26pt;
     }
     .thinBodyCol{
         width: 310px !important;
@@ -1623,25 +1618,66 @@ SR_bgImg{
         margin-top: 28px;
         margin-left: 0px;
     }
+    .SR02_padding{
+        top: 6%;
+    }
+    .bigHeaderText {
+        font-size: 28pt;
+        line-height: 30pt;
+        width: 340px;
+    }
+    #bodyText_anon1 {
+        width: 313px !important;
+    }
+    .smBigHeaderText {
+        font-size: 30pt;
+        line-height: 33pt;
+    }
+    #bodyText_Anon02{
+        width: 310px;
+        margin-left: 0px !important;
+
+    }
+    .paddingLeft6 {
+        padding-left: 10%;
+        top: -13%;
+    }
+    .anon01_padding {
+        top: -12% !important;
+    } 
+    .anon_quotePadding{
+        top: -8%;
+    }
+    .padding18 {
+        padding-top: 0%;
+        top: -3%;
+    }
+    .biggestHeaderText{
+        font-size: 37pt;
+        width: 350px;
+    }
+    .padding25 {
+        padding-top: 0%;
+        padding-left: 36px;
+        top: -16%;
+    }
+    .anon05_headerText {
+        width: 300px !important;
+    }
+    .bodyTextPadding {
+        margin-left: 0px;
+    }
+    .padding15 {
+        padding-top: 0%;
+    }
 }
+    
 .WL01_bodyText {
     width: 390px;
 }
 
 .WL01_headerText {
     width: 560px;
-}
-
-.nav1 {
-
-}
-
-.nav2 {
-
-}
-
-.nav3 {
-    
 }
 
 .redLine {
@@ -1934,7 +1970,7 @@ titleWrap:hover{
 }
 
 .anon05_headerText {
-    width: 910px !important;
+    width: 910px;
 }
 
 .rightWrap {
@@ -2027,3 +2063,5 @@ titleWrap:hover{
     height: 100vh;
     overflow: hidden;
 }
+
+
