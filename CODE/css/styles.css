@@ -1443,13 +1443,13 @@ SR_bgImg{
         padding-left: 39px;
     }
     .paddingSmLeft{
-        padding-left: 45px;
+        padding-left: 36px;
     }
     .quoteHeader{
         padding-left: 10px;
         bottom: 40px;
         font-size: 33pt;
-        line-height: 34pt;
+        line-height: 35pt !important;
         width: 300px !Important;
     }
     .SR_quoteText{
@@ -1457,7 +1457,7 @@ SR_bgImg{
         height: 297px;
     }
     .anon03_quoteSignature{
-        bottom: 30px;
+        bottom: 0px;
     }
     .titleText{
         font-size: 28pt;
@@ -1482,9 +1482,6 @@ SR_bgImg{
         font-size: 11pt;
         line-height: 40pt;
         letter-spacing: 1px;
-    }
-    .anon03_quoteSignature{
-        padding-top: 40px;
     }
     .babyHeaderText{
         font-size: 16pt;
@@ -1557,7 +1554,73 @@ SR_bgImg{
         padding-bottom: 10% !important;
         padding-top: 0% !important;
     }
-
+    .padding16 {
+        padding-top: 20%;
+        padding-left: 37px;
+    }
+    .padding21{
+        padding-top: 30% !important; 
+    }
+    .WL01_bodyText {
+        width: 310px !Important;
+    }
+    .padding22 {
+        padding-top: 0%;
+        top: -8%;
+/*        left: 30px !important;*/
+    }
+    .WL_quoteText {
+        width: 310px !important;
+        font-size: 33pt !important;
+    }
+    .anon03_quoteSignature{
+        padding-top: 15px;
+    }
+    .SR04_mobile{
+        bottom: -13% !important;
+    }
+    .padding14 {
+        padding-top: 33%;
+    }
+    .medBigHeaderText{
+        font-size: 30pt;
+        line-height: 34pt;
+    }
+    .SR05_bodyText{
+        width: 300px;
+    }
+    .SR_endBut {
+        margin-left: 0px;
+    }
+    .SR03_dateText {
+        padding-left: 0px;
+    }
+    .padding24 {
+        bottom: 10%;
+    }
+    .biggishHeaderText{
+        font-size: 29pt;
+    }
+    .thinBodyCol{
+        width: 310px !important;
+    }
+    .WL04_headerText {
+        width: 290px;
+    }
+    .padding14 {
+        padding-top: 20%;
+        padding-left: 38px;
+    }
+    .WL05_bodyText{
+        width: 310px;
+    }
+    .WL04_headerText{
+        width: 320px;
+    }
+    .WL_endBut {
+        margin-top: 28px;
+        margin-left: 0px;
+    }
 }
 .WL01_bodyText {
     width: 390px;

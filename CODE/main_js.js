@@ -2,9 +2,10 @@
         $(".aboutPage").addClass("opacity1");
         console.log('hi');
     }
-  
+    var allbuttons = $(document).find(".button");
     var allVids = $(document).find(".video");
     var allCaptions = $(document).find(".captionText");
+    var allImgs = $(document).find(".img");
     var onMobile = false;
     function changeToMobile(x) {
         if (x.matches) { // on mobile
@@ -15,11 +16,20 @@
             $('.arrowWrap').prop('hidden', true);
             $('.selectedStoryWrap').prop('hidden', true);
             $(".SR05_buttonGroup").prop('hidden', true);
+            $(".WL04_buttonLabel").prop('hidden', true);
+//            $('.audioButContainer').prop('hidden', true);
+            $('.transcriptWrap').prop('hidden', true);
             for (var i = 0; i < allVids.length; i++) {
                 $(allVids[i]).prop('hidden', true); //mute
             }
             for (var i = 0; i < allCaptions.length; i++) {
                 $(allCaptions[i]).prop('hidden', true); //mute
+            }
+            for (var i = 0; i < allImgs.length; i++) {
+                $(allImgs[i]).prop('hidden', true); //mute
+            }
+            for (var i = 0; i < allbuttons.length; i++) {
+                $(allbuttons[i]).prop('hidden', true); //mute
             }
         } else { //not on mobile
             onMobile = false;
@@ -29,6 +39,9 @@
             $('.sideNavBarWrap').prop('hidden', false);
             $('.selectedStoryWrap').prop('hidden', false);
             $('.arrowWrap').prop('hidden', false);
+            $(".WL04_buttonLabel").prop('hidden', false);
+//            $('.audioButContainer').prop('hidden', false);
+            $('.transcriptWrap').prop('hidden', false);
             for (var i = 0; i < allVids.length; i++) {
                 if($(allVids[i]).hasClass("WL_Vid")){
                 }
@@ -38,6 +51,12 @@
             }
             for (var i = 0; i < allCaptions.length; i++) {
                 $(allCaptions[i]).prop('hidden', false); //mute
+            }
+            for (var i = 0; i < allImgs.length; i++) {
+                $(allImgs[i]).prop('hidden', false); //mute
+            }
+            for (var i = 0; i < allbuttons.length; i++) {
+                $(allbuttons[i]).prop('hidden', false); //mute
             }
         }
     }
