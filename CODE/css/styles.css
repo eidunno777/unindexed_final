@@ -1487,15 +1487,18 @@ SR_bgImg{
         padding-top: 40px;
     }
     .babyHeaderText{
-        font-size: 11pt;
+        font-size: 16pt;
         letter-spacing: 2px;
+        filter: brightness(.7);
+    }
+    .uiTitle{
+        top: 4px !important;
     }
     .WL01_headerText {
         width: 290px !important;
         font-size: 26pt;
         line-height: 29pt;
     }
-
     .padding24{
         padding-top: 0%;
     }
@@ -1516,30 +1519,34 @@ SR_bgImg{
         top: 25%;
     }
     .audioButContainer{
-         right:11.5% !important;
+         right: 13.5% !important;
     }
     .aboutBut{
         right: 4.5% !important;
     }
     .titleText{
         left: 52%;
-        top: 28%;
+        top: 34%;
         transform: translate(-43%, -58%);
     }
     .redBar{
-        top: 35% !important;
+        top: 40% !important;
         left: 55%;
     }
     .introPage2{
-       left: -5% !important;
+        top: -12% !important;
+       left: 0% !important;
+    }
+    .introPage2_bodyText {
+        width: 320px !important;
+        left: 54%;
     }
     .scrollIcon{
-        left: 57.5% !important;
-        top: 72%;
+        left: 53% !important;
+        top: 70%;
         width: 20px;
     }
     .titleWrap{
-        left: 18px !important;
 /*        top: 10px !important;*/
     }
     .padding17{
