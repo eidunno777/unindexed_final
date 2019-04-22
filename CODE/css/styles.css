@@ -1116,7 +1116,7 @@ body {
 }
 
 .SR04_headerText {
-    width: 680px;
+    width: 700px;
     font-size: 33pt;
 }
 
@@ -1146,6 +1146,7 @@ SR_bgImg{
 }
 .SR05_bodyText {
     display: inline-block;
+    width: 420px;
 /*    vertical-align: top;*/
 }
 .SR05_buttonGroup {
@@ -1642,9 +1643,7 @@ SR_bgImg{
         margin-top: 28px;
         margin-left: 0px;
     }
-    .SR02_padding{
-/*        top: 6%;*/
-    }
+
     .bigHeaderText {
         font-size: 28pt;
         line-height: 30pt;
@@ -1698,9 +1697,38 @@ SR_bgImg{
         top: 6% !important;
     }
     .SR1 {
-        position: absolute;
         top: 100px !important;
         left: 25px !important;
+    }
+    .SR2 {
+        top: 100px !important;
+        left: 25px !important;
+    }
+    .SR25 {
+        top: 135px !important;
+        left: 23px !important;
+    }
+    .SR3 {
+        top: 100px !important;
+        left: 25px !important;
+    }
+    .SR4 {
+        top: 100px !important;
+        left: 25px !important;
+    }
+    .SR5 {
+        top: 100px !important;
+        left: 25px !important;
+    }
+    .SR02_header {
+        width: 270px !important;
+    }
+    .SR04_bodyText {
+        width: 309px !important;
+    }
+    .SR04_headerText {
+        width: 300px;
+        font-size: 26pt;
     }
 }
 
@@ -2104,9 +2132,7 @@ titleWrap:hover{
 
 
 
-.SR02_padding {
-    padding-top: 16.5%;
-}
+
 
 .SR_quotePadding {
     top: 9%;
@@ -2268,13 +2294,13 @@ titleWrap:hover{
 
 .SR2 {
     position: absolute;
-    left: 105px;
-    top: 245px !important;
+    left: 155px;
+    top: 245px;
 }
 .SR25 {
     position: absolute;
     left: 105px;
-    top: 245px !important;
+    top: 245px;
 }
 
 .SR_Vid {
@@ -2296,7 +2322,7 @@ titleWrap:hover{
 .SR4 {
     position: absolute;
     left: 105px;
-    top: 225px !important;
+    top: 225px;
 }
 
 .SR5 {
