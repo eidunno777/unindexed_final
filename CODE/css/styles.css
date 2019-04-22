@@ -23,7 +23,7 @@ body {
 }
 .bodyText {
     position: relative;
-    z-index: 2000;
+    z-index: 2000000 !important;
     font-family: 'Nunito Sans', sans-serif;
     font-size: 10pt;
     line-height: 19pt;
@@ -36,7 +36,7 @@ body {
 }
 .smHeaderText {
     position: relative;
-    z-index: 2000;
+    z-index: 20000;
     font-family: "Blender Pro Thin" !important;
     font-size: 26pt;
     line-height: 34pt;
@@ -46,7 +46,7 @@ body {
 }
 .medHeaderText {
     position: relative;
-    z-index: 2000;
+    z-index: 20000;
     font-family: "Blender Pro Thin" !important;
     font-size: 29pt;
     line-height: 34pt;
@@ -57,7 +57,7 @@ body {
 
 .bigHeaderText {
     position: relative;
-    z-index: 2000;
+    z-index: 200000;
     font-family: "Blender Pro Thin" !important;
     font-size: 42pt;
     line-height: 40pt;
@@ -138,13 +138,13 @@ body {
 
 .dateText {
     position: relative;
-    z-index: 2000;
+    z-index: 20000;
     font-family: "Blender Pro" !important;
     font-size: 10pt;
     line-height: 0pt;
     padding-bottom: 1px;
     font-style: normal;
-    color: red;
+    color: #ed1c24;
     letter-spacing: 5px;
     width: 45px;
 }
@@ -240,7 +240,6 @@ body {
     display: inline-block;
     left: 4px;
     top: 3px !important;
-/*    margin-top: 5px;*/
     transition: .8s all ease;
 }
 .uiTitle:hover {
@@ -255,7 +254,7 @@ body {
 .button:hover {
     position: relative;
     z-index: 4000;
-    opacity: .5;
+/*    opacity: .5;*/
     cursor: pointer;
     object-fit: cover;
 }
@@ -350,7 +349,8 @@ body {
 }
 
 .bgContainer{
-/*    z-index: -11000;*/
+    position: relative;
+    z-index: 100;
     width: 100%;
     height: 100%;
 }
@@ -362,7 +362,7 @@ body {
     opacity: .1;
     height: 40px;
     width: 40px;
-    z-index: 300;
+    z-index: 100;
 }
 @keyframes opacity01 {
     0% { opacity: 0; }
@@ -376,7 +376,7 @@ body {
     opacity: .15;
     height: 70px;
     width: 70px;
-    z-index: 500;
+    z-index: 100;
 }
 @keyframes opacity015 {
     0% { opacity: 0; }
@@ -390,7 +390,7 @@ body {
     opacity: .2;
     height: 90px;
     width: 90px;
-    z-index: 500;
+    z-index: 100;
 }
 .WL_bgLayer1 {
     position: absolute;
@@ -400,7 +400,7 @@ body {
     opacity: .25;
     height: 120px;
     width: 120px;
-    z-index: 500;
+    z-index: 100;
 }
 .SR_BGLayer4 {
     position: absolute;
@@ -473,7 +473,7 @@ body {
 .bgGradient {
     transform: scale(1.3);
     z-index: -10000;
-    opacity: .7;
+    opacity: 1;
 }
 
 .bgImagesWrap {
@@ -514,8 +514,10 @@ body {
 }
 .VideoFadeInAndScale{
     opacity: 1 !important;
-    animation: scaleDownQuick ease 1.5s;
-    animation-fill-mode: forwards;
+    transform: scale(1) !important;
+    visibility: visible !important;
+/*    animation: scaleDownQuick ease .8s;*/
+/*    animation-fill-mode: forwards;*/
 }
 @keyframes scaleDownQuick{
     0% {transform: scale(1.04);}
@@ -582,6 +584,7 @@ body {
     animation-name: opacity100;
     animation-duration: 2s;
     animation-timing-function: ease;
+    z-index: -100;
 /*    width: 10px;*/
 }
 @keyframes opacity100{
@@ -605,24 +608,6 @@ body {
     line-height: 10pt;
 }
 
-
-.typewriter {
-  overflow: hidden; /* Ensures the content is not revealed until the animation */
-  white-space: nowrap;
-  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-  letter-spacing: .15em; /* Adjust as needed */
-  animation: 
-    typing 2s steps(40, end),
-    blink-caret .75s step-end infinite;
-}
-
-/* The typing effect */
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
-
-
 .navMenuRow {
     top: 0;
     left: 0;
@@ -633,18 +618,18 @@ body {
     width: 100%;
     height: 100%;
     transition: top 2.6s ease, opacity 1s ease;
-/*    top: 100%;*/
+    top: 0%;
+    left: 0%;
 }
 
 .storyPage {
-/*    display: none;*/
     top: 0%;
     opacity: 0;
     visibility: hidden;
-/*    opacity: 1;*/
-/*    top: 100%;*/
     position: absolute;
-    z-index: 1000;
+    width: 0% !important;
+    height: 0% !important;
+/*    z-index: 1000;*/
     left: 0;
     transform: scale(1.05);
     transition: all ease 1.2s;
@@ -677,7 +662,7 @@ body {
     width: 21.5px;
     height: 15px;
     transform: scale(.9);
-    filter: brightness(.8);
+    filter: brightness(1);
     transition: all ease .7s;
 }
 .uiArrow:hover {
@@ -767,8 +752,8 @@ body {
     width: 650px;
     height: 410px;
     position: absolute;
-    top: 9%;
-    left: 33%;
+    top: 56px;
+    left: 194px;
     filter: brightness(.4);
 }
 
@@ -787,8 +772,8 @@ body {
     flex-flow: row nowrap;
     position: absolute;
     width: 590px;
-    top: 0%;
-    left: 32.5%;
+    top: -15px;
+    left: 183px;
 }
 
 .buttonLabel {
@@ -812,9 +797,23 @@ body {
     font-size: 8pt;
     line-height: 13.3pt;
     color: #ffffff;
+    float: left;
     width: 390px;
     opacity: 0;
     transition: 1s ease all;
+}
+
+.typewriter {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  opacity: 1;
+  animation: 
+    typing 1.6s steps(40, end);
+}
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
 }
 
 .thinBodyCol {
@@ -844,36 +843,38 @@ body {
 
 .WL_collatCap {
     position: relative;
-    padding-top: 10px;
-    left: -8px;
+    padding-top: 25px;
+    left: -14px;
     opacity: 0;
     width: 260px;
     transition: 1s ease all;
 }
 
 .WL_Vid {
+    transform: scale(1.03);
     position: absolute;
     z-index: -1000;
-/*    opacity: 0;*/
-    transition: all ease 1.5s;
+    opacity: 0;
+    transition: all ease .6s;
+    visibility: hidden;
 }
 
 .WL_01 {
-    top: 9%;
-    left: 0%;
+    top: 70px;
+    left: -50px;
     width: 380px;
 /*    -webkit-filter:brightness(1);*/
 }
 .WL_02 {
-    top: 80%;
-    left: 52%;
+    top: 590px;
+    left: 670px;
     width: 300px;
 /*    -webkit-filter:brightness(0.7);*/
 }
 .WL_03 {
-    top: 55%;
-    left: -2.3%;
-    width: 250px;
+    top: 340px;
+    left: -46px;
+    width: 200px;
     z-index: -1020;
 /*    -webkit-filter:brightness(0.8);*/
 }
@@ -923,9 +924,9 @@ body {
 }
 
 .WL_iceland {
-    top: 13%;
-    left: -80%;
-    width: 700px;
+    top: 100px;
+    left: 425px;
+    width: 720px;
 }
 
 .textShadow {
@@ -970,8 +971,10 @@ body {
 
 .anon_paybackVid {
     width: 700px;
-    top: 10%;
-    left: -60%;
+    top: 80px;
+    left: 470px;;
+    opacity: 1 !important;
+/*    visibility: visible !important;*/
 }
 
 .video {
@@ -1035,14 +1038,12 @@ body {
 
 .SR_ad {
     position: absolute;
-    left: -75%;
-    top: 12%;
+    left: 465px;
+    top: 100px;
     width: 700px;
 }
 
-.SR_Vid {
-    position: absolute;
-}
+
 
 #SR02_playBut {
     display: inline;
@@ -1052,8 +1053,8 @@ body {
 }
 
 .WL_04 {
-    top: 6%;
-    left: 54%;
+    top: 50px;
+    left: 740px;
     width: 660px;
     z-index: 920;
 /*    -webkit-filter:brightness(0.85);*/
@@ -1106,7 +1107,7 @@ body {
 }
 
 .SR04_headerText {
-    width: 750px;
+    width: 680px;
     font-size: 33pt;
 }
 
@@ -1125,7 +1126,7 @@ body {
 .SR_endBut {
     position: relative;
     display: block;
-    margin-top: 26px;
+    margin-top: 20px;
     margin-left: 39px;
 }
 WL_bgImg{
@@ -1158,6 +1159,8 @@ SR_bgImg{
 .WL03_buttonLabel {
     padding-left: 0px !important;
     width: 135px;
+    display: block;
+    top: 6px;
 }
 
 .buttonTextWrap {
@@ -1172,7 +1175,7 @@ SR_bgImg{
 }
 
 .SR05_container {
-    width: 890px;
+    width: 710px;
 }
 
 .SR_viewBut3Container {
@@ -1236,9 +1239,9 @@ SR_bgImg{
 }
 
 .WL_05 {
-    top: 57%;
-    left: 80%;
-    width: 220px;
+    top: 440px;
+    left: 1090px;
+    width: 240px;
     z-index: 920;
 /*    -webkit-filter:brightness(0.9);*/
 }
@@ -1248,8 +1251,8 @@ SR_bgImg{
 }
 
 .WL_06 {
-    top: 0%;
-    left: 24%;
+    top: -10px;
+    left: 300px;
     width: 200px;
     z-index: 1020;
     -webkit-filter:brightness(0.8);
@@ -1266,7 +1269,7 @@ SR_bgImg{
     color: #c6c6c6;
     width: 90px;
     transition: all 1s ease;
-    filter: brightness(.7);
+    filter: brightness(1);
 }
 .babyHeaderText:hover{
     filter: brightness(1);
@@ -1275,7 +1278,7 @@ SR_bgImg{
     width: 25px;
     position: absolute;
     top: 79%;
-    left: 52.5%;
+    left: 51%;
     animation: scrollIconBounce 3s ease infinite;
 }
 @keyframes scrollIconBounce{
@@ -1287,7 +1290,7 @@ SR_bgImg{
 .introPage2_bodyText {
     position: absolute;
     top: 49%;
-    left: 50%;
+    left: 49%;
     width: 590px;
     font-size: 11pt;
     line-height: 20pt;
@@ -1304,7 +1307,7 @@ SR_bgImg{
 }
 
 .padding16 {
-    padding-top: 11%;
+    padding-top: 16%;
 }
 
 .navText3 {
@@ -1314,33 +1317,33 @@ SR_bgImg{
 
 .anon02_caption {
     opacity: 1 !important;
-    width: 220px;
+    width: 250px;
     position: absolute;
-    left: 10%;
-    top: 53%;
+    left: 40px;
+    top: 380px;
 }
 
 .anon03_caption {
     opacity: 1 !important;
     width: 210px;
     position: absolute;
-    left: 40%;
-    top: 62%;
+    left: 1040px;
+    top: 450px;
 }
 
 .WL02_caption {
     opacity: 1 !important;
     width: 220px;
     position: absolute;
-    left: 31%;
-    top: 68%;
+    left: 970px;
+    top: 515px;;
 }
 
 .WL04_buttonLabel {
     padding-left: 14px;
     display: inline-block;
-    left: 36px;
-    top: 20px;
+    left: 73px;
+    top: -12px;
     width: 170px;
 }
 
@@ -1348,6 +1351,8 @@ SR_bgImg{
     position: relative;
     top: 20px;
     left: 40px;
+    height: 35px;
+    width: 35px;
 }
 
 .padding15 {
@@ -1355,50 +1360,52 @@ SR_bgImg{
 }
 
 .anon_Vid {
-    opacity: 1;
-    transition: all ease 1.5s;
+    opacity: 0;
+    transform: scale(1.03);
+    visibility: hidden;
+    transition: all ease .5s;
 }
 
 .anon_01 {
     width: 700px;
-    top: 22%;
-    left: 30%;
+    top: 170px;
+    left: 193px;
     filter: brightness(.7);
 }
 
 .anon_02 {
-    width: 400px;
-    top: 59%;
-    left: 2%;
+    width: 440px;
+    top: 410px;
+    left: 0px;
     filter: brightness(.6);
 }
 
 .anon_03 {
     position: relative;
-    top: 36%;
-    left: 194%;
-    width: 170px;
-    z-index: 500px;
+    top: 275px;
+    left: 1250px;
+    width: 180px;
+    z-index: 10000 !important;
     filter: brightness(.7);
 }
 
 .anon_04 {
-    left: 159%;
-    top:13%;
+    left: 1080px;
+    top: 85px;
     width: 350px;
 }
 
 .anon_05 {
-    width: 142px;
-    top: 10%;
-    left: 1%;
+    width: 157px;
+    top: 79px;
+    left: -3px;
     filter: brightness(.6);
 }
 
 .anon_06 {
     width: 300px;
-    left: 77%;
-    top: 6%;
+    left: 444px;
+    top: 40px;
     filter: brightness(.8);
 }
 
@@ -1492,10 +1499,7 @@ SR_bgImg{
         letter-spacing: 2px;
         filter: brightness(.7);
     }
-    .uiTitle{
-        left: 0px !important;
-        top: -5x !important;
-    }
+  
     .WL01_headerText {
         width: 290px !important;
         font-size: 26pt;
@@ -1626,7 +1630,7 @@ SR_bgImg{
         margin-left: 0px;
     }
     .SR02_padding{
-        top: 6%;
+/*        top: 6%;*/
     }
     .bigHeaderText {
         font-size: 28pt;
@@ -1680,18 +1684,6 @@ SR_bgImg{
     .anon02_padding{
         top: 6% !important;
     }
-}
-
-@media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
-  html {
-    transform: rotate(-90deg);
-    transform-origin: left top;
-    width: 100vh;
-    overflow-x: hidden;
-    position: absolute;
-    top: 100%;
-    left: 0;
-  }
 }
 
 .WL01_bodyText {
@@ -1755,8 +1747,8 @@ titleWrap:hover{
     font-family: "Blender Pro Thin" !important;
     font-size: 25pt;
     font-style: normal;
-    color: #939393;
-    filter: brightness(.95);
+    color: #c6c6c6;
+    filter: brightness(.9);
     opacity: 0;
     visibility: hidden;
     transition: all ease 1s;
@@ -1768,8 +1760,10 @@ titleWrap:hover{
 .anon_cruiseVid {
     filter: brightness(.5);
     position: absolute;
-    left: 24%;
-    top: 12%;
+    left: 160px;
+    top: 100px;
+    opacity: 1 !important;
+/*    visibility: visible !important;*/
     z-index: -200;
     width: 720px;
     height: 400px;
@@ -1784,14 +1778,15 @@ titleWrap:hover{
     left: 81%;
     width: 12%;
     height: 49px;
-    background-color: #333333;
+/*    background-color: #333333;*/
+    background-color:  #c6c6c6;
+    filter: brightness(.3);
     transition: .8s all ease;
     z-index: 12000000;
 }
 .sideNavBar:hover{
-/*    left: 51%;*/
     cursor: pointer !important;
-    filter: brightness(2);
+    filter: brightness(.9);
 }
 
 .sideNavBarWrap {
@@ -1829,7 +1824,7 @@ titleWrap:hover{
     height: 1px;
     background-color: red;
     opacity: .5;
-    bottom: 3.1%;
+    bottom: 70.1%;
 }
 .vertLine {
     z-index: 1000000000;
@@ -1839,7 +1834,7 @@ titleWrap:hover{
     background-color: red;
     opacity: .5;
     top: 10px;
-    left: 40px;
+    left: 1054px;
 }
 
 .audioImg {
@@ -1856,10 +1851,10 @@ titleWrap:hover{
     display: inline-block;
     width: 2px;
     height: 10px;
-    background-color: #939393;
+    background-color: #c6c6c6;
     margin-right: 2px;
     transition: .8s all ease;
-    filter: brightness(.95);
+    filter: brightness(.9);
 }
 
 .audioButContainer {
@@ -1909,12 +1904,8 @@ titleWrap:hover{
 
 .selectedStoryNum {
     display: inline-block;
-/*
-    color: #ed1c24;
-    filter: brightness(1.6) !important;
-*/
     color: #c6c6c6;
-    filter: brightness(.55);
+    filter: brightness(.7);
     position: relative;
     font-family: "Blender Pro Thin" !important;
     font-size: 11pt;
@@ -1930,14 +1921,14 @@ titleWrap:hover{
     letter-spacing: 2.5px;
     font-style: normal;
     color: #c6c6c6;
-    filter: brightness(.75);
+    filter: brightness(.9);
     transition: all ease .7s;
     display: inline-block;
     padding-left: 7px;
 }
 
 .active {
-    background-color: #ed1c24;
+    background-color: red;
     filter: brightness(1) !important;
 }
 
@@ -1963,12 +1954,12 @@ titleWrap:hover{
     opacity: 1;
     width: 190px;
     position: absolute;
-    top: 63%;
-    left: 47%;
+    top: 470px;
+    left: 1030px;
 }
 
 .SR04_bodyText {
-/*    width: 459px;*/
+    width: 459px;
 }
 
 .red {
@@ -1976,8 +1967,8 @@ titleWrap:hover{
 }
 
 .WL_arrest {
-    top: 10%;
-    left: -34%;
+    top: 90px;
+    left: 410px;
     width: 750px;
     filter: brightness(.4);
 }
@@ -1999,9 +1990,9 @@ titleWrap:hover{
     width: 30%;
     float left;
     display: inline-block;
-    border-left: 1px solid #ed1c24;
+    border-left: 1px solid #991a24;
     padding-left: 30px;
-    margin-top: 20px;
+    margin-top: 0px;
     margin-left: 100px;
 }
 
@@ -2063,7 +2054,7 @@ titleWrap:hover{
 .aboutPageTextWrap {
     position: relative;
     margin-left: 5%;
-    top: 26%;
+    top: 24%;
 }
 
 .aboutPageHeader {
@@ -2071,8 +2062,9 @@ titleWrap:hover{
 }
 
 .aboutPage {
+    transform: scale(.97);
     opacity: 0;
-    visibility: hidden;
+    transition: all 1s ease;
 }
 
 .video:hover {
@@ -2094,4 +2086,232 @@ titleWrap:hover{
 
 .SR_quotePadding {
     top: 9%;
+}
+
+
+
+@keyframes type2 {
+  0% {
+    width: 0;
+  }
+  1% {
+    opacity: 1 !important;
+  }
+  99.9% {
+    border-right: .15em solid orange;
+  }
+  100% {
+    opacity: 1 !important;
+    border: none;
+  }
+}
+
+@-webkit-keyframes type2 {
+  0% {
+    width: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  99.9% {
+    border-right: .15em solid orange;
+  }
+  100% {
+    opacity: 1;
+    border: none;
+  }
+}
+
+.redBut{
+/*    stroke: rgb(255, 0, 0);*/
+/*    fill: rgb(255, 0, 0);*/
+}
+.butTransition{
+    transition: all ease .4s;
+}
+#transcriptBut {
+    position: relative;
+    top: 490px;
+    left: 10px;
+    height: 35px;
+    width: 35px;
+}
+
+.clicked{
+    
+}
+.viewBut {
+    display: inline-block;
+    height: 35px;
+    width: 35px;
+}
+
+#SR_viewBut1 {
+   
+}
+
+.codeBlockContainer {
+    
+}
+
+
+
+
+
+.zWrap {
+    position: absolute;
+    z-index: 1000000000 !important;
+}
+
+.col-sm-5 {
+/*
+    position: relative;
+    z-index: -200;
+*/
+}
+
+/*
+.WL1 {
+    position: absolute;
+    z-index: 10000;
+}
+*/
+
+.WL_Page1 {
+/*
+    left: 00px; !important;
+    top: 37% !important;
+*/
+}
+
+.pagesWrap {
+    position: absolute;
+    z-index: 1000;
+}
+
+.WL1 {
+    position: absolute;
+    left: 560px;
+    top: 280px;
+}
+
+.WL2 {
+    position: absolute;
+    top: 300px !important;
+    left: 105px;
+}
+
+
+
+.WL15 {
+    position: absolute;
+    top: 275px;
+    left: 103px;
+}
+
+.WL02_header {
+    width: 560px;
+}
+
+.WL3 {
+    position: absolute; 
+    top: 300px;
+    left: 650px;
+}
+
+.WL4 {
+    position: absolute;
+    left: 155px;
+    top: 170px;
+}
+
+.WL5 {
+    position: absolute;
+    top: 210px;
+    left: 105px;
+}
+
+.navPositioning {
+    left: 890px;
+    top: 300px;
+}
+
+.SR1 {
+    position: absolute;
+    top: 220px;
+    left: 665px;
+}
+
+.SR2 {
+    position: absolute;
+    left: 105px;
+    top: 245px !important;
+}
+
+.SR_Vid {
+    position: absolute;
+}
+
+.SR02_header {
+    width: 520px;
+}
+
+
+
+.SR3 {
+    position: absolute;
+    top: 310px;
+    left: 665px;
+}
+
+.SR4 {
+    position: absolute;
+    left: 105px;
+    top: 225px !important;
+}
+
+.SR5 {
+    position: absolute;
+    top: 190px;
+    left: 155px;
+}
+
+.anon1 {
+    position: absolute;
+    top: 230px;
+    left: 155px;
+}
+
+.anon2 {
+    position:  absolute;
+    left: 770px;
+    top: 270px;
+}
+
+.anon02_Header {
+    width: 430px;
+}
+
+.anon3 {
+    position: absolute;
+    top: 240px;
+    left: 155px;
+}
+
+.anon35 {
+    position: absolute;
+    top: 280px;
+    left: 155px;
+}
+
+.anon4 {
+    position: absolute;
+    top: 310px;
+    left: 750px;
+}
+
+.anon5 {
+    position: absolute;
+    top: 200px;
+    left: 155px;
 }

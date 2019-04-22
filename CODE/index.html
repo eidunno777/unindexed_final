@@ -17,7 +17,7 @@
         <!--    <img class='bgImage' src="IMG/anonPages/anonVIdeos.png">-->
 <!--        <div class="vertLine"></div>-->
 <!--        <div class="horzLine"></div>-->
-    <!--    <div class="horzLine2"></div>-->
+<!--        <div class="horzLine2"></div>-->
         <div class='bgImagesWrap'>
             <img class='bgGradient' src="IMG/UI/bgGradient.png">
 </div>
@@ -70,18 +70,17 @@
                     </div>
 </div>
             </div>
-            <div class="row page introPage">
+            <div class="row page introPage" hidden>
                 <div class="titleText">UNINDEXED</div>
                 <div class="redBar"></div>
             </div>
-            <div class="row page introPage2">
+            <div class="row page introPage2" hidden>
                 <p class="bodyText introPage2_bodyText">
                     The dark net offers users the power and freedom of complete Internet anonymity. Whether it be using a secure email or buying contraband from a black market, what users choose to do with this freedom is completely up to them. This experience explores three stories that utilize the dark net in significantly different ways.
                 </p>
                 <img class="scrollIcon" src="IMG/UI/arrowIcon.png">
             </div>
             <div class="row navMenuRow navPage page">
-                <div class="col-sm-6"></div>
                 <div class="navMenuContainer col-sm-5">
                     <div class='silkRoadNavMenu' onclick="startStory(this)">
                         <div class="navText1 navMenuText nav1 navMenu">SILK ROAD
@@ -102,346 +101,308 @@
                     <div class='navNum3 navNum nav3 navMenu' onclick="startStory(this)">03</div>
                 </div>
             </div>
-
-            <div class="row anonPage1 page storyPage" >
-                <div class="col-sm-1"></div>
-                <div class="col-sm-6 padding17 paddingSmLeft anon01_padding">
-                    <p class="dateText">2003</p>
-                    <h2 class="bigHeaderText anon01_titleText">ANONYMOUS FIRST ORIGINATES ON 4CHAN</h2>
-                    <p id="bodyText_anon1" class="bodyText">4chan is an imageboard website where posts generally have anonymous authors. The concept of Anonymous began as a decentralized community on 4chan that would act anonymously in a coordinated manner, referring to themselves as 'anons'. These coordinated efforts were usually toward a loosely self-agreed goal that was primarily for entertainment purposes (or lulz). In the next 15 years this small and largely immature 4chan community would evolve into an international hacktivist group.
-                    </p>
-                </div>
-            </div>
-            <div class="row anonPage2 page storyPage">
-                <div class="col-sm-6">
-                    <p class="captionText anon02_caption">SP - an acronym for suppressive person, a term used in Scientology to describe "antisocial personalities." Many who end up leaving the church are labeled as SPs and members are encouraged to disconnect from them.</p>
-                    <video id="video" class='anon_Vid video anon_cruiseVid' muted loop>
-                            <source src="VIDEO/anon_cruise.mp4" type='video/mp4; codecs="avc1.42E01E"'/>
-                    </video>
-                </div>
-                <div class="col-sm-6 padding18 paddingLeft6">
-                    <p class="dateText">2008</p>
-                    <h2 class="smBigHeaderText">PROJECT CHANOLOGY</h2>
-                    <!--                <img id="cruiseBut" class="button playBut" src="IMG/UI/playBut.png" height="38" width="38">-->
-                    <div class="textShadowWrap">
-                        <div class="textShadow anon_02_shadow"></div>
-                        <p id="bodyText_Anon02" class="bodyText">After a video leaked of Tom Cruise gushing about his total devotion to the doctrines of The Church of Scientology, the Internet and 4chan users in particular had a field day making memes of the video. However, the church began trying to expunge the video from the Internet; sending legal nastygrams to anyone hosting or sharing it. The anons were so enraged by this attempt at censorship that they set out to inflict as much damage as possible on the church. So began Project Chanology, in which the anons wanted not only the lulz, but also for those lulz to have a real-world effect. In dedicating themselves to that latter goal, Anonymous began to develop a real political consciousness.
+            <div class="pagesWrap">
+                <div class="row anonPage1 page storyPage" >
+                    <div class="padding17 anon01_padding anon1">
+                        <p class="dateText">2003</p>
+                        <h2 class="bigHeaderText anon01_titleText">ANONYMOUS FIRST ORIGINATES ON 4CHAN</h2>
+                        <p id="bodyText_anon1" class="bodyText">4chan is an imageboard website where posts generally have anonymous authors. The concept of Anonymous began as a decentralized community on 4chan that would act anonymously in a coordinated manner, referring to themselves as 'anons'. These coordinated efforts were usually toward a loosely self-agreed goal that was primarily for entertainment purposes (or lulz). In the next 15 years this small and largely immature 4chan community would evolve into an international hacktivist group.
                         </p>
                     </div>
                 </div>
-            </div>
-            <div class="row anonPage3 page storyPage">
-                <div class="col-sm-1"></div>
-                <div class="col-sm-6 padding18 paddingSmLeft anon02_padding">
-                    <p class="dateText">2010</p>
-                    <h2 class="smBigHeaderText anon03_headerText">OPERATION PAYBACK<br></h2>
-                    <p class="bodyText anon03_bodyText">After WikiLeaks’s release of hundreds of thousands of confidential U.S. documents, MasterCard, PayPal and Visa began blocking payments to the site for alleged terms-of-service violations. The action struck many anons as a transparent attempt to hobble Julian Assange's whistle-blowing organization. So began Operation Payback, in which anons used illegal DDoS attacks to take down the websites of MasterCard and Visa and briefly slow down PayPal to a crawl. In order to avoid jail time, the anons planned and carried out these attacks using the anonymity and protection provided by the dark net.
-                    </p>
-                    <!--                <img class="button playBut playBut_Payback" src="IMG/UI/playBut.png" height="38" width="38">-->
-
+                <div class="row anonPage2 page storyPage">
+                    <p class="captionText anon02_caption">SP - an acronym for suppressive person, a term used in Scientology to describe "antisocial personalities." Many who end up leaving the church are labeled as SPs and members are encouraged to disconnect from them.</p>
+                    <video id="anon_cruise" class='anon_Vid video anon_cruiseVid' muted loop>
+                            <source src="VIDEO/anon_cruise.mp4" type='video/mp4; codecs="avc1.42E01E"'/>
+                    </video>
+                    <div class="padding18 paddingLeft6 anon2">
+                        <p class="dateText">2008</p>
+                        <h2 class="smBigHeaderText anon02_Header">PROJECT CHANOLOGY</h2>
+                        <div class="textShadowWrap">
+                            <div class="textShadow anon_02_shadow"></div>
+                            <p id="bodyText_Anon02" class="bodyText">After a video leaked of Tom Cruise gushing about his total devotion to the doctrines of The Church of Scientology, the Internet and 4chan users in particular had a field day making memes of the video. However, the church began trying to expunge the video from the Internet; sending legal nastygrams to anyone hosting or sharing it. The anons were so enraged by this attempt at censorship that they set out to inflict as much damage as possible on the church. So began Project Chanology, in which the anons wanted not only the lulz, but also for those lulz to have a real-world effect. In dedicating themselves to that latter goal, Anonymous began to develop a real political consciousness.
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                <div class='col-sm-5'>
-                    <!--                <img src="IMG/paybackImg.png" class='tempIMG'>-->
+                <div class="row anonPage3 page storyPage">
+                    <div class="padding18 anon02_padding anon3">
+                        <p class="dateText">2010</p>
+                        <h2 class="smBigHeaderText anon03_headerText">OPERATION PAYBACK<br></h2>
+                        <p class="bodyText anon03_bodyText">After WikiLeaks’s release of hundreds of thousands of confidential U.S. documents, MasterCard, PayPal and Visa began blocking payments to the site for alleged terms-of-service violations. The action struck many anons as a transparent attempt to hobble Julian Assange's whistle-blowing organization. So began Operation Payback, in which anons used illegal DDoS attacks to take down the websites of MasterCard and Visa and briefly slow down PayPal to a crawl. In order to avoid jail time, the anons planned and carried out these attacks using the anonymity and protection provided by the dark net.
+                        </p>
+
+                    </div>
                     <p class="captionText anon03_caption">Anonymous released this video shortly after the attacks. Anonymous almost always releases videos that explain what their motives and who their targets are.</p>
-                    <video class="video anon_Vid anon_paybackVid" muted loop>
+                    <video id="anon_pay" class="video anon_Vid anon_paybackVid" muted loop>
                         <source src="VIDEO/anonPayback.mp4" type='video/mp4; codecs="avc1.42E01E"' />
                     </video>
                 </div>
-            </div>
-            <div class="row anonPage35 quotePage page storyPage">
-                <div class="col-sm-1"></div>
-                <div class="col-sm-6 padding21 paddingSmLeft anon_quotePadding">
-                    <h2 class="quoteHeader anon_quoteText">We are anonymous, we are legion,
-                        we do not forgive, we do not forget</h2>
-                    <p class="quoteSignature anon03_quoteSignature"><span class="redDash">–</span> ANONYMOUS
-                    </p>
-                </div>
-                <div class='col-sm-5'></div>
-            </div>
-            <div class="row anonPage4 page storyPage">
-                <div class="col-sm-6 padding30 paddingLeft10">
-                    <video class="anon_Vid anon_01 video" muted loop>
-                        <source src="VIDEO/anon_01.mp4" type='video/mp4; codecs="avc1.42E01E"' />
-                    </video>
-                    <video class="anon_Vid anon_02 video" muted loop>
-                        <source src="VIDEO/anon_02.mp4" type='video/mp4; codecs="avc1.42E01E"' />
-                    </video>
-                    <video class="anon_Vid anon_03 video" muted loop>
-                        <source src="VIDEO/anon_03.mp4" type='video/mp4; codecs="avc1.42E01E"' />
-                    </video>
-                    <video class="anon_Vid anon_04 video" muted loop>
-                        <source src="VIDEO/anon_04.mp4" type='video/mp4; codecs="avc1.42E01E"' />
-                    </video>
-                    <video class="anon_Vid anon_05 video" muted loop>
-                        <source src="VIDEO/anon_05.mp4" type='video/mp4; codecs="avc1.42E01E"' />
-                    </video>
-                    <video class="anon_Vid anon_06 video" muted loop>
-                        <source src="VIDEO/anon_06.mp4" type='video/mp4; codecs="avc1.42E01E"' />
-                    </video>
-                </div>
-                <div class="col-sm-6 padding25 paddingLeft10">
-                    <p class="dateText">2012</p>
-                    <h2 class="biggestHeaderText">FREEDOM OPS</h2>
-                    <!--                <img id="tunisiaBut" class="button playBut" src="IMG//UI/playBut.png" height="38" width="38">-->
-                    <p class="bodyText">During the Arab Spring, Anonymous provided support to the people fighting to end the oppressive regimes ruling them. This supported consisted of Other Operation Tunisia, Operation Algeria, Operation Egypt, Operation Libya and Operation Syria. In each of these, Anonymous launched DDoS attacks against government websites and provided protestors with anonymizing software such as Tor, allowing people to safety organize resistance and speak out against the regime. The operations helped many of these countries win independence and helped Anonymous gain thousands of new followers from the Middle East.
-                    </p>
-                </div>
-            </div>
-            <div class="row anonPage5 page storyPage">
-                <div class="col-sm-1"></div>
-                <div class="col-sm-6 padding15 paddingSmLeft">
-                    <p class="dateText">2019</p>
-                    <h2 class="medHeaderText anon05_headerText">ANONYMOUS STILL OPERATES WORLDWIDE
-                    </h2>
-                    <p class="bodyText bodyTextPadding anon05_bodyText">Anonymous has evolved from a fringe group of pranksters to an international movement. This evolution could not have occurred without the power and freedom provided by the dark net. The privacy ensured shields the anons, allowing them to plan their attacks and employ illegal tactics to inflict actual damage on those they deems deserving. Without this anonymity, the powerful targets of these attacks would surely punish the perpetrators. For many this would mean jail time, while for others it could even mean death. The dark net allows people to use the web however they choose, without fear of who’s watching; without this anonymity, there is no Anonymous.
-                    </p>
-                    <p class="endStoryBut bodyTextPadding anon_endStoryBut" onClick="returnToNav()">END STORY</p>
-                </div>
-                <div class='col-sm-5'></div>
-            </div>
-
-            <div class="row WL_Page1 page storyPage">
-                <div class="col-sm-5">
-                    <!--                <img class="assangeImg img" src="IMG/WIKILEAKS/WL_assange.png">-->
-                </div>
-                <div class="col-sm-6 padding22 paddingMdLeft">
-                    <p class="dateText">2006</p>
-                    <h2 class="medHeaderText WL01_headerText">JULIAN ASSANGE FOUNDS WIKILEAKS</h2>
-                    <p class="bodyText WL01_bodyText">A non-profit website with the purposes of disseminating original documents from anonymous sources and leakers. WikiLeaks utilizes the Tor network making it apart of the dark net, allowing for fully encrypted end-to-end anonymous communication. Thus creating a secure location for whistleblowers to safely expose the corruption of state and corporate power.
-                    </p>
-                </div>
-            </div>
-            <div class="row WL_Page15 quotePage page storyPage">
-                <div class="col-sm-1"></div>
-                <div class="col-sm-6 padding21 paddingSmLeft">
-                    <h2 class="quoteHeader WL_quoteText">It is impossible to correct abuses unless we know that they’re going on.</h2>
-                    <p class="quoteSignature anon03_quoteSignature"><span class="redDash">–</span> JULIAN ASSANGE
-                    </p>
-                </div>
-                <div class='col-sm-5'></div>
-            </div>
-            <div class="row WL_Page2 page storyPage">
-                <div class="col-sm-1"></div>
-                <div class="col-sm-6 padding21 paddingSmLeft">
-                    <p class="dateText">2010</p>
-                    <h2 class="medHeaderText">WIKILEAKS MAKES MAJOR HEADLINES</h2>
-                    <p class="bodyText WL02_bodyText">After leaking confidential documents from Iceland's Kaupthing Bank, WikiLeaks for its first time got major media coverage. The documents leaked showed that suspiciously large sums of money were loaned to various owners of the bank, and large debts were written off shortly before the collapse of Iceland's banking sector. The leak caused an uproar in Iceland, and ultimately led to four former bosses of the bank bring sentenced to between three and five years in jail
-                    </p><br>
-                </div>
-                <div class="col-sm-4 padding25 paddingMdLeft">
-                    <p class="captionText WL02_caption">This video shows Assange giving a speech to Icelandic protesters during the 2008-2011 Icelandic financial crisis</p>
-                    <video class="video WL_iceland" muted loop>
-                        <source src="VIDEO/WL_iceland.mp4" type='video/mp4; codecs="avc1.42E01E"' />
-                    </video>
-                </div>
-            </div>
-            <div class="row WL_Page3 page storyPage">
-                <div class="col-sm-6">
-                    <div class="transcriptWrap">
-<!--                        <img id="collatBut" class="button" onclick="toggleTranscript()" src="IMG/UI/textBut.png" height="42" width="42">-->
-                        <div id="transcriptBut" class="button" onclick="toggleTranscript()" height="12" width="12">
-                        
-                        </div>
-                        <div class="textColWrap">
-                            <p class="transcriptText css-typing">06:44&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Crazyhorse this is Bushmaster Five, Bushmaster Four break.<br>
-                                06:54&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This is Two-Six roger. I'll pop flares [drop flares]. We also have one individual moving. <br>
-                                07:07&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yeah Bushmaster, we have a van that's approaching and picking up the bodies.<br>
-                                07:14&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Where's that van at?<br>
-                                07:15&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Right down there by the bodies.<br>
-                                07:16&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Okay, yeah.<br>
-                                07:18&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bushmaster; Crazyhorse. We have individuals going to the scene, looks like possibly uh &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picking up bodies and weapons.<br>
-                                07:25&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Let me engage.<br>
-                                07:28&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Can I shoot?<br>
-                                07:31&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Roger. Break. Uh Crazyhorse One-Eight request permission to uh engage.<br>
-                                07:36&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Picking up the wounded?<br>
-                                07:38&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yeah, we're trying to get permission to engage.<br>
-                                07:41&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Come on, let us shoot!<br>
-                                07:44&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bushmaster; Crazyhorse One-Eight.<br>
-                                07:49&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;They're taking him.<br>
-                                07:51&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bushmaster; Crazyhorse One-Eight.<br>
-                                07:56&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This is Bushmaster Seven, go ahead.<br>
-                                07:59&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Roger. We have a black SUV-uh Bongo truck [van] picking up the bodies. <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Request permission to engage.<br>
-                                08:02&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fuck.<br>
-                                08:06&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This is Bushmaster Seven, roger. This is Bushmaster Seven, roger. Engage.<br>
-                                08:12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;One-Eight, engage.<br>
-                                08:12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Clear.<br>
-                                08:13&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Come on!<br>
-                                08:17&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Clear.<br>
-                                08:20&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Clear.<br>
-                                08:21&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We're engaging.<br> </p>
-                            <p class="buttonLabel WL03_buttonLabel">TRANSCRIPT EXCERPT</p>
-                            <p class="captionText WL_collatCap">Unbeknownst to the US forces, the van described in this excerpt of the transcript and photographed above contained a father and two of his children. The father was killed and the two children both seriously injured.</p>
-                        </div>
+                <div class="row anonPage35 quotePage page storyPage">
+                    <div class="padding21 anon_quotePadding anon35">
+                        <h2 class="quoteHeader anon_quoteText">We are anonymous, we are legion,
+                            we do not forgive, we do not forget</h2>
+                        <p class="quoteSignature anon03_quoteSignature"><span class="redDash">–</span> ANONYMOUS
+                        </p>
                     </div>
+                </div>
+                <div class="row anonPage4 page storyPage">
+                    <div class="padding30 paddingLeft10">
+                        <video class="anon_Vid anon_01 video" muted loop>
+                            <source src="VIDEO/anon_01.mp4" type='video/mp4; codecs="avc1.42E01E"' />
+                        </video>
+                        <video class="anon_Vid anon_02 video" muted loop>
+                            <source src="VIDEO/anon_02.mp4" type='video/mp4; codecs="avc1.42E01E"' />
+                        </video>
+                        <video class="anon_Vid anon_03 video" muted loop>
+                            <source src="VIDEO/anon_03.mp4" type='video/mp4; codecs="avc1.42E01E"' />
+                        </video>
+                        <video class="anon_Vid anon_04 video" muted loop>
+                            <source src="VIDEO/anon_04.mp4" type='video/mp4; codecs="avc1.42E01E"' />
+                        </video>
+                        <video class="anon_Vid anon_05 video" muted loop>
+                            <source src="VIDEO/anon_05.mp4" type='video/mp4; codecs="avc1.42E01E"' />
+                        </video>
+                        <video class="anon_Vid anon_06 video" muted loop>
+                            <source src="VIDEO/anon_06.mp4" type='video/mp4; codecs="avc1.42E01E"' />
+                        </video>
+                    </div>
+                    <div class="padding25 paddingLeft10 anon4">
+                        <p class="dateText">2012</p>
+                        <h2 class="biggestHeaderText">FREEDOM OPS</h2>
+                        <p class="bodyText">During the Arab Spring, Anonymous provided support to the people fighting to end the oppressive regimes ruling them. This supported consisted of Other Operation Tunisia, Operation Algeria, Operation Egypt, Operation Libya and Operation Syria. In each of these, Anonymous launched DDoS attacks against government websites and provided protestors with anonymizing software such as Tor, allowing people to safety organize resistance and speak out against the regime. The operations helped many of these countries win independence and helped Anonymous gain thousands of new followers from the Middle East.
+                        </p>
+                    </div>
+                </div>
+                <div class="row anonPage5 page storyPage">
+                    <div class="padding15 anon5">
+                        <p class="dateText">2019</p>
+                        <h2 class="medHeaderText anon05_headerText">ANONYMOUS STILL OPERATES WORLDWIDE
+                        </h2>
+                        <p class="bodyText bodyTextPadding anon05_bodyText">Anonymous has evolved from a fringe group of pranksters to an international movement. This evolution could not have occurred without the power and freedom provided by the dark net. The privacy ensured shields the anons, allowing them to plan their attacks and employ illegal tactics to inflict actual damage on those they deems deserving. Without this anonymity, the powerful targets of these attacks would surely punish the perpetrators. For many this would mean jail time, while for others it could even mean death. The dark net allows people to use the web however they choose, without fear of who’s watching; without this anonymity, there is no Anonymous.
+                        </p>
+                        <p class="endStoryBut bodyTextPadding anon_endStoryBut" onClick="returnToNav()">END STORY</p>
+                    </div>
+                </div>
+
+                <div class="row WL_Page1 page storyPage">
+                    <div class="padding22 paddingMdLeft WL1">
+                        <p class="dateText">2006</p>
+                        <h2 class="medHeaderText WL01_headerText">JULIAN ASSANGE FOUNDS WIKILEAKS</h2>
+                        <p class="bodyText WL01_bodyText">A non-profit website with the purposes of disseminating original documents from anonymous sources and leakers. WikiLeaks utilizes the Tor network making it apart of the dark net, allowing for fully encrypted end-to-end anonymous communication. Thus creating a secure location for whistleblowers to safely expose the corruption of state and corporate power.
+                        </p>
+                    </div>
+                </div>
+                <div class="row WL_Page15 quotePage page storyPage">
+                    <div class="padding21 paddingSmLeft WL15">
+                        <h2 class="quoteHeader WL_quoteText">It is impossible to correct abuses unless we know that they’re going on.</h2>
+                        <p class="quoteSignature anon03_quoteSignature"><span class="redDash">–</span> JULIAN ASSANGE
+                        </p>
+                    </div>
+                </div>
+                <div class="row WL_Page2 page storyPage">
+<!--                    <div class="col-sm-1"></div>-->
+                    <div class="padding21 paddingSmLeft WL2">
+                        <p class="dateText">2010</p>
+                        <h2 class="medHeaderText WL02_header">WIKILEAKS MAKES MAJOR HEADLINES</h2>
+                        <p class="bodyText WL02_bodyText">After leaking confidential documents from Iceland's Kaupthing Bank, WikiLeaks for its first time got major media coverage. The documents leaked showed that suspiciously large sums of money were loaned to various owners of the bank, and large debts were written off shortly before the collapse of Iceland's banking sector. The leak caused an uproar in Iceland, and ultimately led to four former bosses of the bank bring sentenced to between three and five years in jail
+                        </p><br>
+                    </div>
+                    <div class="padding25 paddingMdLeft">
+                        <p class="captionText WL02_caption">This video shows Assange giving a speech to Icelandic protesters during the 2008-2011 Icelandic financial crisis</p>
+                        <video class="video WL_iceland" muted loop>
+                            <source src="VIDEO/WL_iceland.mp4" type='video/mp4; codecs="avc1.42E01E"' />
+                        </video>
+                    </div>
+                </div>
+                <div class="row WL_Page3 page storyPage">
+                        <div class="transcriptWrap">
+                            <div id="transcriptBut" class="button" onclick="toggleTranscript()"></div>
+                            <div class="textColWrap">
+                                <p class="transcriptText css-typing">06:44&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Crazyhorse this is Bushmaster Five, Bushmaster Four break.<br>
+                                    06:54&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This is Two-Six roger. I'll pop flares [drop flares]. We also have one individual moving. <br>
+                                    07:07&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yeah Bushmaster, we have a van that's approaching and picking up the bodies.<br>
+                                    07:14&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Where's that van at?<br>
+                                    07:15&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Right down there by the bodies.<br>
+                                    07:16&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Okay, yeah.<br>
+                                    07:18&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bushmaster; Crazyhorse. We have individuals going to the scene, looks like possibly uh<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;picking up bodies and weapons.<br>
+                                    07:25&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Let me engage.<br>
+                                    07:28&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Can I shoot?<br>
+                                    07:31&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Roger. Break. Uh Crazyhorse One-Eight request permission to uh engage.<br>
+                                    07:36&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Picking up the wounded?<br>
+                                    07:38&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yeah, we're trying to get permission to engage.<br>
+                                    07:41&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Come on, let us shoot!<br>
+                                    07:44&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bushmaster; Crazyhorse One-Eight.<br>
+                                    07:49&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;They're taking him.<br>
+                                    07:51&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bushmaster; Crazyhorse One-Eight.<br>
+                                    07:56&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This is Bushmaster Seven, go ahead.<br>
+                                    07:59&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Roger. We have a black SUV-uh Bongo truck [van] picking up the bodies. <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Request permission to engage.<br>
+                                    08:02&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fuck.<br>
+                                    08:06&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This is Bushmaster Seven, roger. This is Bushmaster Seven, roger. Engage.<br>
+                                    08:12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;One-Eight, engage.<br>
+                                    08:12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Clear.<br>
+                                    08:13&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Come on!<br>
+                                    08:17&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Clear.<br>
+                                    08:20&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Clear.<br>
+                                    08:21&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We're engaging.<br> </p>
+                                <p class="buttonLabel WL03_buttonLabel">TRANSCRIPT EXCERPT</p>
+                                <p class="captionText WL_collatCap">Unbeknownst to the US forces, the van described in this excerpt of the transcript and photographed above contained a father and two of his children. The father was killed and the two children both seriously injured.</p>
+                            </div>
+                        </div>
                     <img class="collatImg img" src="IMG/WIKILEAKS/WL_Collat.jpg">
+                    <div class="padding22 paddingSmLeft WL3">
+                        <p class="dateText">2010</p>
+                        <h2 class="biggishHeaderText thinHeaderCol">COLLATERAL MURDER</h2>
+                        <p class="bodyText thinBodyCol">On April 5th, WikiLeaks released a classified U.S. military video depicting the indiscriminate slaying of over a dozen people in the Iraqi suburb of New Baghdad — including two Reuters news staff. WikiLeaks released the full 39-minute video as well as a 17-minute version of the footage, edited down for maximum emotional impact and titled 'Collateral Murder'. Following the video release, the attacks received worldwide coverage and controversy, with both the legality and morality of the attacks, as well as the manipulation of the footage by WikiLeaks coming into question.
+                        </p>
+                    </div>
                 </div>
-                <div class="col-sm-6 padding22 paddingSmLeft">
-                    <p class="dateText">2010</p>
-                    <h2 class="biggishHeaderText thinHeaderCol">COLLATERAL MURDER</h2>
-                    <p class="bodyText thinBodyCol">On April 5th, WikiLeaks released a classified U.S. military video depicting the indiscriminate slaying of over a dozen people in the Iraqi suburb of New Baghdad — including two Reuters news staff. WikiLeaks released the full 39-minute video as well as a 17-minute version of the footage, edited down for maximum emotional impact and titled 'Collateral Murder'. Following the video release, the attacks received worldwide coverage and controversy, with both the legality and morality of the attacks, as well as the manipulation of the footage by WikiLeaks coming into question.
-                    </p>
+                <div class="row WL_Page4 page storyPage">
+                    <video class="WL_Vid WL_01 video" muted loop>
+                        <source src="VIDEO/WL_01.mp4" type='video/mp4; codecs="avc1.42E01E"' />
+                    </video>
+                    <video class="WL_Vid WL_02 video" muted loop>
+                        <source src="VIDEO/WL_02.mp4" type='video/mp4; codecs="avc1.42E01E"' />
+                    </video>
+                    <video class="WL_Vid WL_03 video" muted loop>
+                        <source src="VIDEO/WL_03.mp4" type='video/mp4; codecs="avc1.42E01E"' />
+                    </video>
+                    <video class="WL_Vid WL_04 video" muted loop>
+                        <source src="VIDEO/WL_04.mp4" type='video/mp4; codecs="avc1.42E01E"' />
+                    </video>
+                    <video class="WL_Vid WL_05 video" muted loop>
+                        <source src="VIDEO/WL_05.mp4" type='video/mp4; codecs="avc1.42E01E"' />
+                    </video>
+                    <video class="WL_Vid WL_06 video" muted loop>
+                        <source src="VIDEO/WL_06.mp4" type='video/mp4; codecs="avc1.42E01E"' />
+                    </video>
+                    <div class="padding14 WL4">
+                        <p class="dateText">2010</p>
+                        <h2 class="medHeaderText WL04_headerText">WIKILEAKS RELEASES THE LARGEST LEAK OF CLASSIFIED DOCUMENTS IN HISTORY</h2>
+                        <p class="bodyText WL04_bodyText">
+                             92,000 documents related to the war in Afghanistan and 400,000 documents related to the Iraq War. The documents revealed a real and uncensored story of both wars, detailing thousands of unreported civilian causalities, evidence of torture as well as other war crimes. Shortly after these leaks, WikiLeaks released 250,000 confidential cables sent among U.S. diplomats, revealing the inner workings of U.S. diplomacy. The U.S. condemned all these leaks, suggested the disclosures put lives at risk and gave adversaries valuable information. As a result, Assange has become targeted by the U.S. government.
+                        </p>
+                        <div id="WL04_playButID" class="button WL04_playBut" onclick="revealWLVideos()" height="12" width="12"></div>
+                        <p class="buttonLabel WL04_buttonLabel">REACTIONS FROM U.S.</p>
+                    </div>
+                    <div class="padding21 paddingMdLeft"></div>
                 </div>
-            </div>
-            <div class="row WL_Page4 page storyPage">
-                <video class="WL_Vid WL_01 video" hidden muted loop>
-                    <source src="VIDEO/WL_01.mp4" type='video/mp4; codecs="avc1.42E01E"' />
-                </video>
-                <video class="WL_Vid WL_02 video" hidden muted loop>
-                    <source src="VIDEO/WL_02.mp4" type='video/mp4; codecs="avc1.42E01E"' />
-                </video>
-                <video class="WL_Vid WL_03 video" hidden muted loop>
-                    <source src="VIDEO/WL_03.mp4" type='video/mp4; codecs="avc1.42E01E"' />
-                </video>
-                <video class="WL_Vid WL_04 video" hidden muted loop>
-                    <source src="VIDEO/WL_04.mp4" type='video/mp4; codecs="avc1.42E01E"' />
-                </video>
-                <video class="WL_Vid WL_05 video" hidden muted loop>
-                    <source src="VIDEO/WL_05.mp4" type='video/mp4; codecs="avc1.42E01E"' />
-                </video>
-                <video class="WL_Vid WL_06 video" hidden muted loop>
-                    <source src="VIDEO/WL_06.mp4" type='video/mp4; codecs="avc1.42E01E"' />
-                </video>
-                <div class="col-sm-2"></div>
-                <div class="col-sm-6 padding14">
-                    <p class="dateText">2010</p>
-                    <h2 class="medHeaderText WL04_headerText">WIKILEAKS RELEASES THE LARGEST LEAK OF CLASSIFIED DOCUMENTS IN HISTORY</h2>
-                    <p class="bodyText WL04_bodyText">
-                         92,000 documents related to the war in Afghanistan and 400,000 documents related to the Iraq War. The documents revealed a real and uncensored story of both wars, detailing thousands of unreported civilian causalities, evidence of torture as well as other war crimes. Shortly after these leaks, WikiLeaks released 250,000 confidential cables sent among U.S. diplomats, revealing the inner workings of U.S. diplomacy. The U.S. condemned all these leaks, suggested the disclosures put lives at risk and gave adversaries valuable information. As a result, Assange has become targeted by the U.S. government.
-                    </p>
-                    <img class="button WL04_playBut" onclick="revealWLVideos()" src="IMG/UI/playBut.png">
-                    <p class="buttonLabel WL04_buttonLabel">REACTIONS FROM U.S.</p>
-                </div>
-                <div class="col-sm-4 padding21 paddingMdLeft"></div>
-            </div>
-            <div class="row WL_Page5 page storyPage">
-                <div class="col-sm-1"></div>
-                <div class="col-sm-5 padding16 paddingSmLeft">
-                    <p class="dateText">2019</p>
-                    <h2 class="medHeaderText WL04_headerText">JULIAN ASSANGE ARRESTED</h2>
-                    <p class="bodyText WL05_bodyText">After spending 7 years in U.K.'s Ecuadorian Embassy, on April 11th Assange was suddenly evicted and arrested by U.K. authorities on behalf of a U.S. extradition warrant. Currently, the U.S. has charged him with one count of conspiracy to commit computer intrusion, but additional charges could be added at a later date. By utilizing the anonymity provided by the dark net, WikiLeaks created the first platform for whistleblowers to safety expose corruption; however, the platform only protects the sources of the leaks not WikiLeaks itself.   
-                    </p>
-                    <p class="endStoryBut WL_endBut" onClick="returnToNav()">END STORY</p>
-                </div>
-                <div class="col-sm-6">
+                <div class="row WL_Page5 page storyPage">
+                    <div class="padding16 paddingSmLeft WL5">
+                        <p class="dateText">2019</p>
+                        <h2 class="medHeaderText WL04_headerText">JULIAN ASSANGE ARRESTED</h2>
+                        <p class="bodyText WL05_bodyText">After spending 7 years in U.K.'s Ecuadorian Embassy, on April 11th Assange was suddenly evicted and arrested by U.K. authorities on behalf of a U.S. extradition warrant. Currently, the U.S. has charged him with one count of conspiracy to commit computer intrusion, but additional charges could be added at a later date. By utilizing the anonymity provided by the dark net, WikiLeaks created the first platform for whistleblowers to safety expose corruption; however, the platform only protects the sources of the leaks not WikiLeaks itself.   
+                        </p>
+                        <p class="endStoryBut WL_endBut" onClick="returnToNav()">END STORY</p>
+                    </div>
                     <video class="WL_Vid WL_arrest video" muted loop>
                         <source src="VIDEO/WL_assangeArrest.mp4" type='video/mp4; codecs="avc1.42E01E"' />
                     </video>
                     <p class="captionText WL_arrestCap"> </p>
                 </div>
-            </div>
 
-            <div class="row SR_Page1 page storyPage">
-                <div class="col-sm-5">
-                    <!--                <img class="rossImg" src="IMG/WIKILEAKS/SR_ross.png">-->
-                </div>
-                <div class="col-sm-6 padding17 paddingMdLeft">
-                    <p class="dateText">2010</p>
-                    <h2 class="smHeaderText SR01_headerText">ROSS ULBRICT BEGINS DEVELOPEMENT ON SILK ROAD </h2>
-                    <p class="bodyText">At the age of 26, Ulbrict - a libertarian idealist from Texas - began building the website Silk Road. His vision was to create a free market experiment that had an emphasis on user anonymity. To achieve this, Ulbrict built the site for the dark net, where communication between users would be entirely anonymous. Ulbrict also designed the site to only handle transactions made in bitcoin, which offered a level of anonymity far greater than any other form of currency or credit card. As a result, Silk Road’s existence would be completely outside the scope of government control, allowing users to buy or sell almost anything.
-                    </p>
-                </div>
-            </div>
-            <div class="row SR_Page2 page storyPage">
-                <div class="col-sm-1"></div>
-                <div class="col-sm-6 padding16 paddingSmLeft SR02_padding">
-                    <p class="dateText">2011</p>
-                    <h2 class="medHeaderText">SILK ROAD BECOMES THE BIGGEST DARKNET BLACK MARKET</h2>
-                    <div class="bodyTextWrap">
-                        <p class="bodyText SR02_bodyText">In its first year live Silk Road took off, quickly becoming the most heavily trafficked dark net black market. Much of its success can be attributed to trustworthiness of the platform. From the start Ulbrict had installed a rating and feedback system into the site, allowing for an online community to emerge and keep dealers in check — thus eliminating much of the fear of buying fake or altered products. Additionally, since purchases were occurring on an online platform, Silk Road eliminated the dangers of meeting with nefarious dealers in person. In essence, Silk Road brought the drug trade into the 21st century.
-                        </p> 
-                    </div>
-                </div>
-                <div class="col-sm-4 padding21 paddingMdLeft">
-                    <video class="SR_Vid SR_ad video" muted loop>
-                        <source src="VIDEO/SR_ad.mp4" type='video/mp4; codecs="avc1.42E01E"' />
-                    </video>
-                    <p class="captionText SR02_caption">Ulbrict even created this commercial for the site, which features a hip-hop beat as background music.</p>
-                </div>
-            </div>
-            <div class="row SR_Page25 quotePage page storyPage">
-                <div class="col-sm-1"></div>
-                <div class="col-sm-6 padding18 paddingSmLeft SR_quotePadding">
-                    <h2 class="quoteHeader SR_quoteText">People should have the right to buy and sell whatever they wanted so long as they aren't hurting anyone</h2>
-                    <p class="quoteSignature anon03_quoteSignature"><span class="redDash">–</span> ROSS ULBRICT
-                    </p>
-                </div>
-                <div class='col-sm-5'></div>
-            </div>
-            <div class="row SR_Page3 page storyPage">
-                <div class="col-sm-5">
-                    <!--                <img class="rossImg" src="IMG/WIKILEAKS/SR_ross.png">-->
-                </div>
-                <div class="col-sm-6 padding24 paddingBigLeft">
-                    <p class="dateText SR03_dateText">2012</p>
-                    <!--                <h2 class="smHeaderText">ROSS ULBRICT BEGINS DEVELOPING SILK ROAD </h2>-->
-                    <p class="bodyText">Despite creating terms of service that were more prohibitive than other dark net black markets, Ulbricht became unwilling or unable to maintain the standards that he had initially set. As a result, as the site evolved, more and more dangerous products, including heroin, guns, and fentanyl, began to be listed. All these listings were easily accessible to everyone of all ages, all you needed was a shipping address and a bitcoin account.
-                    </p>
-                </div>
-            </div>
-            <div class="row SR_Page4 page storyPage">
-                <div class="col-sm-1"></div>
-                <div class="col-sm-6 padding17 paddingSmLeft SR04_mobile">
-                    <p class="dateText">2013</p>
-                    <h2 class="medHeaderText SR04_headerText">THE FBI SHUTS DOWN SILK ROAD</h2>
-                    <div class="bodyTextWrap">
-                        <p class="bodyText SR04_bodyText">After almost a two-year long investigation, federal agents apprehended Ulbricht, charging him with narcotics trafficking, computer hacking and money laundering. Ulbrict's undoing came after agents were able to link him back to a username handle which frequently posted about Silk Road in bitcoin forums. In one of these posts the Gmail account 'rossulbricht@gmail.com,' was included. As part of the investigation, it was determined that over $1.2 billion in sales had occurred on Silk Road, which had acquired nearly a million users worldwide. On February 4, 2015, Ulbrict was convicted on all non-violent counts and sentenced to double life imprisonment plus forty years, without the possibility of parole.
+                <div class="row SR_Page1 page storyPage">
+                    <div class="padding17 SR1">
+                        <p class="dateText">2010</p>
+                        <h2 class="smHeaderText SR01_headerText">ROSS ULBRICT BEGINS DEVELOPEMENT ON SILK ROAD </h2>
+                        <p class="bodyText">At the age of 26, Ulbrict - a libertarian idealist from Texas - began building the website Silk Road. His vision was to create a free market experiment that had an emphasis on user anonymity. To achieve this, Ulbrict built the site for the dark net, where communication between users would be entirely anonymous. Ulbrict also designed the site to only handle transactions made in bitcoin, which offered a level of anonymity far greater than any other form of currency or credit card. As a result, Silk Road’s existence would be completely outside the scope of government control, allowing users to buy or sell almost anything.
                         </p>
                     </div>
                 </div>
-                <div class="col-sm-4 padding21 paddingMdLeft"></div>
-            </div>
-            <div class="row SR_Page5 page storyPage">
-                <div class="col-sm-1"></div>
-                <div class="col-sm-6 padding14 paddingSmLeft">
-                    <p class="dateText">TODAY</p>
-                    <h2 class="medBigHeaderText SR04_headerText">THE END OF DARKNET BLACK MARKETS?</h2>
-                    <div class="bodyTextWrap SR05_container">
-                        <div class="SR05_buttonGroup">
-                            <div class="viewButContainer buttonContainer">
-                                <div class="buttonTextWrap">
-                                    <p class="buttonLabel rightButtonLabel rightAlign">DREAM MARKET</p>
-                                    <p id="viewBut1Cap" class="captionText SR05_caption rightAlign">
-                                        Status: Active since 2013<br>
-                                        Total Current Listings: 120,062<br>
-                                        Drug Listings: 61,457
-                                    </p>
-                                </div>
-                                <img id="SR_viewBut1" class="button viewBut" onclick="revealSR_05(this)" src="IMG/UI/viewBut.png">
-                            </div>
-                            <div class="viewButContainer buttonContainer">
-                                <div class="buttonTextWrap">
-                                    <p class="buttonLabel rightButtonLabel rightAlign">SILK ROAD 3</p>
-                                    <p id="viewBut2Cap" class="captionText SR05_caption rightAlign">
-                                        Status: Active since 2013<br>
-                                        Total Current Listings: 51,074<br>
-                                        Drug Listings: 33,291
-                                    </p>
-                                </div>
-                                <img id="SR_viewBut2" class="button viewBut" onclick="revealSR_05(this)" src="IMG/UI/viewBut.png">
-                            </div>
-                            <div class="viewButContainer buttonContainer SR_viewBut3Container">
-                                <div class="buttonTextWrap">
-                                    <p class="buttonLabel rightButtonLabel rightAlign">ALPHA BAY</p>
-                                    <p id="viewBut3Cap" class="captionText SR05_caption rightAlign">
-                                        Status: Shutdown<br>
-                                        Listings before shutdown:<br>
-                                        Total Listings: 369,000<br>
-                                        Drug Listings: 250,000<br>
-                                    </p>
-                                </div>
-                                <img id="SR_viewBut3" class="button viewBut" onclick="revealSR_05(this)" src="IMG/UI/viewBut.png">
-                            </div>
+                <div class="row SR_Page2 page storyPage">
+                    <div class="padding16 paddingSmLeft SR02_padding SR2">
+                        <p class="dateText">2011</p>
+                        <h2 class="medHeaderText SR02_header">SILK ROAD BECOMES THE BIGGEST DARKNET BLACK MARKET</h2>
+                        <div class="bodyTextWrap">
+                            <p class="bodyText SR02_bodyText">In its first year live Silk Road took off, quickly becoming the most heavily trafficked dark net black market. Much of its success can be attributed to trustworthiness of the platform. From the start Ulbrict had installed a rating and feedback system into the site, allowing for an online community to emerge and keep dealers in check — thus eliminating much of the fear of buying fake or altered products. Additionally, since purchases were occurring on an online platform, Silk Road eliminated the dangers of meeting with nefarious dealers in person. In essence, Silk Road brought the drug trade into the 21st century.
+                            </p> 
                         </div>
-                        <div class="textAndButContainer">
-                            <p class="bodyText SR05_bodyText">Rather than end the online black market trade, the shutdown of Silk Road simply caused other dark net black market sites to spring up to take over the demand left behind. Today there are many black markets still on the dark net, many of which are much larger than the Silk Road, and contain no terms-of-service what so ever. When a one of these dark markets is taken down, people go to the next one. Making one thing very clear: as long as users can remain anonymous and money can be made, a black market will always exist on the dark net.
+                    </div>
+                    <div class="padding21 paddingMdLeft">
+                        <video class="SR_Vid SR_ad video" muted loop>
+                            <source src="VIDEO/SR_ad.mp4" type='video/mp4; codecs="avc1.42E01E"' />
+                        </video>
+                        <p class="captionText SR02_caption">Ulbrict even created this commercial for the site, which features a hip-hop beat as background music.</p>
+                    </div>
+                </div>
+                <div class="row SR_Page25 quotePage page storyPage">
+                    <div class="padding18 paddingSmLeft SR_quotePadding SR2">
+                        <h2 class="quoteHeader SR_quoteText">People should have the right to buy and sell whatever they wanted so long as they aren't hurting anyone</h2>
+                        <p class="quoteSignature anon03_quoteSignature"><span class="redDash">–</span> ROSS ULBRICT
+                        </p>
+                    </div>
+                </div>
+                <div class="row SR_Page3 page storyPage">
+                    <div class="padding24 SR3">
+                        <p class="dateText SR03_dateText">2012</p>
+                        <p class="bodyText">Despite creating terms of service that were more prohibitive than other dark net black markets, Ulbricht became unwilling or unable to maintain the standards that he had initially set. As a result, as the site evolved, more and more dangerous products, including heroin, guns, and fentanyl, began to be listed. All these listings were easily accessible to everyone of all ages, all you needed was a shipping address and a bitcoin account.
+                        </p>
+                    </div>
+                </div>
+                <div class="row SR_Page4 page storyPage">
+                    <div class="padding17 paddingSmLeft SR04_mobile SR4">
+                        <p class="dateText">2013</p>
+                        <h2 class="medHeaderText SR04_headerText">THE FBI SHUTS DOWN SILK ROAD</h2>
+                        <div class="bodyTextWrap">
+                            <p class="bodyText SR04_bodyText">After almost a two-year long investigation, federal agents apprehended Ulbricht, charging him with narcotics trafficking, computer hacking and money laundering. Ulbrict's undoing came after agents were able to link him back to a username handle which frequently posted about Silk Road in bitcoin forums. In one of these posts the Gmail account 'rossulbricht@gmail.com,' was included. As part of the investigation, it was determined that over $1.2 billion in sales had occurred on Silk Road, which had acquired nearly a million users worldwide. On February 4, 2015, Ulbrict was convicted on all non-violent counts and sentenced to double life imprisonment plus forty years, without the possibility of parole.
                             </p>
-                            <p class="endStoryBut SR_endBut" onClick="returnToNav()">END STORY</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-4 padding21 paddingBigLeft"></div>
+                <div class="row SR_Page5 page storyPage">
+                    <div class="padding14 SR5">
+                        <p class="dateText">TODAY</p>
+                        <h2 class="medBigHeaderText SR04_headerText">THE END OF DARKNET BLACK MARKETS?</h2>
+                        <div class="bodyTextWrap SR05_container">
+                            <div class="SR05_buttonGroup">
+                                <div class="viewButContainer buttonContainer">
+                                    <div class="buttonTextWrap">
+                                        <p class="buttonLabel rightButtonLabel rightAlign">DREAM MARKET</p>
+                                        <p id="viewBut1Cap" class="captionText SR05_caption rightAlign">
+                                            Status: Active since 2013<br>
+                                            Total Current Listings: 120,062<br>
+                                            Drug Listings: 61,457
+                                        </p>
+                                    </div>
+                                    <div id="SR_viewBut1" class="button viewBut" onclick="revealSR_05(this)">
+                                    </div>
+                                </div>
+                                <div class="viewButContainer buttonContainer">
+                                    <div class="buttonTextWrap">
+                                        <p class="buttonLabel rightButtonLabel rightAlign">SILK ROAD 3</p>
+                                        <p id="viewBut2Cap" class="captionText SR05_caption rightAlign">
+                                            Status: Active since 2013<br>
+                                            Total Current Listings: 51,074<br>
+                                            Drug Listings: 33,291
+                                        </p>
+                                    </div>
+                                    <div id="SR_viewBut2" class="button viewBut" onclick="revealSR_05(this)">
+                                    </div>
+                                </div>
+                                <div class="viewButContainer buttonContainer SR_viewBut3Container">
+                                    <div class="buttonTextWrap">
+                                        <p class="buttonLabel rightButtonLabel rightAlign">ALPHA BAY</p>
+                                        <p id="viewBut3Cap" class="captionText SR05_caption rightAlign">
+                                            Status: Shutdown<br>
+                                            Listings before shutdown:<br>
+                                            Total Listings: 369,000<br>
+                                            Drug Listings: 250,000<br>
+                                        </p>
+                                    </div>
+                                    <div id="SR_viewBut3" class="button viewBut" onclick="revealSR_05(this)">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="textAndButContainer">
+                                <p class="bodyText SR05_bodyText">Rather than end the online black market trade, the shutdown of Silk Road simply caused other dark net black market sites to spring up to take over the demand left behind. Today there are many black markets still on the dark net, many of which are much larger than the Silk Road, and contain no terms-of-service what so ever. When a one of these dark markets is taken down, people go to the next one. Making one thing very clear: as long as users can remain anonymous and money can be made, a black market will always exist on the dark net.
+                                </p>
+                                <p class="endStoryBut SR_endBut" onClick="returnToNav()">END STORY</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-
+           
             <div class='codeBlockContainer' hidden>
                 <p class="anonBGCode">????? ?????? ??? ??? ??? ??? ??? ????????? ??? ??? ?? <br><br>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;????? ?????? ??? ??? ??? ??? ??? ????????? ??? ??? ?? <br>

@@ -1,6 +1,27 @@
-    function revealAboutPage(){
-        $(".aboutPage").addClass("opacity1");
-        console.log('hi');
+    var onAboutPage = false;
+    function toggleAboutPage(){
+        if(onAboutPage == false){
+            $(".navPage").removeClass('opacity1');
+            aboutButScramble();
+            setTimeout(function(){
+                    $(".aboutPage").addClass("opacity1");
+                    $('.aboutPage').css('transform', 'scale(1)');
+                     $('.navPage').prop('hidden', true);
+                    onAboutPage = true;
+            }, 500);
+        }
+        else{
+            aboutButScramble();
+            $(".aboutPage").removeClass('opacity1');
+            $('.aboutPage').css('transform', 'scale(.97)');
+            $('.navPage').prop('hidden', false);
+            setTimeout(function(){
+                    $(".navPage").addClass("opacity1");
+//                    $('.navPage').prop('hidden', true);
+                    onAboutPage = false;
+            }, 500);
+        }
+        
     }
     var allbuttons = $(document).find(".button");
     var allVids = $(document).find(".video");
@@ -207,6 +228,7 @@
     var currentlyScrolling = false;
     //prev page in story
     function pageUp() {
+        console.log(pageNumber);
         if (navClicked == true && pageNumber != 0 && currentlyScrolling == false) {
             currentlyScrolling = true;
             setTimeout(function() {
@@ -260,11 +282,20 @@
                 } else if (pageClassList[pageNumber + 1] == ".WL_Page15") {
                     fWL_quote.setText(phrases6[counter]);
                     counter = (counter + 1) % phrases6.length
+                } else if (pageClassList[pageNumber + 1] == ".anonPage4"){
+                    revealAnonVideos(); 
                 }
 
                 var pageVids = $(pageClassList[pageNumber + 1]).find('.video');
                 for (var i = 0; i < pageVids.length; i++) {
                     pageVids[i].play();
+                    if(pageVids[i].id == 'anon_cruise' || pageVids[i].id == 'anon_pay'){
+                        $(pageVids[i]).addClass('opacity1');
+                    }
+                    else{
+                        $('#anon_curise').removeClass('opacity1');
+                        $('#anon_pay').removeClass('opacity1');
+                    }
                 }
             }
         }
@@ -279,7 +310,7 @@
         }
         //next page
         if(newPageNum != pageNumber){
-            setTimeout(function() {
+//            setTimeout(function() {
                 $(sideNavBarList[pageNumber]).removeClass('active');
                 $(sideNavBarList[newPageNum]).addClass('active');
                 //scale up if 
@@ -290,65 +321,161 @@
                     $(pageClassList[pageNumber]).css('transform', 'scale(1.05)');
                 }
                 $(pageClassList[pageNumber]).removeClass('opacity1');
+                pageNumber = newPageNum;
+//            }, 400);
+            setTimeout(function(){
+                 //if page hasnt been visited yet
+            if (visitedPages[pageNumber] == false) {
+                visitedPages[pageNumber] = true;
+                //quote scramble
+//                console.log(pageClassList[pageNumber + 2]);
                 $(pageClassList[newPageNum]).css('transform', 'scale(1)');
                 $(pageClassList[newPageNum]).addClass('opacity1');
-                pageNumber = newPageNum;
-            }, 400);
-            //if page hasnt been visited yet
-            if (visitedPages[pageNumber + 1] == false) {
-
-                visitedPages[pageNumber + 1] = true;
-                //quote scramble
-                if (pageClassList[pageNumber + 1] == ".SR_Page25") {
+                if (pageClassList[pageNumber] == ".SR_Page25") {
                     fSR_quote.setText(phrases5[counter]);
                     counter = (counter + 1) % phrases5.length
-                } else if (pageClassList[pageNumber + 1] == ".anonPage35") {
+                } else if (pageClassList[pageNumber] == ".anonPage35") {
                     fAnon_quote.setText(phrases7[counter]);
                     counter = (counter + 1) % phrases7.length
-                } else if (pageClassList[pageNumber + 1] == ".WL_Page15") {
+                } else if (pageClassList[pageNumber] == ".WL_Page15") {
                     fWL_quote.setText(phrases6[counter]);
                     counter = (counter + 1) % phrases6.length
+                } else if (pageClassList[pageNumber] == ".anonPage4"){
+                    revealAnonVideos(); 
                 }
 
-                var pageVids = $(pageClassList[pageNumber + 1]).find('.video');
+                var pageVids = $(pageClassList[pageNumber]).find('.video');
                 for (var i = 0; i < pageVids.length; i++) {
+                    console.log(pageVids[i].id);
+                    if(pageVids[i].id == 'anon_cruise' || pageVids[i].id == 'anon_pay'){
+                        $(pageVids[i]).addClass('opacity1');
+                    }
+                    else{
+                        $('#anon_curise').removeClass('opacity1');
+                        $('#anon_pay').removeClass('opacity1');
+                    }
                     pageVids[i].play();
                 }
             }
+            }, 600);
+           
+//            if (visitedPages[pageNumber + 1] == false) {
+//
+//                visitedPages[pageNumber + 1] = true;
+//                //quote scramble
+////                console.log(pageClassList[pageNumber + 2]);
+//                if (pageClassList[pageNumber + 1] == ".SR_Page25") {
+//                    fSR_quote.setText(phrases5[counter]);
+//                    counter = (counter + 1) % phrases5.length
+//                } else if (pageClassList[pageNumber + 1] == ".anonPage35") {
+//                    fAnon_quote.setText(phrases7[counter]);
+//                    counter = (counter + 1) % phrases7.length
+//                } else if (pageClassList[pageNumber + 1] == ".WL_Page15") {
+//                    fWL_quote.setText(phrases6[counter]);
+//                    counter = (counter + 1) % phrases6.length
+//                } else if (pageClassList[pageNumber + 1] == ".anonPage4"){
+//                    revealAnonVideos(); 
+//                }
+//
+//                var pageVids = $(pageClassList[pageNumber + 1]).find('.video');
+//                for (var i = 0; i < pageVids.length; i++) {
+//                    pageVids[i].play();
+//                    console.log('PLAY ME');
+//                }
+//            }
         }
 
     }
 
     var WL_vids = [".WL_04", ".WL_01", ".WL_02", ".WL_05", ".WL_06", ".WL_03"];
-    var vidRevealInterval = 0;
     var vidsRevealed = false;
-
+    
     function revealWLVideos() {
         if (vidsRevealed == false) {
-            $(WL_vids[0]).attr("hidden", false);
             $(WL_vids[0]).addClass('VideoFadeInAndScale');
             setTimeout(function() {
-                $(WL_vids[1]).attr("hidden", false);
                 $(WL_vids[1]).addClass('VideoFadeInAndScale');
-            }, 500);
+            }, 300);
             setTimeout(function() {
-                $(WL_vids[2]).attr("hidden", false);
                 $(WL_vids[2]).addClass('VideoFadeInAndScale');
+            }, 600);
+            setTimeout(function() {
+                $(WL_vids[3]).addClass('VideoFadeInAndScale');
             }, 1000);
             setTimeout(function() {
-                $(WL_vids[3]).attr("hidden", false);
-                $(WL_vids[3]).addClass('VideoFadeInAndScale');
-            }, 1500);
-            setTimeout(function() {
-                $(WL_vids[4]).attr("hidden", false);
                 $(WL_vids[4]).addClass('VideoFadeInAndScale');
-            }, 2000);
+            }, 1300);
             setTimeout(function() {
-                $(WL_vids[5]).attr("hidden", false);
                 $(WL_vids[5]).addClass('VideoFadeInAndScale');
-            }, 2500);
+            }, 1700);
             vidsRevealed = true;
         }
+        else{
+            console.log('bye bye');
+            $(WL_vids[0]).removeClass('VideoFadeInAndScale');
+            setTimeout(function() {
+                $(WL_vids[1]).removeClass('VideoFadeInAndScale');
+            }, 200);
+            setTimeout(function() {
+                $(WL_vids[2]).removeClass('VideoFadeInAndScale');
+            }, 500);
+            setTimeout(function() {
+                $(WL_vids[3]).removeClass('VideoFadeInAndScale');
+            }, 800);
+            setTimeout(function() {
+                $(WL_vids[4]).removeClass('VideoFadeInAndScale');
+            }, 1100);
+            setTimeout(function() {
+                $(WL_vids[5]).removeClass('VideoFadeInAndScale');
+            }, 1400);
+            vidsRevealed = false;
+        }
+    }
+
+    var anon_vids = [".anon_01", ".anon_04", ".anon_05", ".anon_03", ".anon_06", ".anon_02"];
+    var anonVidsRevealed = false;
+    function revealAnonVideos() {
+        if (anonVidsRevealed == false) {
+            console.log('reveal anon');
+            setTimeout(function() {
+                $(anon_vids[0]).addClass('VideoFadeInAndScale');
+            }, 1100);
+            setTimeout(function() {
+                $(anon_vids[1]).addClass('VideoFadeInAndScale');
+            }, 1600);
+            setTimeout(function() {
+                $(anon_vids[2]).addClass('VideoFadeInAndScale');
+            }, 2100);
+            setTimeout(function() {
+                $(anon_vids[3]).addClass('VideoFadeInAndScale');
+            }, 2600);
+            setTimeout(function() {
+                $(anon_vids[4]).addClass('VideoFadeInAndScale');
+            }, 2900);
+            setTimeout(function() {
+                $(anon_vids[5]).addClass('VideoFadeInAndScale');
+            }, 3400);
+            anonVidsRevealed = true;
+        }
+    }
+    function hideAnonVideos(){
+        $(anon_vids[0]).removeClass('VideoFadeInAndScale');
+            setTimeout(function() {
+                $(anon_vids[1]).removeClass('VideoFadeInAndScale');
+            }, 200);
+            setTimeout(function() {
+                $(anon_vids[2]).removeClass('VideoFadeInAndScale');
+            }, 500);
+            setTimeout(function() {
+                $(anon_vids[3]).removeClass('VideoFadeInAndScale');
+            }, 800);
+            setTimeout(function() {
+                $(anon_vids[4]).removeClass('VideoFadeInAndScale');
+            }, 1100);
+            setTimeout(function() {
+                $(anon_vids[5]).removeClass('VideoFadeInAndScale');
+            }, 1400);
+            anonVidsRevealed = false;
     }
 
     function revealUI(){
@@ -417,8 +544,29 @@
             $(this).off('touchmove touchend');
         });
     });
-    
+//        var favicon_images = [
+//                        'http://website.com/img/tmp-0.gif',
+//                        'http://website.com/img/tmp-1.gif',
+//                        'http://website.com/img/tmp-2.gif',
+//                        'http://website.com/img/tmp-3.gif',
+//                        'http://website.com/img/tmp-4.gif',
+//                        'http://website.com/img/tmp-5.gif',
+//                        'http://website.com/img/tmp-6.gif'
+//                    ],
+//        image_counter = 0; // To keep track of the current image
+//
+//    setInterval(function() {
+//        $("link[rel='icon']").remove();
+//        $("link[rel='shortcut icon']").remove();
+//        $("head").append('<link rel="icon" href="' + favicon_images[image_counter] + '" type="image/gif">');
 
+        // If last image then goto first image
+        // Else go to next image    
+//        if(image_counter == favicon_images.length -1)
+//            image_counter = 0;
+//        else
+//            image_counter++;
+//    }, 200);
     document.addEventListener("wheel", function(e) {
         if (onIntroPage2 == true) {
             onIntroPage2 = false;
@@ -450,7 +598,7 @@
                     }
                 }
                 //scroll up - prev page in story
-                else if (pageNumber != 5) {
+                else if (pageNumber != 6) {
                     if (midScroll == false) {
                         pageUp();
                         console.log('scroll up');
@@ -471,7 +619,6 @@
     $(".video").hover(
         function() {
             if(audioEnabled == true){
-                console.log('poop');
                  $(this).animate({
                     volume: .9
                 }, 700);
@@ -488,24 +635,32 @@
     function audioButClicked(){
         if (audioEnabled == true){
             //disable audio from all videos 
+            console.log('DISABLE AUDIO');
             $('audio,video').each(function(){
                 $(this).prop('muted', true);
-                console.log($(this));
             });
+            zeroAllVidVolume();
 //            var audioBars = $('.audioButContainer').find('.audioButBars');
             $('.audioButContainer').children().addClass('smallHeight');
             audioEnabled = false;
         }
         else{
+            console.log('ENABLE AUDIO');
             $('audio,video').each(function(){
-                $(this).prop('muted', false);
-                console.log($(this));
+//               $(this).prop('muted', false);
+               $(this).volume = 0;
             });
             $('.audioButContainer').children().removeClass('smallHeight');
             audioEnabled = true;
         }
     }
-
+    function zeroAllVidVolume(){
+        $('video').each(function(){
+            $(this).prop('muted', true);
+            $(this).volume = 0;
+        });
+    }
+    zeroAllVidVolume();
     //    ****
     //    var WL_Vids = $(".WL_Page4").find(".WL_Vid");
     //    for(var i = 0; i < WL_Vids.length; i++){
@@ -516,10 +671,24 @@
 //    for (var i = 0; i < allVids.length; i++) {
 //        $(allVids[i]).prop('muted', true); //mute
 //    }
-
+    function resetButtons(){
+        var buttons = $(document).find('.button');
+        for(var i = 0; i < buttons.length; i++){
+            if($(buttons[i]).hasClass("clicked")){
+               $(buttons[i]).trigger( "click" );
+               $(buttons[i]).trigger( "mouseout" );
+            }
+        }
+    }
+    function resetVidsToHidden(){
+        vidsRevealed = false;
+    }
     function returnToNav() {
         navClicked = false;
+        resetButtons();
+        resetVidsToHidden();
         resetVisitedPagesArray();
+        hideAnonVideos();
         $(".uiTitle").removeClass("opacity1");
         $(".sideNavBarWrap").removeClass("opacity1");
         $(".selectedStoryWrap").removeClass("opacity1");
@@ -550,13 +719,87 @@
            $(this).css('transform', 'scale(1.05)');
         });
     }
-    //    var animation = bodymovin.loadAnimation({
-    //        container: document.getElementById('navMenuAnim'),
-    //        renderer: 'svg',
-    //        loop: false,
-    //        autoplay: true,
-    //        path: 'JS/data.json'
-    //    });
+    /*BoDYMOVIN BUTTON ANIMATIONS*/
+
+    var transcriptAnim = bodymovin.loadAnimation({
+        container: document.getElementById('transcriptBut'),
+        renderer: 'svg',
+        loop: false,
+        autoplay: false,
+        path: 'JS/transcriptBut.json'
+    });
+    var viewAnim1 = bodymovin.loadAnimation({
+        container: document.getElementById('SR_viewBut1'),
+        renderer: 'svg',
+        loop: false,
+        autoplay: false,
+        path: 'JS/viewBut.json'
+    });
+    var viewAnim2 = bodymovin.loadAnimation({
+        container: document.getElementById('SR_viewBut2'),
+        renderer: 'svg',
+        loop: false,
+        autoplay: false,
+        path: 'JS/viewBut.json'
+    });
+    var viewAnim3 = bodymovin.loadAnimation({
+        container: document.getElementById('SR_viewBut3'),
+        renderer: 'svg',
+        loop: false,
+        autoplay: false,
+        path: 'JS/viewBut.json'
+    });
+    var WL_playBut = bodymovin.loadAnimation({
+        container: document.getElementById('WL04_playButID'),
+        renderer: 'svg',
+        loop: false,
+        autoplay: false,
+        path: 'JS/playBut.json'
+    });
+    function addButHoverAnim(containerID, animName){
+        $(containerID).on( "click", function() {
+            var paths = $(containerID).find('path');
+            if($(containerID).hasClass("clicked") == false){
+              $(containerID).addClass("clicked");
+                for(var i = 0; i < paths.length; i++){
+                    $(paths[i]).addClass('butTransition');
+                }
+                for(var i = 0; i < paths.length; i++){
+                    $(paths[i]).addClass('redBut');
+                }
+            }
+            else{
+                $(containerID).removeClass("clicked");
+                for(var i = 0; i < paths.length; i++){
+                    $(paths[i]).removeClass('redBut');
+                }
+            }
+        });
+        $(containerID).hover(
+        //hovering
+          function() {
+              if($(this).hasClass("clicked") == false){
+                  animName.setDirection(1);
+                  animName.play();
+              }
+          }, 
+         //stopped hovering
+         function() {
+            if($(this).hasClass("clicked") == false){
+                animName.setDirection(-1);
+                animName.play();
+            }
+          }
+        );
+    }
+
+    addButHoverAnim("#transcriptBut", transcriptAnim);
+    addButHoverAnim("#SR_viewBut1", viewAnim1);
+    addButHoverAnim("#SR_viewBut2", viewAnim2);
+    addButHoverAnim("#SR_viewBut3", viewAnim3);
+//    addButHoverAnim("#WL04_playButID", WL_playBut);
+    addButHoverAnim("#WL04_playButID", WL_playBut);
+
 
     // ——————————————————————————————————————————————————
     // Video Code
@@ -586,12 +829,15 @@
     }
 
     function revealTranscript() {
-        $(".transcriptText").css("opacity", "1");
+//        $(".transcriptText").css("opacity", "1");
+        $(".transcriptText").addClass('typewriter');
+        $('.WL03_buttonLabel').css('top', '23px');
+//        $(".transcriptText").css('animation', 'type2 2s steps(400, end)');
         setTimeout(function() {
             $(".WL_collatCap").css("opacity", "1");
             transcriptVisible = true;
             timePassed = true;
-        }, 1000);
+        }, 1900);
     }
 
     function hideTranscript() {
@@ -609,20 +855,48 @@
     function revealSR_05(viewBut) {
         var captionElementID;
         var clickedSiteID = viewBut.id;
-        if (clickedSiteID == "SR_viewBut1" && SR05_viewBut1Clicked == false) {
-            SR05_viewBut1Clicked = true;
-            captionElementID = SR05_captions[0].id;
+        console.log(captionElementID);
+        console.log(clickedSiteID);
+        if (clickedSiteID == "SR_viewBut1") {
+            if(SR05_viewBut1Clicked == false){
+                SR05_viewBut1Clicked = true;
+                captionElementID = SR05_captions[0].id;
+                $("#" + captionElementID).addClass("opacity1");
+            }
+            else{
+                SR05_viewBut1Clicked = false;
+                console.log('false');
+                captionElementID = SR05_captions[0].id;
+                $("#" + captionElementID).removeClass("opacity1");
+            }
         }
-        if (clickedSiteID == "SR_viewBut2" && SR05_viewBut2Clicked == false) {
-            SR05_viewBut2Clicked = true;
-            captionElementID = SR05_captions[1].id;
+        else if (clickedSiteID == "SR_viewBut2") {
+            if(SR05_viewBut2Clicked == false){ 
+                console.log('inside viewBut2');
+                SR05_viewBut2Clicked = true;
+                captionElementID = SR05_captions[1].id;
+                $("#" + captionElementID).addClass("opacity1");
+            }
+            else{
+                SR05_viewBut2Clicked = false;
+                console.log('false');
+                captionElementID = SR05_captions[1].id;
+                $("#" + captionElementID).removeClass("opacity1");
+            }
         }
-        if (clickedSiteID == "SR_viewBut3" && SR05_viewBut3Clicked == false) {
-            SR05_viewBut3Clicked = true;
-            captionElementID = SR05_captions[2].id;
+        else if (clickedSiteID == "SR_viewBut3") {
+            if(SR05_viewBut3Clicked == false){
+                SR05_viewBut3Clicked = true;
+                captionElementID = SR05_captions[2].id;
+                $("#" + captionElementID).addClass("opacity1");
+            }
+            else{
+                SR05_viewBut3Clicked = false;
+                console.log('false');
+                captionElementID = SR05_captions[2].id;
+                $("#" + captionElementID).removeClass("opacity1");
+            }
         }
-
-        $("#" + captionElementID).css("opacity", "1");
     }
 
     // ——————————————————————————————————————————————————
@@ -635,7 +909,7 @@
         //text scramble object has class of element to scramble innerHTML of, chars to scramble with and update method(?)
         constructor(el) {
             this.el = el
-            this.chars = '!<>-_\\/[]{}—=+*^?#ABQCEURI18492047'
+            this.chars = '!<>-_\\/[]{}—=+*^?#AQCI18492047'
             this.update = this.update.bind(this)
         }
         setText(newText) {
@@ -652,7 +926,7 @@
             for (let i = 0; i < length; i++) {
                 const from = oldText[i] || ''
                 const to = newText[i] || ''
-                const start = Math.floor(Math.random() * 0);
+                var start = Math.floor(Math.random() * 0);
                 var end;
                 if (newText == "UNINDEXED") {
                     //by altering this changes length of scramble
@@ -664,7 +938,12 @@
                         end = Math.floor(Math.random() * ((175 - 50) + 1) + 50);
                     }
 
-                } else {
+                } 
+                else if (newText == "?" || newText == "X") {
+                    end = 70;
+                    start = 0;
+                }
+                else {
                     end = Math.floor(Math.random() * ((155 - 30) + 1) + 30);
                 }
                 this.queue.push({
@@ -741,6 +1020,10 @@
     const phrases7 = [
         "We are anonymous, we are legion, we do not forgive, we do not forget"
     ]
+    const phrases8 = [
+        "?",
+        "X"
+    ]
 
     const title = document.querySelector('.titleText');
     const SR_quote = document.querySelector('.SR_quoteText');
@@ -749,6 +1032,7 @@
     const silkRoad = document.querySelector('.navText1');
     const wikiLeaks = document.querySelector('.navText2');
     const anon = document.querySelector('.navText3');
+    const questionMark = document.querySelector('.aboutBut');
 
     const fSilkRoad = new TextScramble(silkRoad);
     const fWikiLeaks = new TextScramble(wikiLeaks);
@@ -757,6 +1041,9 @@
     const fWL_quote = new TextScramble(WL_quote);
     const fAnon_quote = new TextScramble(anon_quote);
     const fTitle = new TextScramble(title);
+    
+    const fQuestionMark = new TextScramble(questionMark);
+
 
     let counter = 0
     const next = () => {
@@ -774,7 +1061,21 @@
 
     }
 
+    let counter2 = 1;
+    const aboutButScramble = () => {
+        if(counter2 == 1){
+            fQuestionMark.setText(phrases8[counter2]);
+            counter2 = 0;
+            console.log(counter2);
+        }
+        else{
+            fQuestionMark.setText(phrases8[counter2]);
+            counter2 = 1;
+            console.log(counter2);
+        }
+    }
 
+//    aboutButScramble();
     // ——————————————————————————————————————————————————
     // Intro/Transition Animation
     // ——————————————————————————————————————————————————
