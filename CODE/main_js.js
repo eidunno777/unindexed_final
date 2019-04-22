@@ -1,12 +1,24 @@
     var onAboutPage = false;
+    var onNavPage = true;
     function toggleAboutPage(){
         if(onAboutPage == false){
-            $(".navPage").removeClass('opacity1');
+            if(onNavPage == true){
+                $(".navPage").removeClass('opacity1');
+            }
+            else{
+                $(pageClassList[pageNumber]).removeClass('opacity1');
+            }
             aboutButScramble();
             setTimeout(function(){
                     $(".aboutPage").addClass("opacity1");
                     $('.aboutPage').css('transform', 'scale(1)');
-                     $('.navPage').prop('hidden', true);
+                    if(onNavPage == true){
+                        $('.navPage').prop('hidden', true);
+                    }
+                    else{
+                        $(pageClassList[pageNumber]).prop('hidden', true);
+                        toggleAboutPageUI();
+                    }
                     onAboutPage = true;
             }, 500);
         }
@@ -14,14 +26,39 @@
             aboutButScramble();
             $(".aboutPage").removeClass('opacity1');
             $('.aboutPage').css('transform', 'scale(.97)');
-            $('.navPage').prop('hidden', false);
+            if(onNavPage == true){
+                $('.navPage').prop('hidden', false);
+            }
+            else{
+                $(pageClassList[pageNumber]).prop('hidden', false);
+            }
             setTimeout(function(){
+                if(onNavPage == true){
                     $(".navPage").addClass("opacity1");
-//                    $('.navPage').prop('hidden', true);
-                    onAboutPage = false;
+                }
+                else{
+                    $(pageClassList[pageNumber]).addClass("opacity1");
+                    toggleAboutPageUI();
+                }
+                onAboutPage = false;
             }, 500);
         }
         
+    }
+
+    function toggleAboutPageUI(){
+        if(onAboutPage == false){
+            $(".sideNav").removeClass('opacity1');
+            $('.sideNavBarWrap').removeClass('opacity1');
+            $('.arrowWrap').removeClass('opacity1');
+            $('.selectedStoryWrap').removeClass('opacity1');
+        }
+        else{
+            $(".sideNav").addClass('opacity1');
+            $('.sideNavBarWrap').addClass('opacity1');
+            $('.arrowWrap').addClass('opacity1');
+            $('.selectedStoryWrap').addClass('opacity1');
+        }
     }
     var allbuttons = $(document).find(".button");
     var allVids = $(document).find(".video");
@@ -176,6 +213,7 @@
         resetNavBar();
         resetVisitedPagesArray();
         revealUIElements();
+        onNavPage = false;
         var story = $(storyName).attr('class');
         if (story == "anonNavMenu" || $(storyName).hasClass('nav3')) {
             changeStoryName(3);
@@ -495,7 +533,6 @@
     var midScroll = false;
     var lastPoint = null; //global
     $(window).on('touchstart', function(e) {
-
         var swipe = e.originalEvent.touches,
         start = swipe[0].pageY;
 
@@ -519,7 +556,7 @@
                     }, 2000);
                 }, 900);
             }
-            else if (pageNumber != -1) {
+            else if (pageNumber != -1 && onAboutPage == false) {
                 if (distance < -30) {
                     if (midScroll == false) {
                         pageDown();
@@ -583,7 +620,7 @@
                 }, 2000);
             }, 900);
         } else {
-            if (pageNumber != -1) {
+            if (pageNumber != -1 && onAboutPage == false) {
                 var variation = parseInt(e.deltaY);
                 //scroll down - next page in story
                 if (variation > 0) {
@@ -598,7 +635,7 @@
                     }
                 }
                 //scroll up - prev page in story
-                else if (pageNumber != 6) {
+                else if (pageNumber != 6 && onAboutPage == false) {
                     if (midScroll == false) {
                         pageUp();
                         console.log('scroll up');
@@ -681,6 +718,7 @@
     }
     function returnToNav() {
         navClicked = false;
+        onNavPage = true;
         resetVidsToHidden();
         resetVisitedPagesArray();
         hideAnonVideos();
