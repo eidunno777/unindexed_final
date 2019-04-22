@@ -40,6 +40,7 @@
             $(".WL04_buttonLabel").prop('hidden', true);
 //            $('.audioButContainer').prop('hidden', true);
             $('.transcriptWrap').prop('hidden', true);
+            $('.mobileDotsWrap').prop('hidden', false);
             for (var i = 0; i < allVids.length; i++) {
                 $(allVids[i]).prop('hidden', true); //mute
             }
@@ -63,6 +64,7 @@
             $(".WL04_buttonLabel").prop('hidden', false);
 //            $('.audioButContainer').prop('hidden', false);
             $('.transcriptWrap').prop('hidden', false);
+            $('.mobileDotsWrap').prop('hidden', true);
             for (var i = 0; i < allVids.length; i++) {
                 if($(allVids[i]).hasClass("WL_Vid")){
                 }
@@ -224,6 +226,7 @@
     }
     
     var sideNavBarList = $(".sideNavBarWrap").find(".sideNavBar");
+    var mobileDotNavList = $(".mobileDotsWrap").find(".mobileDot");
 
     var currentlyScrolling = false;
     //prev page in story
@@ -234,18 +237,17 @@
             setTimeout(function() {
                 currentlyScrolling = false;
                 pageNumber--;
-            }, 600);
-                $(pageClassList[pageNumber]).css('transform', 'scale(1.05)');
+            }, 700);
+                $(pageClassList[pageNumber]).css('transform', 'scale(1.03)');
                 $(pageClassList[pageNumber]).removeClass('opacity1');
             setTimeout(function() {
-//                for(var i = 0; i < sideNavBarList.length; i++){
-//                    if(sideNavBar)
-//                }
                 $(sideNavBarList[pageNumber]).removeClass('active');
                 $(sideNavBarList[pageNumber - 1]).addClass('active');
+                $(mobileDotNavList[pageNumber]).removeClass('active');
+                $(mobileDotNavList[pageNumber - 1]).addClass('active');
                 $(pageClassList[pageNumber - 1]).css('transform', 'scale(1)');
                 $(pageClassList[pageNumber - 1]).addClass('opacity1');
-            }, 400);
+            }, 600);
         }
     }
     
@@ -256,7 +258,7 @@
             setTimeout(function() {
                 currentlyScrolling = false;
                 pageNumber++;
-            }, 600);
+            }, 700);
             //current page fade out / scale up
             $(pageClassList[pageNumber]).css('transform', 'scale(.95)');
             $(pageClassList[pageNumber]).removeClass('opacity1'); 
@@ -264,9 +266,11 @@
             setTimeout(function() {
                 $(sideNavBarList[pageNumber]).removeClass('active');
                 $(sideNavBarList[pageNumber + 1]).addClass('active');
+                $(mobileDotNavList[pageNumber]).removeClass('active');
+                $(mobileDotNavList[pageNumber + 1]).addClass('active');
                 $(pageClassList[pageNumber + 1]).css('transform', 'scale(1)');
                 $(pageClassList[pageNumber + 1]).addClass('opacity1');
-            }, 400);
+            }, 600);
             
             //if page hasnt been visited yet
             if (visitedPages[pageNumber + 1] == false) {
@@ -282,9 +286,7 @@
                 } else if (pageClassList[pageNumber + 1] == ".WL_Page15") {
                     fWL_quote.setText(phrases6[counter]);
                     counter = (counter + 1) % phrases6.length
-                } else if (pageClassList[pageNumber + 1] == ".anonPage4"){
-                    revealAnonVideos(); 
-                }
+                } 
 
                 var pageVids = $(pageClassList[pageNumber + 1]).find('.video');
                 for (var i = 0; i < pageVids.length; i++) {
@@ -313,12 +315,14 @@
 //            setTimeout(function() {
                 $(sideNavBarList[pageNumber]).removeClass('active');
                 $(sideNavBarList[newPageNum]).addClass('active');
+                $(mobileDotNavList[pageNumber]).removeClass('active');
+                $(mobileDotNavList[newPageNum]).addClass('active');
                 //scale up if 
                 if(newPageNum > pageNumber){
-                    $(pageClassList[pageNumber]).css('transform', 'scale(.95)');
+                    $(pageClassList[pageNumber]).css('transform', 'scale(.97)');
                 }
                 else{
-                    $(pageClassList[pageNumber]).css('transform', 'scale(1.05)');
+                    $(pageClassList[pageNumber]).css('transform', 'scale(1.03)');
                 }
                 $(pageClassList[pageNumber]).removeClass('opacity1');
                 pageNumber = newPageNum;
@@ -340,9 +344,7 @@
                 } else if (pageClassList[pageNumber] == ".WL_Page15") {
                     fWL_quote.setText(phrases6[counter]);
                     counter = (counter + 1) % phrases6.length
-                } else if (pageClassList[pageNumber] == ".anonPage4"){
-                    revealAnonVideos(); 
-                }
+                } 
 
                 var pageVids = $(pageClassList[pageNumber]).find('.video');
                 for (var i = 0; i < pageVids.length; i++) {
@@ -434,48 +436,52 @@
 
     var anon_vids = [".anon_01", ".anon_04", ".anon_05", ".anon_03", ".anon_06", ".anon_02"];
     var anonVidsRevealed = false;
-    function revealAnonVideos() {
-        if (anonVidsRevealed == false) {
-            console.log('reveal anon');
-            setTimeout(function() {
-                $(anon_vids[0]).addClass('VideoFadeInAndScale');
-            }, 1100);
-            setTimeout(function() {
-                $(anon_vids[1]).addClass('VideoFadeInAndScale');
-            }, 1600);
-            setTimeout(function() {
-                $(anon_vids[2]).addClass('VideoFadeInAndScale');
-            }, 2100);
-            setTimeout(function() {
-                $(anon_vids[3]).addClass('VideoFadeInAndScale');
-            }, 2600);
-            setTimeout(function() {
-                $(anon_vids[4]).addClass('VideoFadeInAndScale');
-            }, 2900);
-            setTimeout(function() {
-                $(anon_vids[5]).addClass('VideoFadeInAndScale');
-            }, 3400);
-            anonVidsRevealed = true;
+    function toggleAnonVideos(){
+        if (anonVidsRevealed){
+            hideAnonVideos();
+        }
+        else{
+            revealAnonVideos();
         }
     }
+    function revealAnonVideos() {
+        console.log('reveal anon');
+        $(anon_vids[0]).addClass('VideoFadeInAndScale');
+        setTimeout(function() {
+            $(anon_vids[1]).addClass('VideoFadeInAndScale');
+        }, 400);
+        setTimeout(function() {
+            $(anon_vids[2]).addClass('VideoFadeInAndScale');
+        }, 800);
+        setTimeout(function() {
+            $(anon_vids[3]).addClass('VideoFadeInAndScale');
+        }, 1200);
+        setTimeout(function() {
+            $(anon_vids[4]).addClass('VideoFadeInAndScale');
+        }, 1600);
+        setTimeout(function() {
+            $(anon_vids[5]).addClass('VideoFadeInAndScale');
+        }, 2000);
+        anonVidsRevealed = true;
+    }
     function hideAnonVideos(){
-        $(anon_vids[0]).removeClass('VideoFadeInAndScale');
-            setTimeout(function() {
-                $(anon_vids[1]).removeClass('VideoFadeInAndScale');
-            }, 200);
-            setTimeout(function() {
-                $(anon_vids[2]).removeClass('VideoFadeInAndScale');
-            }, 500);
-            setTimeout(function() {
-                $(anon_vids[3]).removeClass('VideoFadeInAndScale');
-            }, 800);
-            setTimeout(function() {
-                $(anon_vids[4]).removeClass('VideoFadeInAndScale');
-            }, 1100);
-            setTimeout(function() {
-                $(anon_vids[5]).removeClass('VideoFadeInAndScale');
-            }, 1400);
-            anonVidsRevealed = false;
+        $(anon_vids[5]).removeClass('VideoFadeInAndScale');
+        setTimeout(function() {
+            $(anon_vids[4]).removeClass('VideoFadeInAndScale');
+        }, 200);
+        setTimeout(function() {
+            $(anon_vids[3]).removeClass('VideoFadeInAndScale');
+        }, 500);
+        setTimeout(function() {
+            $(anon_vids[2]).removeClass('VideoFadeInAndScale');
+        }, 800);
+        setTimeout(function() {
+            $(anon_vids[1]).removeClass('VideoFadeInAndScale');
+        }, 1100);
+        setTimeout(function() {
+            $(anon_vids[0]).removeClass('VideoFadeInAndScale');
+        }, 1400);
+        anonVidsRevealed = false;
     }
 
     function revealUI(){
@@ -544,29 +550,22 @@
             $(this).off('touchmove touchend');
         });
     });
-//        var favicon_images = [
-//                        'http://website.com/img/tmp-0.gif',
-//                        'http://website.com/img/tmp-1.gif',
-//                        'http://website.com/img/tmp-2.gif',
-//                        'http://website.com/img/tmp-3.gif',
-//                        'http://website.com/img/tmp-4.gif',
-//                        'http://website.com/img/tmp-5.gif',
-//                        'http://website.com/img/tmp-6.gif'
-//                    ],
-//        image_counter = 0; // To keep track of the current image
-//
-//    setInterval(function() {
-//        $("link[rel='icon']").remove();
-//        $("link[rel='shortcut icon']").remove();
-//        $("head").append('<link rel="icon" href="' + favicon_images[image_counter] + '" type="image/gif">');
-
-        // If last image then goto first image
-        // Else go to next image    
-//        if(image_counter == favicon_images.length -1)
-//            image_counter = 0;
-//        else
-//            image_counter++;
-//    }, 200);
+    function leaveIntroPage2(){
+        onIntroPage2 = false;
+        var introPage2 = $('.introPage2');
+        $(introPage2).removeClass('fadeInAndScale');
+        fadeOutAndReset(introPage2);
+        setTimeout(function() {
+            revealUI();
+            navPageIntro();
+            next();
+            scrambling = true;
+            $('.introPage2').prop('hidden', 'true');
+            setTimeout(function(){
+                scrambling = false;
+            }, 2000);
+        }, 900);
+    }
     document.addEventListener("wheel", function(e) {
         if (onIntroPage2 == true) {
             onIntroPage2 = false;
@@ -578,6 +577,7 @@
                 navPageIntro();
                 next();
                 scrambling = true;
+                $('.introPage2').prop('hidden', 'true');
                 setTimeout(function(){
                     scrambling = false;
                 }, 2000);
@@ -612,10 +612,6 @@
             }
         }
     });
-//    window.addEventListener('scroll', function(e) {
-//        scroll();
-//    });
-    /* fade in/out audio on hover */
     $(".video").hover(
         function() {
             if(audioEnabled == true){
@@ -685,7 +681,6 @@
     }
     function returnToNav() {
         navClicked = false;
-        resetButtons();
         resetVidsToHidden();
         resetVisitedPagesArray();
         hideAnonVideos();
@@ -697,10 +692,11 @@
 //        $(arrows[0]).removeClass("opacity1");
 //        $(arrows[1]).removeClass("opacity1");
         clearBackground();
-        $(pageClassList[pageNumber]).css('transform', 'scale(.95)');
+        $(pageClassList[pageNumber]).css('transform', 'scale(.97)');
         $(pageClassList[pageNumber]).removeClass('opacity1');
         setTimeout(function(){
              resetPagePositions();
+            resetButtons();
         }, 1000);
 //        fadeOutAndReset(pageClassList[pageNumber]);
         for(var i = 0; i < allNavMenuItems.length; i++){
@@ -716,7 +712,7 @@
        var storyPages = $("#main").find('.storyPage');
        $(storyPages).each(function( index ) {
            console.log('hi');
-           $(this).css('transform', 'scale(1.05)');
+           $(this).css('transform', 'scale(1.03)');
         });
     }
     /*BoDYMOVIN BUTTON ANIMATIONS*/
@@ -751,6 +747,13 @@
     });
     var WL_playBut = bodymovin.loadAnimation({
         container: document.getElementById('WL04_playButID'),
+        renderer: 'svg',
+        loop: false,
+        autoplay: false,
+        path: 'JS/playBut.json'
+    });
+    var anon_playBut = bodymovin.loadAnimation({
+        container: document.getElementById('anon04_playButID'),
         renderer: 'svg',
         loop: false,
         autoplay: false,
@@ -797,7 +800,7 @@
     addButHoverAnim("#SR_viewBut1", viewAnim1);
     addButHoverAnim("#SR_viewBut2", viewAnim2);
     addButHoverAnim("#SR_viewBut3", viewAnim3);
-//    addButHoverAnim("#WL04_playButID", WL_playBut);
+    addButHoverAnim("#anon04_playButID", anon_playBut);
     addButHoverAnim("#WL04_playButID", WL_playBut);
 
 
@@ -1112,6 +1115,7 @@
             $('.introPage2').addClass("fadeInAndScale");
             setTimeout(function() {
                 onIntroPage2 = true;
+                $('.introPage').prop('hidden', 'true');
             }, 500);
         }, 4500);
     }

@@ -14,13 +14,12 @@
 
 <body>
     <div class="siteWrap">
-        <!--    <img class='bgImage' src="IMG/anonPages/anonVIdeos.png">-->
 <!--        <div class="vertLine"></div>-->
 <!--        <div class="horzLine"></div>-->
 <!--        <div class="horzLine2"></div>-->
         <div class='bgImagesWrap'>
             <img class='bgGradient' src="IMG/UI/bgGradient.png">
-</div>
+        </div>
         <div class="uiContainer">
             <div class="titleWrap"  onClick="returnToNav()">
                 <div class="redLine" onClick="returnToNav()"></div>
@@ -46,10 +45,20 @@
                 <p class="selectedStoryNum uiElement">01</p>
                 <p class="selectedStory uiElement">SILK ROAD</p>
             </div>
+            <div class="dotstyle dotstyle-fillup mobileDotsWrap">
+                <ul>
+                    <li class="mobileDot active"></li>
+                    <li class="mobileDot"></li>
+                    <li class="mobileDot"></li>
+                    <li class="mobileDot"></li>
+                    <li class="mobileDot"></li>
+                    <li class="mobileDot"></li>
+                </ul>
+            </div>
         </div>
 
         <div id="main" class="container-fluid">
-            <div class="aboutPage page" hidden>
+            <div class="aboutPage page">
                 <div class="aboutPageTextWrap">
                     <h1 class="medBigHeaderText aboutPageHeader">ABOUT</h1>
                     <div class="textWrap">
@@ -68,17 +77,17 @@
                             </p>
                         </div>
                     </div>
-</div>
+                </div>
             </div>
-            <div class="row page introPage" hidden>
+            <div class="row page introPage">
                 <div class="titleText">UNINDEXED</div>
                 <div class="redBar"></div>
             </div>
-            <div class="row page introPage2" hidden>
+            <div class="row page introPage2">
                 <p class="bodyText introPage2_bodyText">
                     The dark net offers users the power and freedom of complete Internet anonymity. Whether it be using a secure email or buying contraband from a black market, what users choose to do with this freedom is completely up to them. This experience explores three stories that utilize the dark net in significantly different ways.
                 </p>
-                <img class="scrollIcon" src="IMG/UI/arrowIcon.png">
+                <img class="scrollIcon" src="IMG/UI/arrowIcon.png" onClick="leaveIntroPage2()">
             </div>
             <div class="row navMenuRow navPage page">
                 <div class="navMenuContainer col-sm-5">
@@ -169,9 +178,10 @@
                     </div>
                     <div class="padding25 paddingLeft10 anon4">
                         <p class="dateText">2012</p>
-                        <h2 class="biggestHeaderText">FREEDOM OPS</h2>
-                        <p class="bodyText">During the Arab Spring, Anonymous provided support to the people fighting to end the oppressive regimes ruling them. This supported consisted of Other Operation Tunisia, Operation Algeria, Operation Egypt, Operation Libya and Operation Syria. In each of these, Anonymous launched DDoS attacks against government websites and provided protestors with anonymizing software such as Tor, allowing people to safety organize resistance and speak out against the regime. The operations helped many of these countries win independence and helped Anonymous gain thousands of new followers from the Middle East.
+                        <h2 class="biggestHeaderText anon04_header">FREEDOM OPS</h2>
+                        <p class="bodyText anon04_bodyText">During the Arab Spring, Anonymous provided support to the people fighting to end the oppressive regimes ruling them. This supported consisted of Other Operation Tunisia, Operation Algeria, Operation Egypt, Operation Libya and Operation Syria. In each of these, Anonymous launched DDoS attacks against government websites and provided protestors with anonymizing software such as Tor, allowing people to safety organize resistance and speak out against the regime. The operations helped many of these countries win independence and helped Anonymous gain thousands of new followers from the Middle East.
                         </p>
+                        <div id="anon04_playButID" class="button anon04_playBut" onclick="toggleAnonVideos()"></div>
                     </div>
                 </div>
                 <div class="row anonPage5 page storyPage">
