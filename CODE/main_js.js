@@ -1,5 +1,7 @@
     var onAboutPage = false;
     var onNavPage = true;
+    var desktopClassesArray = [".WL1", ".WL15", ".WL2", ".WL3", ".WL4", ".WL5", ".SR1", ".SR2", ".SR25", ".SR3", ".SR4", ".SR5", ".anon1", ".anon2", ".anon3", ".anon35", ".anon4", ".anon5"];
+    var desktopClassesArray2 = ["WL1", "WL15", "WL2", "WL3", "WL4", "WL5", "SR1", "SR2", "SR25", "SR3", "SR4", "SR5", "anon1", "anon2", "anon3", "anon35", "anon4", "anon5"];
     function toggleAboutPage(){
         if(onAboutPage == false){
             if(onNavPage == true){
@@ -146,11 +148,11 @@
         }
     }
     
-    var desktopClassesArray = [".WL1", ".WL15", ".WL2", ".WL3", ".WL4", ".WL5", ".SR1", ".SR2", ".SR25", ".SR3", ".SR4", ".SR5", ".anon1", ".anon2", ".anon3", ".anon35", ".anon4", ".anon5"];
+    
     function removeDesktopClasses(){
         for(var i = 0; i < desktopClassesArray.length; i++){
             console.log($(desktopClassesArray[i]));
-            $(desktopClassesArray[i]).removeClass(desktopClassesArray[i]);
+            $(desktopClassesArray[i]).removeClass(desktopClassesArray2[i]);
         }
     }
     var allNavMenuItems = $(document).find('.navMenu');
