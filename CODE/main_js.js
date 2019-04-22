@@ -78,6 +78,7 @@
 //            $('.audioButContainer').prop('hidden', true);
             $('.transcriptWrap').prop('hidden', true);
             $('.mobileDotsWrap').prop('hidden', false);
+            removeDesktopClasses();
             for (var i = 0; i < allVids.length; i++) {
                 $(allVids[i]).prop('hidden', true); //mute
             }
@@ -145,6 +146,13 @@
         }
     }
     
+    var desktopClassesArray = [".WL1", ".WL15", ".WL2", ".WL3", ".WL4", ".WL5", ".SR1", ".SR2", ".SR25", ".SR3", ".SR4", ".SR5", ".anon1", ".anon2", ".anon3", ".anon35", ".anon4", ".anon5"];
+    function removeDesktopClasses(){
+        for(var i = 0; i < desktopClassesArray.length; i++){
+            console.log($(desktopClassesArray[i]));
+            $(desktopClassesArray[i]).removeClass(desktopClassesArray[i]);
+        }
+    }
     var allNavMenuItems = $(document).find('.navMenu');
     function navPageIntro(){
         var nav1Items = $(document).find('.nav1');

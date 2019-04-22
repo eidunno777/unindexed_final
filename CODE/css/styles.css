@@ -1827,7 +1827,7 @@ titleWrap:hover{
     height: 1px;
     background-color: red;
     opacity: .5;
-    top: 5.8%;
+    top: 25.8%;
 }
 .horzLine2 {
     width: 100%;
@@ -1845,7 +1845,7 @@ titleWrap:hover{
     background-color: red;
     opacity: .5;
     top: 10px;
-    left: 154px;
+    left: 24px;
 }
 
 .audioImg {
@@ -1983,6 +1983,8 @@ titleWrap:hover{
     left: 410px;
     width: 750px;
     filter: brightness(.4);
+    visibility: hidden;
+    opacity: 1;
 }
 
 .WL_arrestCap {
@@ -2074,6 +2076,8 @@ titleWrap:hover{
 }
 
 .aboutPage {
+    position: absolute;
+    z-index: 1000000;
     transform: scale(.97);
     opacity: 0;
     transition: all 1s ease;
@@ -2255,6 +2259,11 @@ titleWrap:hover{
 }
 
 .SR2 {
+    position: absolute;
+    left: 105px;
+    top: 245px !important;
+}
+.SR25 {
     position: absolute;
     left: 105px;
     top: 245px !important;
