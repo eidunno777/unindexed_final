@@ -1569,8 +1569,11 @@ SR_bgImg{
         left: 8px !important;
     }
     .padding17{
+        position: absolute;
         padding-bottom: 10% !important;
         padding-top: 0% !important;
+        top: 200px;
+        left: 23px;
     }
     .padding16 {
         padding-top: 7%;
@@ -2358,7 +2361,7 @@ titleWrap:hover{
 	position: absolute;
     left: 50%;
     transform: translate(-50%);
-    bottom: 40px;
+    bottom: 5%;
 	display: inline-block;
 	margin: 0;
 	padding: 0;
