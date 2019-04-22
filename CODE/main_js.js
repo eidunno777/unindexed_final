@@ -80,7 +80,7 @@
 //            $('.audioButContainer').prop('hidden', true);
             $('.transcriptWrap').prop('hidden', true);
             $('.mobileDotsWrap').prop('hidden', false);
-            removeDesktopClasses();
+//            removeDesktopClasses();
             for (var i = 0; i < allVids.length; i++) {
                 $(allVids[i]).prop('hidden', true); //mute
             }
@@ -149,12 +149,12 @@
     }
     
     
-    function removeDesktopClasses(){
-        for(var i = 0; i < desktopClassesArray.length; i++){
-            console.log($(desktopClassesArray[i]));
-            $(desktopClassesArray[i]).removeClass(desktopClassesArray2[i]);
-        }
-    }
+//    function removeDesktopClasses(){
+//        for(var i = 0; i < desktopClassesArray.length; i++){
+//            console.log($(desktopClassesArray[i]));
+//            $(desktopClassesArray[i]).removeClass(desktopClassesArray2[i]);
+//        }
+//    }
     var allNavMenuItems = $(document).find('.navMenu');
     function navPageIntro(){
         var nav1Items = $(document).find('.nav1');

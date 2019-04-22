@@ -1697,6 +1697,11 @@ SR_bgImg{
     .anon02_padding{
         top: 6% !important;
     }
+    .SR1 {
+        position: absolute;
+        top: 100px !important;
+        left: 25px !important;
+    }
 }
 
 .WL01_bodyText {
