@@ -1572,7 +1572,7 @@ SR_bgImg{
         position: absolute;
         padding-bottom: 10% !important;
         padding-top: 0% !important;
-        top: 200px;
+        top: 100px;
         left: 23px;
     }
     .padding16 {
@@ -1830,7 +1830,7 @@ titleWrap:hover{
     height: 1px;
     background-color: red;
     opacity: .5;
-    top: 25.8%;
+    top: 100px;
 }
 .horzLine2 {
     width: 100%;
