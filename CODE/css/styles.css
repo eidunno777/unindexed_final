@@ -1776,6 +1776,25 @@ SR_bgImg{
         top: 100px !important;
         left: 25px !important;
     }
+    .aboutPageTextWrap {
+        position: relative;
+        margin-left: 155px;
+        top: 24%;
+    }
+    .leftWrap {
+        width: 50%;
+        display: inline-block;
+        float: left;
+    }
+    .rightWrap {
+        width: 30%;
+        float left;
+        display: inline-block;
+        border-left: 1px solid #991a24;
+        padding-left: 30px;
+        margin-top: 0px;
+        margin-left: 100px;
+    }
 }
 
 .WL01_bodyText {
