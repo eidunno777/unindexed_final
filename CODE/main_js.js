@@ -1173,7 +1173,7 @@
         //fadeOut/scaleDown titlePage and hide
         setTimeout(function() {
             fadeOutAndReset(introPage);
-        }, 4000);
+        }, 4700);
 
         //unhide and fadeIn/scaleDown
         setTimeout(function() {
@@ -1182,7 +1182,7 @@
                 onIntroPage2 = true;
                 $('.introPage').prop('hidden', 'true');
             }, 500);
-        }, 4500);
+        }, 5200);
     }
     introAnim();
 
