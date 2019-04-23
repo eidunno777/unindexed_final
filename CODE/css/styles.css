@@ -1567,7 +1567,7 @@ SR_bgImg{
     }
     .titleWrap{
         top: 21px !important;
-        left: 8px !important;
+        left: 7px !important;
     }
     .padding17{
         position: absolute;
@@ -2459,7 +2459,7 @@ titleWrap:hover{
 }
 
 .dotstyle ul {
-	position: absolute;
+	position: relative;
     left: 50%;
     transform: translate(-50%);
 /*    bottom: 5% !important;*/
@@ -2496,7 +2496,7 @@ titleWrap:hover{
 
 .dotsWrap {
     position: absolute;
-    bottom: 50px;
+    bottom: 18%;
 /*    height: 100vh !important;*/
     width: 100%;
 }
