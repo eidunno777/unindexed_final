@@ -2495,7 +2495,7 @@ titleWrap:hover{
 }
 
 .dotsWrap {
-    position: absolute;
+    position: fixed;
     bottom: 5%;
 /*    height: 100vh !important;*/
     width: 100%;
