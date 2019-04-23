@@ -1778,22 +1778,22 @@ SR_bgImg{
     }
     .aboutPageTextWrap {
         position: relative;
-        margin-left: 155px;
-        top: 24%;
+        margin-left: 25px !important;
+        top: 10% !Important;
     }
     .leftWrap {
-        width: 50%;
+        width: 90% !important;
         display: inline-block;
         float: left;
     }
     .rightWrap {
-        width: 30%;
-        float left;
-        display: inline-block;
-        border-left: 1px solid #991a24;
-        padding-left: 30px;
-        margin-top: 0px;
-        margin-left: 100px;
+        opacity: 0 !important;
+    }
+    .introPage {
+        position: absolute;
+        z-index: 1000;
+        top: 0px;
+        left: -4px;
     }
 }
 
