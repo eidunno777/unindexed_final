@@ -198,8 +198,10 @@
             }
         }
     }
-    var dotsNavBarList = $('.dotsWrap').find('mobileDot');
+    var dotsNavBarList = $('.dotsWrap').find('.mobileDot');
+console.log(dotsNavBarList);
     function resetMobileNavBar(){
+        console.log(dotsNavBarList);
         for(var i = 0; i < dotsNavBarList.length; i++){
             if(i == 0){
                 $(dotsNavBarList[i]).addClass('active');
