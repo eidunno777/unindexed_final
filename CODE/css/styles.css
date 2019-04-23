@@ -2162,6 +2162,7 @@ titleWrap:hover{
     z-index: 1000000;
     transform: scale(.97);
     opacity: 0;
+    visibility: hidden;
     transition: all 1s ease;
 }
 
@@ -2408,7 +2409,7 @@ titleWrap:hover{
 .anon4 {
     position: absolute;
     top: 310px;
-    left: 750px;
+    left: 700px;
 }
 
 .anon5 {
@@ -2438,7 +2439,7 @@ titleWrap:hover{
 	position: absolute;
     left: 50%;
     transform: translate(-50%);
-    bottom: 5%;
+    bottom: 5% !important;
 	display: inline-block;
 	margin: 0;
 	padding: 0;
@@ -2464,4 +2465,14 @@ titleWrap:hover{
 
 .scrollIcon:hover {
     cursor: pointer;
+}
+
+.mobileDotsWrap {
+/*    position: relative;*/
+}
+
+.dotsWrap {
+    position: relative;
+    height: 100vh !important;
+    width: 100%;
 }
