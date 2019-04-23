@@ -359,7 +359,7 @@ body {
     animation-name: opacity01;
     animation-duration: 2s;
     animation-timing-function: ease;
-    opacity: .14;
+    opacity: .17;
     filter: brightness(.6);
     height: 40px;
     width: 40px;
@@ -374,7 +374,7 @@ body {
     animation-name: opacity015;
     animation-duration: 2s;
     animation-timing-function: ease;
-    opacity: .2;
+    opacity: .22;
     filter: brightness(.7);
     height: 70px;
     width: 70px;
@@ -389,7 +389,7 @@ body {
     animation-name: opacity02;
     animation-duration: 2s;
     animation-timing-function: ease;
-    opacity: .25;
+    opacity: .26;
     filter: brightness(.8);
     height: 90px;
     width: 90px;
@@ -400,7 +400,7 @@ body {
     animation-name: opacity025;
     animation-duration: 2s;
     animation-timing-function: ease;
-    opacity: .29;
+    opacity: .3;
     filter: brightness(.9);
     height: 120px;
     width: 120px;
@@ -639,7 +639,7 @@ body {
     height: 0% !important;
 /*    z-index: 1000;*/
     left: 0;
-    transform: scale(1.03);
+    transform: scale(1.02);
     transition: all ease 1.5s;
 }
 
@@ -982,7 +982,7 @@ body {
     width: 700px;
     top: 80px;
     left: 470px;;
-    opacity: 1 !important;
+/*    opacity: 1 !important;*/
 /*    visibility: visible !important;*/
 }
 
@@ -1880,7 +1880,7 @@ titleWrap:hover{
     position: absolute;
     left: 160px;
     top: 100px;
-    opacity: 1 !important;
+/*    opacity: 1 !important;*/
 /*    visibility: visible !important;*/
     z-index: -200;
     width: 720px;

@@ -304,7 +304,15 @@ console.log(dotsNavBarList);
                 currentlyScrolling = false;
                 pageNumber--;
             }, 700);
-                $(pageClassList[pageNumber]).css('transform', 'scale(1.03)');
+                if($(pageClassList[pageNumber]).hasClass('anonPage4')){
+                     hideAnonVideos();
+                     $("#anon04_playButID").trigger( "mouseout" );
+                }
+                if($(pageClassList[pageNumber]).hasClass('WL_Page4')){
+                    hideWLVideos();
+                    $("#WL04_playButID").trigger( "mouseout" );
+                }
+                $(pageClassList[pageNumber]).css('transform', 'scale(1.02)');
                 $(pageClassList[pageNumber]).removeClass('opacity1');
             setTimeout(function() {
                 $(sideNavBarList[pageNumber]).removeClass('active');
@@ -319,6 +327,16 @@ console.log(dotsNavBarList);
     
     //next page in story
     function pageDown() {
+        $(pageClassList[pageNumber]).css('transform', 'scale(.98)');
+        $(pageClassList[pageNumber]).removeClass('opacity1'); 
+        if($(pageClassList[pageNumber]).hasClass('anonPage4')){
+             hideAnonVideos();
+             $("#anon04_playButID").trigger( "mouseout" );
+        }
+        if($(pageClassList[pageNumber]).hasClass('WL_Page4')){
+            hideWLVideos();
+            $("#WL04_playButID").trigger( "mouseout" );
+        }
         if (navClicked == true && pageNumber != 5 && currentlyScrolling == false) {
             currentlyScrolling = true;
             setTimeout(function() {
@@ -326,8 +344,6 @@ console.log(dotsNavBarList);
                 pageNumber++;
             }, 700);
             //current page fade out / scale up
-            $(pageClassList[pageNumber]).css('transform', 'scale(.95)');
-            $(pageClassList[pageNumber]).removeClass('opacity1'); 
             //next page fade in / scale up
             setTimeout(function() {
                 $(sideNavBarList[pageNumber]).removeClass('active');
@@ -357,13 +373,13 @@ console.log(dotsNavBarList);
                 var pageVids = $(pageClassList[pageNumber + 1]).find('.video');
                 for (var i = 0; i < pageVids.length; i++) {
                     pageVids[i].play();
-                    if(pageVids[i].id == 'anon_cruise' || pageVids[i].id == 'anon_pay'){
-                        $(pageVids[i]).addClass('opacity1');
-                    }
-                    else{
-                        $('#anon_curise').removeClass('opacity1');
-                        $('#anon_pay').removeClass('opacity1');
-                    }
+//                    if(pageVids[i].id == 'anon_cruise' || pageVids[i].id == 'anon_pay'){
+//                        $(pageVids[i]).addClass('opacity1');
+//                    }
+//                    else{
+//                        $('#anon_curise').removeClass('opacity1');
+//                        $('#anon_pay').removeClass('opacity1');
+//                    }
                 }
             }
         }
@@ -376,24 +392,28 @@ console.log(dotsNavBarList);
                 newPageNum = i;
             }
         }
-        console.log(newPageNum);
+        if($(pageClassList[pageNumber]).hasClass('anonPage4')){
+             hideAnonVideos();
+             $("#anon04_playButID").trigger( "mouseout" );
+        }
+        if($(pageClassList[pageNumber]).hasClass('WL_Page4')){
+            hideWLVideos();
+            $("#WL04_playButID").trigger( "mouseout" );
+        }
         //next page
         if(newPageNum != pageNumber){
-//            setTimeout(function() {
                 $(sideNavBarList[pageNumber]).removeClass('active');
                 $(sideNavBarList[newPageNum]).addClass('active');
                 $(mobileDotNavList[pageNumber]).removeClass('active');
                 $(mobileDotNavList[newPageNum]).addClass('active');
-                //scale up if 
                 if(newPageNum > pageNumber){
-                    $(pageClassList[pageNumber]).css('transform', 'scale(.97)');
+                    $(pageClassList[pageNumber]).css('transform', 'scale(.98)');
                 }
                 else{
-                    $(pageClassList[pageNumber]).css('transform', 'scale(1.03)');
+                    $(pageClassList[pageNumber]).css('transform', 'scale(1.02)');
                 }
                 $(pageClassList[pageNumber]).removeClass('opacity1');
                 pageNumber = newPageNum;
-//            }, 400);
             setTimeout(function(){
                  //if page hasnt been visited yet
             if (visitedPages[pageNumber] == false) {
@@ -411,14 +431,6 @@ console.log(dotsNavBarList);
                 } 
                 var pageVids = $(pageClassList[pageNumber]).find('.video');
                 for (var i = 0; i < pageVids.length; i++) {
-                    console.log(pageVids[i].id);
-                    if(pageVids[i].id == 'anon_cruise' || pageVids[i].id == 'anon_pay'){
-                        $(pageVids[i]).addClass('opacity1');
-                    }
-                    else{
-                        $('#anon_curise').removeClass('opacity1');
-                        $('#anon_pay').removeClass('opacity1');
-                    }
                     pageVids[i].play();
                 }
             }
@@ -474,7 +486,25 @@ console.log(dotsNavBarList);
             vidsRevealed = false;
         }
     }
-
+    function hideWLVideos() {
+        $(WL_vids[0]).removeClass('VideoFadeInAndScale');
+        setTimeout(function() {
+            $(WL_vids[1]).removeClass('VideoFadeInAndScale');
+        }, 200);
+        setTimeout(function() {
+            $(WL_vids[2]).removeClass('VideoFadeInAndScale');
+        }, 500);
+        setTimeout(function() {
+            $(WL_vids[3]).removeClass('VideoFadeInAndScale');
+        }, 800);
+        setTimeout(function() {
+            $(WL_vids[4]).removeClass('VideoFadeInAndScale');
+        }, 1100);
+        setTimeout(function() {
+            $(WL_vids[5]).removeClass('VideoFadeInAndScale');
+        }, 1400);
+        vidsRevealed = false;
+    }
     var anon_vids = [".anon_01", ".anon_04", ".anon_05", ".anon_03", ".anon_06", ".anon_02"];
     var anonVidsRevealed = false;
     function toggleAnonVideos(){
