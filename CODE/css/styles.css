@@ -1691,7 +1691,7 @@ SR_bgImg{
         top: 6% !important;
     }
     .SR1 {
-        top: 100px !important;
+        top: 85px !important;
         left: 25px !important;
     }
     .SR2 {
@@ -1711,7 +1711,7 @@ SR_bgImg{
         left: 25px !important;
     }
     .SR5 {
-        top: 100px !important;
+        top: 85px !important;
         left: 25px !important;
     }
     .SR02_header {
@@ -1741,7 +1741,7 @@ SR_bgImg{
         left: 25px !important;
     }
     .WL4 {
-        top: 100px !important;
+        top: 85px !important;
         left: 25px !important;
     }
     .WL5 {
@@ -1773,7 +1773,7 @@ SR_bgImg{
         left: 25px !important;
     }
     .anon5 {
-        top: 100px !important;
+        top: 85px !important;
         left: 25px !important;
     }
     .aboutPageTextWrap {
@@ -2496,7 +2496,8 @@ titleWrap:hover{
 
 .dotsWrap {
     position: fixed;
-    bottom: 5%;
+    bottom: 3%;
+    transition: all ease 1s;
 /*    height: 100vh !important;*/
     width: 100%;
     opacity: 0;
