@@ -376,6 +376,7 @@ console.log(dotsNavBarList);
                 newPageNum = i;
             }
         }
+        console.log(newPageNum);
         //next page
         if(newPageNum != pageNumber){
 //            setTimeout(function() {
@@ -398,9 +399,6 @@ console.log(dotsNavBarList);
             if (visitedPages[pageNumber] == false) {
                 visitedPages[pageNumber] = true;
                 //quote scramble
-//                console.log(pageClassList[pageNumber + 2]);
-                $(pageClassList[newPageNum]).css('transform', 'scale(1)');
-                $(pageClassList[newPageNum]).addClass('opacity1');
                 if (pageClassList[pageNumber] == ".SR_Page25") {
                     fSR_quote.setText(phrases5[counter]);
                     counter = (counter + 1) % phrases5.length
@@ -411,7 +409,6 @@ console.log(dotsNavBarList);
                     fWL_quote.setText(phrases6[counter]);
                     counter = (counter + 1) % phrases6.length
                 } 
-
                 var pageVids = $(pageClassList[pageNumber]).find('.video');
                 for (var i = 0; i < pageVids.length; i++) {
                     console.log(pageVids[i].id);
@@ -425,32 +422,10 @@ console.log(dotsNavBarList);
                     pageVids[i].play();
                 }
             }
+            $(pageClassList[newPageNum]).css('transform', 'scale(1)');
+            $(pageClassList[newPageNum]).addClass('opacity1');
             }, 600);
            
-//            if (visitedPages[pageNumber + 1] == false) {
-//
-//                visitedPages[pageNumber + 1] = true;
-//                //quote scramble
-////                console.log(pageClassList[pageNumber + 2]);
-//                if (pageClassList[pageNumber + 1] == ".SR_Page25") {
-//                    fSR_quote.setText(phrases5[counter]);
-//                    counter = (counter + 1) % phrases5.length
-//                } else if (pageClassList[pageNumber + 1] == ".anonPage35") {
-//                    fAnon_quote.setText(phrases7[counter]);
-//                    counter = (counter + 1) % phrases7.length
-//                } else if (pageClassList[pageNumber + 1] == ".WL_Page15") {
-//                    fWL_quote.setText(phrases6[counter]);
-//                    counter = (counter + 1) % phrases6.length
-//                } else if (pageClassList[pageNumber + 1] == ".anonPage4"){
-//                    revealAnonVideos(); 
-//                }
-//
-//                var pageVids = $(pageClassList[pageNumber + 1]).find('.video');
-//                for (var i = 0; i < pageVids.length; i++) {
-//                    pageVids[i].play();
-//                    console.log('PLAY ME');
-//                }
-//            }
         }
 
     }
@@ -560,61 +535,7 @@ console.log(dotsNavBarList);
     //scrolling event listener
     var midScroll = false;
     var lastPoint = null; //global
-//    $(window).on('touchstart', function(e) {
-//        var swipe = e.originalEvent.touches,
-//        start = swipe[0].pageY;
-//
-//        $(this).on('touchmove', function(e) {
-//
-//            var contact = e.originalEvent.touches,
-//            end = contact[0].pageY,
-//            distance = end-start;
-//            if (onIntroPage2 == true) {
-//                onIntroPage2 = false;
-//                var introPage2 = $('.introPage2');
-//                $(introPage2).removeClass('fadeInAndScale');
-//                fadeOutAndReset(introPage2);
-//                setTimeout(function() {
-//                    revealUI();
-//                    navPageIntro();
-//                    next();
-//                    scrambling = true;
-//                    setTimeout(function(){
-//                        scrambling = false;
-//                    }, 2000);
-//                }, 900);
-//            }
-//            else if (pageNumber != -1 && onAboutPage == false) {
-//                if (distance < -30) {
-//                    if (midScroll == false) {
-//                        pageDown();
-//                        console.log('scroll down');
-//                        midScroll = true;
-//                        //2s limitation bw each scroll
-//                        setTimeout(function() {
-//                            midScroll = false;
-//                        }, 1200);
-//                    }
-//                }// up
-//                if (distance > 30) 
-//                {
-//                    if (midScroll == false) {
-//                        pageUp();
-//                        console.log('scroll up');
-//                        midScroll = true;
-//                        //2s limitation bw each scroll
-//                        setTimeout(function() {
-//                            midScroll = false;
-//                        }, 2000);
-//                    }
-//                }// down
-//            }
-//        })
-//        .one('touchend', function() {
-//
-//            $(this).off('touchmove touchend');
-//        });
-//    });
+
 document.addEventListener('touchstart', handleTouchStart, false);        
 document.addEventListener('touchmove', handleTouchMove, false);
 
@@ -679,7 +600,6 @@ function handleTouchMove(evt) {
                     midScroll = false;
                 }, 2000);
             }
-           
         }                       
     } else {
         if ( yDiff > 0 ) {
