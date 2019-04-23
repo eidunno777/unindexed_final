@@ -2474,8 +2474,8 @@ titleWrap:hover{
 	display: block;
 	float: left;
 	margin: 0 10px;
-	width: 10px;
-	height: 10px;
+	width: 6px;
+	height: 6px;
 	cursor: pointer;
     border-radius: 50%;
     background-color:  #c6c6c6;
@@ -2496,7 +2496,7 @@ titleWrap:hover{
 
 .dotsWrap {
     position: absolute;
-    bottom: 28%;
+    bottom: 5%;
 /*    height: 100vh !important;*/
     width: 100%;
 }
