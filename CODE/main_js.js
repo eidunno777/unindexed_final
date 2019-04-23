@@ -272,7 +272,9 @@
             $('.arrowWrap').addClass("opacity1");
         }, 1200);
     }
-    
+    function revealMobileUI(){
+        $(".dotsWrap").addClass("opacity1");
+    }
     var sideNavBarList = $(".sideNavBarWrap").find(".sideNavBar");
     var mobileDotNavList = $(".mobileDotsWrap").find(".mobileDot");
 
