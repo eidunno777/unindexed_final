@@ -660,6 +660,16 @@ function handleTouchMove(evt) {
             }, 900);
         }
         if ( xDiff > 0 ) {
+             if (midScroll == false) {
+                pageDown();
+                console.log('scroll down');
+                midScroll = true;
+                //2s limitation bw each scroll
+                setTimeout(function() {
+                    midScroll = false;
+                }, 1200);
+            }
+        } else {
             if (midScroll == false) {
                 pageUp();
                 console.log('scroll up');
@@ -669,30 +679,11 @@ function handleTouchMove(evt) {
                     midScroll = false;
                 }, 2000);
             }
-        } else {
-            if (midScroll == false) {
-                pageDown();
-                console.log('scroll down');
-                midScroll = true;
-                //2s limitation bw each scroll
-                setTimeout(function() {
-                    midScroll = false;
-                }, 1200);
-            }
+           
         }                       
     } else {
         if ( yDiff > 0 ) {
             if (midScroll == false) {
-                pageUp();
-                console.log('scroll up');
-                midScroll = true;
-                //2s limitation bw each scroll
-                setTimeout(function() {
-                    midScroll = false;
-                }, 2000);
-            }
-        } else { 
-            if (midScroll == false) {
                 pageDown();
                 console.log('scroll down');
                 midScroll = true;
@@ -701,6 +692,17 @@ function handleTouchMove(evt) {
                     midScroll = false;
                 }, 1200);
             }
+        } else { 
+            if (midScroll == false) {
+                pageUp();
+                console.log('scroll up');
+                midScroll = true;
+                //2s limitation bw each scroll
+                setTimeout(function() {
+                    midScroll = false;
+                }, 2000);
+            }
+            
         }                                                                 
     }
     /* reset values */
