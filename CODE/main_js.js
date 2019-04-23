@@ -198,7 +198,17 @@
             }
         }
     }
-
+    var dotsNavBarList = $('.dotsWrap').find('mobileDot');
+    function resetMobileNavBar(){
+        for(var i = 0; i < dotsNavBarList.length; i++){
+            if(i == 0){
+                $(dotsNavBarList[i]).addClass('active');
+            }
+            else{
+                $(dotsNavBarList[i]).removeClass('active');
+            }
+        }
+    }
     function changeStoryName(storyNum){
         var newStoryName = '';
         var newStoryNum = '';
@@ -221,6 +231,7 @@
     var navNumber = "";
     function startStory(storyName) {
         resetNavBar();
+        resetMobileNavBar();
         resetVisitedPagesArray();
         revealUIElements();
         revealMobileUI();
