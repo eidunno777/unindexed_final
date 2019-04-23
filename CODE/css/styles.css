@@ -1458,7 +1458,9 @@ SR_bgImg{
         padding-bottom: 0px;
         top: 12px;
     }
-
+    .babyHeaderText{
+        filter: brightness(1) !important;
+    }
     .paddingMdLeft{
         padding-left: 39px;
     }

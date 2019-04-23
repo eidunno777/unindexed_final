@@ -560,61 +560,153 @@ console.log(dotsNavBarList);
     //scrolling event listener
     var midScroll = false;
     var lastPoint = null; //global
-    $(window).on('touchstart', function(e) {
-        var swipe = e.originalEvent.touches,
-        start = swipe[0].pageY;
+//    $(window).on('touchstart', function(e) {
+//        var swipe = e.originalEvent.touches,
+//        start = swipe[0].pageY;
+//
+//        $(this).on('touchmove', function(e) {
+//
+//            var contact = e.originalEvent.touches,
+//            end = contact[0].pageY,
+//            distance = end-start;
+//            if (onIntroPage2 == true) {
+//                onIntroPage2 = false;
+//                var introPage2 = $('.introPage2');
+//                $(introPage2).removeClass('fadeInAndScale');
+//                fadeOutAndReset(introPage2);
+//                setTimeout(function() {
+//                    revealUI();
+//                    navPageIntro();
+//                    next();
+//                    scrambling = true;
+//                    setTimeout(function(){
+//                        scrambling = false;
+//                    }, 2000);
+//                }, 900);
+//            }
+//            else if (pageNumber != -1 && onAboutPage == false) {
+//                if (distance < -30) {
+//                    if (midScroll == false) {
+//                        pageDown();
+//                        console.log('scroll down');
+//                        midScroll = true;
+//                        //2s limitation bw each scroll
+//                        setTimeout(function() {
+//                            midScroll = false;
+//                        }, 1200);
+//                    }
+//                }// up
+//                if (distance > 30) 
+//                {
+//                    if (midScroll == false) {
+//                        pageUp();
+//                        console.log('scroll up');
+//                        midScroll = true;
+//                        //2s limitation bw each scroll
+//                        setTimeout(function() {
+//                            midScroll = false;
+//                        }, 2000);
+//                    }
+//                }// down
+//            }
+//        })
+//        .one('touchend', function() {
+//
+//            $(this).off('touchmove touchend');
+//        });
+//    });
+document.addEventListener('touchstart', handleTouchStart, false);        
+document.addEventListener('touchmove', handleTouchMove, false);
 
-        $(this).on('touchmove', function(e) {
+var xDown = null;                                                        
+var yDown = null;
 
-            var contact = e.originalEvent.touches,
-            end = contact[0].pageY,
-            distance = end-start;
-            if (onIntroPage2 == true) {
-                onIntroPage2 = false;
-                var introPage2 = $('.introPage2');
-                $(introPage2).removeClass('fadeInAndScale');
-                fadeOutAndReset(introPage2);
+function getTouches(evt) {
+  return evt.touches ||             // browser API
+         evt.originalEvent.touches; // jQuery
+}                                                     
+
+function handleTouchStart(evt) {
+    var firstTouch = getTouches(evt)[0];                                      
+    xDown = firstTouch.clientX;                                      
+    yDown = firstTouch.clientY;                                      
+};                                                
+
+function handleTouchMove(evt) {
+    if ( ! xDown || ! yDown ) {
+        return;
+    }
+
+    var xUp = evt.touches[0].clientX;                                    
+    var yUp = evt.touches[0].clientY;
+
+    var xDiff = xDown - xUp;
+    var yDiff = yDown - yUp;
+    
+    if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
+        if (onIntroPage2 == true) {
+            onIntroPage2 = false;
+            var introPage2 = $('.introPage2');
+            $(introPage2).removeClass('fadeInAndScale');
+            fadeOutAndReset(introPage2);
+            setTimeout(function() {
+                revealUI();
+                navPageIntro();
+                next();
+                scrambling = true;
+                setTimeout(function(){
+                    scrambling = false;
+                }, 2000);
+            }, 900);
+        }
+        if ( xDiff > 0 ) {
+            if (midScroll == false) {
+                pageUp();
+                console.log('scroll up');
+                midScroll = true;
+                //2s limitation bw each scroll
                 setTimeout(function() {
-                    revealUI();
-                    navPageIntro();
-                    next();
-                    scrambling = true;
-                    setTimeout(function(){
-                        scrambling = false;
-                    }, 2000);
-                }, 900);
+                    midScroll = false;
+                }, 2000);
             }
-            else if (pageNumber != -1 && onAboutPage == false) {
-                if (distance < -30) {
-                    if (midScroll == false) {
-                        pageDown();
-                        console.log('scroll down');
-                        midScroll = true;
-                        //2s limitation bw each scroll
-                        setTimeout(function() {
-                            midScroll = false;
-                        }, 1200);
-                    }
-                }// up
-                if (distance > 30) 
-                {
-                    if (midScroll == false) {
-                        pageUp();
-                        console.log('scroll up');
-                        midScroll = true;
-                        //2s limitation bw each scroll
-                        setTimeout(function() {
-                            midScroll = false;
-                        }, 2000);
-                    }
-                }// down
+        } else {
+            if (midScroll == false) {
+                pageDown();
+                console.log('scroll down');
+                midScroll = true;
+                //2s limitation bw each scroll
+                setTimeout(function() {
+                    midScroll = false;
+                }, 1200);
             }
-        })
-        .one('touchend', function() {
-
-            $(this).off('touchmove touchend');
-        });
-    });
+        }                       
+    } else {
+        if ( yDiff > 0 ) {
+            if (midScroll == false) {
+                pageUp();
+                console.log('scroll up');
+                midScroll = true;
+                //2s limitation bw each scroll
+                setTimeout(function() {
+                    midScroll = false;
+                }, 2000);
+            }
+        } else { 
+            if (midScroll == false) {
+                pageDown();
+                console.log('scroll down');
+                midScroll = true;
+                //2s limitation bw each scroll
+                setTimeout(function() {
+                    midScroll = false;
+                }, 1200);
+            }
+        }                                                                 
+    }
+    /* reset values */
+    xDown = null;
+    yDown = null;                                             
+};
     function leaveIntroPage2(){
         onIntroPage2 = false;
         var introPage2 = $('.introPage2');
