@@ -2499,4 +2499,5 @@ titleWrap:hover{
     bottom: 5%;
 /*    height: 100vh !important;*/
     width: 100%;
+    opacity: 0;
 }

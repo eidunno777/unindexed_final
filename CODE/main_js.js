@@ -223,6 +223,7 @@
         resetNavBar();
         resetVisitedPagesArray();
         revealUIElements();
+        revealMobileUI();
         onNavPage = false;
         var story = $(storyName).attr('class');
         if (story == "anonNavMenu" || $(storyName).hasClass('nav3')) {
@@ -273,7 +274,9 @@
         }, 1200);
     }
     function revealMobileUI(){
-        $(".dotsWrap").addClass("opacity1");
+        setTimeout(function() {
+            $(".dotsWrap").addClass("opacity1");
+        }, 1000);
     }
     var sideNavBarList = $(".sideNavBarWrap").find(".sideNavBar");
     var mobileDotNavList = $(".mobileDotsWrap").find(".mobileDot");
@@ -738,6 +741,7 @@
         $(".sideNavBarWrap").removeClass("opacity1");
         $(".selectedStoryWrap").removeClass("opacity1");
         $('.arrowWrap').removeClass("opacity1");
+        $('.dotsWrap').removeClass("opacity1");
 //        var arrows = $('.arrowWrap').find(".uiArrow");
 //        $(arrows[0]).removeClass("opacity1");
 //        $(arrows[1]).removeClass("opacity1");
