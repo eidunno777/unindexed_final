@@ -1576,10 +1576,7 @@ SR_bgImg{
         top: 100px;
         left: 23px;
     }
-    .padding16 {
-        padding-top: 7%;
-        padding-left: 37px;
-    }
+
     .padding21{
         padding-top: 18% !important; 
     }
@@ -1629,10 +1626,7 @@ SR_bgImg{
     .WL04_headerText {
         width: 290px;
     }
-    .padding14 {
-        padding-top: 20%;
-        padding-left: 38px;
-    }
+
     .WL05_bodyText{
         width: 290px;
     }
@@ -1681,7 +1675,7 @@ SR_bgImg{
     }
     .padding25 {
         padding-top: 0%;
-        padding-left: 36px;
+/*        padding-left: 36px;*/
         top: -9%;
     }
     .anon05_headerText {
@@ -1729,6 +1723,58 @@ SR_bgImg{
     .SR04_headerText {
         width: 300px;
         font-size: 26pt;
+    }
+    .WL1 {
+        top: 100px !important;
+        left: 25px !important;
+    }
+    .WL2 {
+        top: 100px !important;
+        left: 25px !important;
+    }
+    .WL15 {
+        top: 135px !important;
+        left: 23px !important;
+    }
+    .WL3 {
+        top: 100px !important;
+        left: 25px !important;
+    }
+    .WL4 {
+        top: 100px !important;
+        left: 25px !important;
+    }
+    .WL5 {
+        top: 100px !important;
+        left: 25px !important;
+    }
+    .WL02_header {
+        width: 280px !important;
+        font-size: 
+    }
+    .anon1 {
+        top: 100px !important;
+        left: 25px !important;
+    }
+    .anon2 {
+        top: 100px !important;
+        left: 25px !important;
+    }
+    .anon35 {
+        top: 135px !important;
+        left: 23px !important;
+    }
+    .anon3 {
+        top: 100px !important;
+        left: 25px !important;
+    }
+    .anon4 {
+        top: 100px !important;
+        left: 25px !important;
+    }
+    .anon5 {
+        top: 100px !important;
+        left: 25px !important;
     }
 }
 
@@ -2241,14 +2287,14 @@ titleWrap:hover{
 
 .WL1 {
     position: absolute;
-    left: 560px;
+    left: 650px;
     top: 280px;
 }
 
 .WL2 {
     position: absolute;
-    top: 300px !important;
-    left: 105px;
+    top: 300px;
+    left: 155px;
 }
 
 
@@ -2256,7 +2302,7 @@ titleWrap:hover{
 .WL15 {
     position: absolute;
     top: 275px;
-    left: 103px;
+    left: 153px;
 }
 
 .WL02_header {
@@ -2266,7 +2312,7 @@ titleWrap:hover{
 .WL3 {
     position: absolute; 
     top: 300px;
-    left: 650px;
+    left: 700px;
 }
 
 .WL4 {
@@ -2278,7 +2324,7 @@ titleWrap:hover{
 .WL5 {
     position: absolute;
     top: 210px;
-    left: 105px;
+    left: 155px;
 }
 
 .navPositioning {
@@ -2299,7 +2345,7 @@ titleWrap:hover{
 }
 .SR25 {
     position: absolute;
-    left: 105px;
+    left: 155px;
     top: 245px;
 }
 
@@ -2321,7 +2367,7 @@ titleWrap:hover{
 
 .SR4 {
     position: absolute;
-    left: 105px;
+    left: 155px;
     top: 225px;
 }
 

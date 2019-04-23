@@ -77,7 +77,7 @@
             $('.selectedStoryWrap').prop('hidden', true);
             $(".SR05_buttonGroup").prop('hidden', true);
             $(".WL04_buttonLabel").prop('hidden', true);
-//            $('.audioButContainer').prop('hidden', true);
+            $('.audioButContainer').prop('hidden', true);
             $('.transcriptWrap').prop('hidden', true);
             $('.mobileDotsWrap').prop('hidden', false);
 //            removeDesktopClasses();
@@ -102,7 +102,7 @@
             $('.selectedStoryWrap').prop('hidden', false);
             $('.arrowWrap').prop('hidden', false);
             $(".WL04_buttonLabel").prop('hidden', false);
-//            $('.audioButContainer').prop('hidden', false);
+            $('.audioButContainer').prop('hidden', false);
             $('.transcriptWrap').prop('hidden', false);
             $('.mobileDotsWrap').prop('hidden', true);
             for (var i = 0; i < allVids.length; i++) {
