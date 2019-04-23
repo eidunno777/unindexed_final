@@ -1779,7 +1779,7 @@ SR_bgImg{
     .aboutPageTextWrap {
         position: relative;
         margin-left: 25px !important;
-        top: 11% !Important;
+        top: 13% !Important;
     }
     .leftWrap {
         width: 90% !important;
@@ -2462,7 +2462,7 @@ titleWrap:hover{
 	position: absolute;
     left: 50%;
     transform: translate(-50%);
-    bottom: 5% !important;
+/*    bottom: 5% !important;*/
 	display: inline-block;
 	margin: 0;
 	padding: 0;
@@ -2495,7 +2495,8 @@ titleWrap:hover{
 }
 
 .dotsWrap {
-    position: relative;
-    height: 100vh !important;
+    position: absolute;
+    bottom: 50px;
+/*    height: 100vh !important;*/
     width: 100%;
 }
