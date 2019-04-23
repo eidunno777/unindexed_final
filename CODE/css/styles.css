@@ -1779,7 +1779,7 @@ SR_bgImg{
     .aboutPageTextWrap {
         position: relative;
         margin-left: 25px !important;
-        top: 10% !Important;
+        top: 11% !Important;
     }
     .leftWrap {
         width: 90% !important;
@@ -1794,6 +1794,10 @@ SR_bgImg{
         z-index: 1000;
         top: 0px;
         left: -4px;
+    }
+    .about_BodyText {
+        font-size: 9pt !important;
+        line-height: 16pt !important;
     }
 }
 
