@@ -910,7 +910,7 @@ body {
     height: 1px;
     background-color: #ed1c24;
     opacity: 1;
-    transition: 15s ease-in width, 1s ease opacity;
+    transition: 12s ease-in width, 1s ease opacity;
 /*    animation: barGrow 4s ease-in 1s 1 normal;*/
 }
 
