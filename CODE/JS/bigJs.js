@@ -553,7 +553,7 @@
         //fadeOut/scaleDown titlePage and hide
         setTimeout(function() {
             fadeOutAndReset(introPage);
-        }, 7000);
+        }, 12000);
 
         //unhide and fadeIn/scaleDown
         setTimeout(function() {
@@ -561,7 +561,7 @@
             setTimeout(function() {
                 onIntroPage2 = true;
             }, 500);
-        }, 7500);
+        }, 12500);
     }
     introAnim();
 
