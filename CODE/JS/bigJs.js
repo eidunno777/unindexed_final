@@ -413,7 +413,7 @@
                     if (i == 5) {
                         end = 190;
                     } else {
-                        end = Math.floor(Math.random() * ((175 - 50) + 1) + 50);
+                        end = Math.floor(Math.random() * ((175 - 50) + 1) + 70);
                     }
 
                 } else {
