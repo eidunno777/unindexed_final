@@ -1,4 +1,5 @@
     var allVids = $(document).find(".video");
+    console.log('wtf');
     function myFunction(x) {
         if (x.matches) { // If media query matches
             $(".sideNav").prop('hidden', true);
