@@ -413,11 +413,11 @@
                     if (i == 5) {
                         end = 50;
                     } else {
-                        end = Math.floor(Math.random() * ((125 - 50) + 1) + 30);
+                        end = Math.floor(Math.random() * ((15) + 1) + 30);
                     }
 
                 } else {
-                    end = Math.floor(Math.random() * ((105 - 30) + 1) + 30);
+                    end = Math.floor(Math.random() * ((50) + 1) + 30);
                 }
                 this.queue.push({
                     from,
