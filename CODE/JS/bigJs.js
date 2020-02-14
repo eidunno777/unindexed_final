@@ -411,7 +411,7 @@
                     //                    end = start + Math.floor(Math.random() * 100);
                     //should manually set unindexed reveal times
                     if (i == 5) {
-                        end = 90;
+                        end = 50;
                     } else {
                         end = Math.floor(Math.random() * ((175 - 50) + 1) + 30);
                     }
