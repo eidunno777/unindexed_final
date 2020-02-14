@@ -1219,7 +1219,7 @@ function handleTouchMove(evt) {
         //fadeOut/scaleDown titlePage and hide
         setTimeout(function() {
             fadeOutAndReset(introPage);
-        }, 4700);
+        }, 12000);
 
         //unhide and fadeIn/scaleDown
         setTimeout(function() {
@@ -1228,7 +1228,7 @@ function handleTouchMove(evt) {
                 onIntroPage2 = true;
                 $('.introPage').prop('hidden', 'true');
             }, 500);
-        }, 5200);
+        }, 12500);
     }
     introAnim();
 
