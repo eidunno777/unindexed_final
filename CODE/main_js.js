@@ -1210,7 +1210,7 @@ function handleTouchMove(evt) {
 //            $(currentPage).css('visibility', 'hidden');
 //        }, 1000);
     }
-
+    console.log('hi');
     function introAnim() {
         $(".redBar").css('width', '110%');
         fTitle.setText(phrases4[counter]);
@@ -1219,6 +1219,7 @@ function handleTouchMove(evt) {
         //fadeOut/scaleDown titlePage and hide
         setTimeout(function() {
             fadeOutAndReset(introPage);
+             console.log('1st event');
         }, 12000);
 
         //unhide and fadeIn/scaleDown
