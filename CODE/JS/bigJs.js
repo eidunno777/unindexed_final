@@ -411,13 +411,13 @@
                     //                    end = start + Math.floor(Math.random() * 100);
                     //should manually set unindexed reveal times
                     if (i == 5) {
-                        end = 50;
+                        end = 20;
                     } else {
-                        end = Math.floor(Math.random() * ((15) + 1) + 30);
+                        end = Math.floor(Math.random() *  20);
                     }
 
                 } else {
-                    end = Math.floor(Math.random() * ((50) + 1) + 30);
+                    end = Math.floor(Math.random() * 20);
                 }
                 this.queue.push({
                     from,
